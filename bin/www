@@ -7,14 +7,13 @@
 var app = require('../app');
 var debug = require('debug')('node-1:server');
 var http = require('http');
-var browserSync = require('browser-sync');
 
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '4000');
+var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
@@ -89,8 +88,4 @@ function onListening() {
     debug('Listening on ' + bind);
     console.log('web runing on:');
     console.log('localhost:' + addr.port);
-    // browserSync({
-    //   proxy: 'localhost:' + port,
-    //   files: ['public/**/*.{js,css}','views/**']
-    // });
 }

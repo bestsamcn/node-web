@@ -15,7 +15,7 @@ router.get('/team', function(req, res, next) {
   res.render('tpl/about',{title:'团队'});
 });
 router.get('/pictures', function(req, res, next) {
-  res.render('tpl/pictures',{title:'图片'});
+  res.render('tpl/pictures',{title:'图s片'});
 });
 router.get('/products', function(req, res, next) {
   res.render('tpl/products',{title:'产品'});

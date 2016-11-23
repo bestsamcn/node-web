@@ -4,15 +4,21 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
+var mongoConfig = require('./config/connect_db');
+
 var fs = require('fs');
 var mime = require('mime');
 
 var app = express();
+
+var mongodb = mongoose.connect(mongoConfig.mongodb);
+
 
 // view engine setup
 //模板是会缓存的，开发环境可以设置不缓存
