@@ -16,7 +16,8 @@
     "mine": "^0.1.0",
     "mongoose": "^4.6.8",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "tiny-lr": "^1.0.3"
   },
   "devDependencies": {
     "art-template": "^3.0.3",

@@ -2,15 +2,20 @@ module.exports=function(grunt){
     //任务配置 
     grunt.initConfig({ 
         watch:{
-            html:{
+            template:{
                 files:['views/**'],
-                option:{
+                options:{
+                    livereload:true
+                }
+            },
+            static:{
+                files:['public/**'],
+                options:{
                     livereload:true
                 }
             }
         },
-        nodemon:{
-            dev:{
+        nodemon:{dev:{
                 script:'bin/www',
                 options:{
                     env:{

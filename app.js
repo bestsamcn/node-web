@@ -10,14 +10,15 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
-var mongoConfig = require('./config/connect_db');
+// var mongoConfig = require('./config/connect_db');
+//mongodb
+var db = mongoose.connect("mongodb://127.0.0.1:27017/users");
+
 
 var fs = require('fs');
 var mime = require('mime');
-
 var app = express();
 
-var mongodb = mongoose.connect(mongoConfig.mongodb);
 
 
 // view engine setup
@@ -45,21 +46,25 @@ app.use('/public', express.static(__dirname + '/public'));
 //router
 app.use('/', routes);
 app.use('/users', users);
-app.use('/about',about);
-app.use('/contact',contact);
+app.use('/about', about);
+app.use('/contact', contact);
 
-app.use(function(req,res){
-  if(req.url!=="/favicon.ico"){
-     console.log(req.url);
-     res.end();
-     }
+//api
+var sign = require('./api/sign');
+app.use('/api/sign',sign);
+
+app.use(function(req, res) {
+    if (req.url !== "/favicon.ico") {
+        console.log(req.url);
+        res.end();
+    }
 })
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handlers
@@ -67,23 +72,23 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
     });
-  });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
 
 
