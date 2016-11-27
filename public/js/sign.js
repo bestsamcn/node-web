@@ -1,13 +1,14 @@
 $(function(){
-	var name = $('#name').val();
-	var password = $('#password').val();
-	var postObj = {
-		name:name,
-		password:password
-	}
+	
+    //登录
 	$('#sub').on('click', function(e) {
-		console.log(postObj)
 	    e.preventDefault()
+		var name = $('#name').val();
+		var password = $('#password').val();
+		var postObj = {
+			name:name,
+			password:password
+		}
 	    $.ajax({
 	        type: 'post',
 	        dataType: 'json',
@@ -17,6 +18,5 @@ $(function(){
 	            console.log(res)
 	        }
 	    })
-	    return false
 	})
 })

@@ -12,7 +12,7 @@ var about = require('./routes/about');
 var contact = require('./routes/contact');
 // var mongoConfig = require('./config/connect_db');
 //mongodb
-var db = mongoose.connect("mongodb://127.0.0.1:27017/users");
+global.db = mongoose.connect("mongodb://127.0.0.1:27017/users");
 
 
 var fs = require('fs');
