@@ -8,7 +8,7 @@
 var express = require('express');
 var router = express.Router();
 router.get('/',function(req,res){
-	res.render('tpl/contact',{title:'联系'})
+	res.render('tpl/contact',{title:'联系',routerName:'contact'})
 });
 module.exports = router;
 

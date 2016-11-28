@@ -9,16 +9,16 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('tpl/about',{title:'关于'});
+  res.render('tpl/about',{title:'关于',routerName:'about'});
 });
 router.get('/team', function(req, res, next) {
-  res.render('tpl/about',{title:'团队'});
+  res.render('tpl/about',{title:'团队',routerName:'about'});
 });
 router.get('/pictures', function(req, res, next) {
-  res.render('tpl/pictures',{title:'图s片'});
+  res.render('tpl/pictures',{title:'图片',routerName:'about'});
 });
 router.get('/products', function(req, res, next) {
-  res.render('tpl/products',{title:'产品'});
+  res.render('tpl/products',{title:'产品',routerName:'about'});
 });
 
 module.exports = router;
