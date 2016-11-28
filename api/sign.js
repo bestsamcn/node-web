@@ -3,24 +3,14 @@ var express = require('express');
 var router = express.Router();
 
 //mongoose
-var mongoose = require('mongoose');
-var userSchema = new mongoose.Schema({
-	name:{
-		type:String,
-		require:true
-	},
-	password:{
-		type:String,
-		require:true
-	}
-});
+var UserModel = require('../mongo/schema/User').UserModel;
 
-var userModel = mongoose.model('User',userSchema);
 
+//登录
 router.post('/login',function(req,res){
 	var uname = req.body.name;
 	var upswd = req.body.password;
-	userModel.findOne({name:uname},function(e,d){
+	UserModel.findOne({name:uname},function(e,d){
 		console.log(d)
 		if(e){
 			res.send(500);
@@ -38,6 +28,27 @@ router.post('/login',function(req,res){
 			return
 		}
 		res.json({retCode:0,msg:'登录成功',data:null});
+		res.end();
+	});
+});
+
+//注册
+router.post('/register',function(req,res){
+	var uname = req.body.name;
+	var upswd = req.body.password;
+	var createTime = new Date().getTime();
+	var User = new UserModel({
+		name:uname,
+		password:upswd,
+		createTime:createTime
+	});
+	User.save(function(e){
+		if(e){
+			res.send(500);
+			res.end();
+			return
+		}
+		res.json({retCode:0,msg:'注册成功',data:null});
 		res.end();
 	});
 })

@@ -4,16 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
-// var mongoConfig = require('./config/connect_db');
-//mongodb
-global.db = mongoose.connect("mongodb://127.0.0.1:27017/users");
-
 
 var fs = require('fs');
 var mime = require('mime');

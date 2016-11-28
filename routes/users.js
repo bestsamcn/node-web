@@ -5,7 +5,7 @@ router.get('/login', function(req, res, next) {
   res.render('tpl/login',{title:'登录'});
 });
 
-router.get('/admin', function(req, res, next) {
-  res.send('admin');
+router.get('/register', function(req, res, next) {
+  res.render('tpl/register',{title:'注册'});
 });
 module.exports = router;
