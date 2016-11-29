@@ -1,6 +1,7 @@
 
 var express = require('express');
 var router = express.Router();
+var crypto = require('crypto');
 
 //mongoose
 var UserModel = require('../mongo/schema/User').UserModel;
@@ -10,6 +11,8 @@ var UserModel = require('../mongo/schema/User').UserModel;
 router.post('/login',function(req,res){
 	var uname = req.body.name;
 	var upswd = req.body.password;
+	var md5 = crypto.createHash('md5');
+	upswd = md5.update(upswd).digest('hex');
 	UserModel.findOne({name:uname},function(e,d){
 		console.log(d)
 		if(e){
@@ -27,6 +30,7 @@ router.post('/login',function(req,res){
 			res.end();
 			return
 		}
+		req.session.username = uname;
 		res.json({retCode:0,msg:'登录成功',data:null});
 		res.end();
 	});
@@ -37,19 +41,32 @@ router.post('/register',function(req,res){
 	var uname = req.body.name;
 	var upswd = req.body.password;
 	var createTime = new Date().getTime();
+
+	var md5 = crypto.createHash('md5');
+	upswd = md5.update(upswd).digest('hex');
+
 	var User = new UserModel({
 		name:uname,
 		password:upswd,
 		createTime:createTime
 	});
-	User.save(function(e){
-		if(e){
-			res.send(500);
+
+    UserModel.findOne({name:uname},function(e,d){
+    	if(d){
+    		res.json({retCode:4,msg:'用户名已经存在',data:null});
+    		res.end();
+    		return;
+    	}
+    	User.save(function(e){
+			if(e){
+				res.send(500);
+				res.end();
+				return
+			}
+			res.json({retCode:0,msg:'注册成功',data:null});
 			res.end();
-			return
-		}
-		res.json({retCode:0,msg:'注册成功',data:null});
-		res.end();
-	});
+		});
+    })
+	
 })
 module.exports = router

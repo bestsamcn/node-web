@@ -3,6 +3,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var expressSession = require('express-session');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
@@ -31,8 +32,16 @@ app.set('views', __dirname + '/views');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+
 app.use(cookieParser());
+app.use(expressSession({
+    secret: 'node-1',
+    httpOnly:true,
+    maxAge:1000*60*60*24
+}));
 
 //___dirname最后没有斜杠 ，指定'/public'为静态文件目录后，引入静态文件可以使用'/publick/xxxx'
 //指定静态目录后，也会解决了mimetype的问题
@@ -46,7 +55,7 @@ app.use('/contact', contact);
 
 //api
 var sign = require('./api/sign');
-app.use('/api/sign',sign);
+app.use('/api/sign', sign);
 
 app.use(function(req, res) {
     if (req.url !== "/favicon.ico") {
@@ -85,7 +94,6 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
 
 
 

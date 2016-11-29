@@ -12,7 +12,7 @@ $(function(){
 	    $.ajax({
 	        type: 'post',
 	        dataType: 'json',
-	        url: 'http://127.0.0.1:3000/api/sign/login',
+	        url: 'http://localhost:3000/api/sign/login',
 	        data:postObj,
 	        success: function(res) {
 	            console.log(res)
@@ -31,7 +31,7 @@ $(function(){
 	    $.ajax({
 	        type: 'post',
 	        dataType: 'json',
-	        url: 'http://127.0.0.1:3000/api/sign/register',
+	        url: 'http://localhost:3000/api/sign/register',
 	        data:postObj,
 	        success: function(res) {
 	            console.log(res)
