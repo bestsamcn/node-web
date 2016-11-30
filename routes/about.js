@@ -9,7 +9,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('tpl/about',{title:'关于',routerName:'about'});
+  res.render('tpl/about',{title:'关于',routerName:'about',isLogin});
 });
 router.get('/team', function(req, res, next) {
   res.render('tpl/about',{title:'团队',routerName:'about'});

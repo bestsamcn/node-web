@@ -3,7 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: '首页',routerName:'index'});
+	console.log(req.session)
+  res.render('index', { title: '首页',routerName:'index',loginInfo:req.session});
 });
 
 

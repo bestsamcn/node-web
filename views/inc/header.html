@@ -30,10 +30,17 @@
                     <li class="{{if routerName==='index'}}active{{/if}}"><a href="/">首页</a></li>
                     <li class="{{if routerName==='about'}}active{{/if}}"><a href="/about">关于</a></li>
                     <li class="{{if routerName==='contact'}}active{{/if}}"><a href="/contact">联系</a></li>
+                    {{loginInfo}}
+                    {{if !loginInfo.isLogin}}
+
                     <li class="{{if routerName==='login'}}active{{/if}}"><a href="/users/login">登录</a>
                     </li>
                     <li class="{{if routerName==='register'}}active{{/if}}"><a href="/users/register">注册</a>
                     </li>
+                    {{/if}}
+                    {{if !!loginInfo.isLogin}}
+                    <li ><a href="/api/user/logout">退出</a>
+                    {{/if}}
                 </ul>
                 {{if routerName==='about'}}
                 <ul class="nav navbar-nav navbar-right">

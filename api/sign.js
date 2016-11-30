@@ -30,10 +30,18 @@ router.post('/login',function(req,res){
 			res.end();
 			return
 		}
-		req.session.username = uname;
+		req.session.user = d;
+		req.session.isLogin = true;
 		res.json({retCode:0,msg:'登录成功',data:null});
 		res.end();
 	});
+});
+//退出登录
+router.post('/logout',function(req,res){
+		req.session.user = null;
+		req.session.isLogin = true;
+		res.json({retCode:0,msg:'退出成功',data:null});
+		res.redirect('/');
 });
 
 //注册
@@ -69,4 +77,5 @@ router.post('/register',function(req,res){
     })
 	
 })
+
 module.exports = router

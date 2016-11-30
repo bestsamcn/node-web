@@ -3,7 +3,10 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var expressSession = require('express-session');
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
+
+
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
@@ -37,10 +40,13 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cookieParser());
-app.use(expressSession({
-    secret: 'node-1',
-    httpOnly:true,
-    maxAge:1000*60*60*24
+app.use(session({
+    store: new RedisStore({
+        host:'10.28.5.197',
+        port:'6379',
+        db:1  //此属性可选。redis可以进行分库操作。若无此参数，则不进行分库
+    }),
+    secret: 'keyboard cat'
 }));
 
 //___dirname最后没有斜杠 ，指定'/public'为静态文件目录后，引入静态文件可以使用'/publick/xxxx'
