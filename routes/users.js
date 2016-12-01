@@ -8,14 +8,16 @@ router.get('/login', function(req, res, next) {
     }
 	res.render('tpl/login', {
 		title: '登录',
-		routerName: 'login'
+		routerName: 'login',
+		loginInfo:req.session
 	});
 });
 
 router.get('/register', function(req, res, next) {
 	res.render('tpl/register', {
 		title: '注册',
-		routerName: 'register'
+		routerName: 'register',
+		loginInfo:req.session
 	});
 });
 module.exports = router;

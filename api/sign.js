@@ -9,12 +9,12 @@ var UserModel = require('../mongo/schema/User').UserModel;
 
 //登录
 router.post('/login',function(req,res){
+	console.log(req.body)
 	var uname = req.body.name;
 	var upswd = req.body.password;
 	var md5 = crypto.createHash('md5');
 	upswd = md5.update(upswd).digest('hex');
 	UserModel.findOne({name:uname},function(e,d){
-		console.log(d)
 		if(e){
 			res.send(500);
 			res.end();
@@ -30,6 +30,10 @@ router.post('/login',function(req,res){
 			res.end();
 			return
 		}
+		var uLastLoginTime = new Date().getTime();
+		UserModel.update({name:uname},{lastLoginTime:uLastLoginTime},function(e,d){
+			console.log(e,d)
+		})
 		req.session.user = d;
 		req.session.isLogin = true;
 		res.json({retCode:0,msg:'登录成功',data:null});
@@ -37,11 +41,11 @@ router.post('/login',function(req,res){
 	});
 });
 //退出登录
-router.post('/logout',function(req,res){
-		req.session.user = null;
-		req.session.isLogin = true;
-		res.json({retCode:0,msg:'退出成功',data:null});
-		res.redirect('/');
+router.get('/logout',function(req,res){
+	req.session.user = null;
+	req.session.isLogin = false;
+	res.clearCookie('connect.sid');
+	res.json({retCode:0,msg:'退出成功',data:null});
 });
 
 //注册

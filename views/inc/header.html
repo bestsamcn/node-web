@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">{{title}}</a>
+                <a class="navbar-brand" href="#">{{isLogin ? user.name : title}}</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -39,7 +39,7 @@
                     </li>
                     {{/if}}
                     {{if !!loginInfo.isLogin}}
-                    <li ><a href="/api/user/logout">退出</a>
+                    <li ><a href="javascript:;" id="logout-item">退出</a>
                     {{/if}}
                 </ul>
                 {{if routerName==='about'}}

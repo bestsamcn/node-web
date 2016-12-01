@@ -12,14 +12,39 @@ $(function(){
 	    $.ajax({
 	        type: 'post',
 	        dataType: 'json',
-	        url: 'http://localhost:3000/api/sign/login',
+	        url: 'http://10.28.5.197:3000/api/sign/login',
 	        data:postObj,
+	        xhrFields:{
+	        	withCredentials: true
+	        },
 	        success: function(res) {
-	            console.log(res)
+	            if(res.retCode === 0){
+	            	return
+	            	window.location.href='/';
+	            	return;
+	            }
+	            console.log(res.msg)
 	        }
 	    })
 	});
-	//登录
+	$('#logout-item').on('click', function(e) {
+	    $.ajax({
+	        type: 'get',
+	        dataType: 'json',
+	        url: 'http://localhost:3000/api/sign/logout',
+	        xhrFields:{
+	        	withCredentials: true
+	        },
+	        data:{},
+	        success: function(res) {
+	            if(res.retCode === 0){
+	            	window.location.href='/';
+	            	return;
+	            }
+	        }
+	    })
+	});
+	//注册
 	$('#register-sub').on('click', function(e) {
 	    e.preventDefault()
 		var name = $('#name').val();

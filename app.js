@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
+var cors = require('cors');
 
 
 var bodyParser = require('body-parser');
@@ -40,14 +41,34 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(cookieParser());
+
+var config={
+    name:'nid',
+    secret:'node-1',
+    cookie : {
+        maxAge : 1800000
+    },
+    sessionStore : {
+       host : '10.28.5.197',
+       port : '6379',
+       db : 1,
+       ttl : 1800,
+       logErrors : true
+    }
+}
 app.use(session({
-    store: new RedisStore({
-        host:'10.28.5.197',
-        port:'6379',
-        db:1  //此属性可选。redis可以进行分库操作。若无此参数，则不进行分库
-    }),
-    secret: 'keyboard cat'
+    name : config.id,
+    secret : config.secret,
+    resave : true,
+    rolling:true,
+    saveUninitialized : false,
+    cookie : config.cookie,
+    store : new RedisStore(config.sessionStore)
 }));
+
+//跨域
+app.use(cors({credentials: true, origin: true}));
+
 
 //___dirname最后没有斜杠 ，指定'/public'为静态文件目录后，引入静态文件可以使用'/publick/xxxx'
 //指定静态目录后，也会解决了mimetype的问题
@@ -70,6 +91,14 @@ app.use(function(req, res) {
     }
 })
 
+
+
+app.use(function (req, res, next) {
+  if (!req.session) {
+    return next(new Error('oh no')) // handle error
+  }
+  next() // otherwise continue
+})
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
