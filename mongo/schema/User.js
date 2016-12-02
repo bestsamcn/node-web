@@ -3,7 +3,7 @@ var mongoose =  require('mongoose');
 
 //用户信息
 var UserSchema = new mongoose.Schema({
-	name:{
+	account:{
 		type:String,
 		require:true,
 		unique:true
@@ -11,6 +11,28 @@ var UserSchema = new mongoose.Schema({
 	password:{
 		type:String,
 		require:true
+	},
+	realName:{
+		type:String,
+		require:false,
+		default:''
+	},
+	mobile:{
+		type:String,
+		require:false,
+		default:'',
+		unique:true
+	},
+	email:{
+		type:String,
+		require:false,
+		default:'',
+		unique:true
+	},
+	gender:{
+		type:Number,
+		require:true,
+		default:1,
 	},
 	createTime:{
 		type:Date,

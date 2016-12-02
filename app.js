@@ -10,10 +10,7 @@ var cors = require('cors');
 
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var about = require('./routes/about');
-var contact = require('./routes/contact');
+
 
 var fs = require('fs');
 var mime = require('mime');
@@ -57,13 +54,16 @@ var config={
     }
 }
 app.use(session({
-    name : config.id,
-    secret : config.secret,
-    resave : true,
-    rolling:true,
-    saveUninitialized : false,
-    cookie : config.cookie,
-    store : new RedisStore(config.sessionStore)
+    store: new RedisStore({
+        host:'10.28.5.197',
+        port:'6379',
+        ttl: (30),
+        db:1  //此属性可选。redis可以进行分库操作。若无此参数，则不进行分库
+    }),
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: (1000*30)},
+    secret: 'keyboard cat'
 }));
 
 //跨域
@@ -75,21 +75,29 @@ app.use(cors({credentials: true, origin: true}));
 app.use('/public', express.static(__dirname + '/public'));
 
 //router
-app.use('/', routes);
-app.use('/users', users);
-app.use('/about', about);
-app.use('/contact', contact);
+var indexRouter = require('./routes/index');
+var signRouter = require('./routes/sign');
+var userRouter = require('./routes/user');
+var aboutRouter = require('./routes/about');
+var contactRouter = require('./routes/contact');
+var pictureRouter = require('./routes/picture');
+var servicesRouter = require('./routes/services');
+app.use('/', indexRouter);
+app.use('/sign', signRouter);
+app.use('/user', userRouter);
+app.use('/about', aboutRouter);
+app.use('/contact', contactRouter);
+app.use('/picture', pictureRouter);
+app.use('/services', servicesRouter);
 
 //api
-var sign = require('./api/sign');
-app.use('/api/sign', sign);
+var signApi = require('./api/sign');
+var randomApi = require('./api/random');
+app.use('/api/sign', signApi);
+app.use('/api/random',randomApi)
 
-app.use(function(req, res) {
-    if (req.url !== "/favicon.ico") {
-        console.log(req.url);
-        res.end();
-    }
-})
+
+
 
 
 
