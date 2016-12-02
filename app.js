@@ -40,30 +40,26 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 
 var config={
-    name:'nid',
+    name:'nsessionid',
     secret:'node-1',
     cookie : {
-        maxAge : 1800000
+        maxAge : 1000*60*60*24
     },
     sessionStore : {
        host : '10.28.5.197',
        port : '6379',
        db : 1,
-       ttl : 1800,
+       ttl : 60*60*24,
        logErrors : true
     }
 }
 app.use(session({
-    store: new RedisStore({
-        host:'10.28.5.197',
-        port:'6379',
-        ttl: (30),
-        db:1  //此属性可选。redis可以进行分库操作。若无此参数，则不进行分库
-    }),
+    name:config.name,
+    store: new RedisStore(config.sessionStore),
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: (1000*30)},
-    secret: 'keyboard cat'
+    cookie: config.cookie,
+    secret: config.secret
 }));
 
 //跨域

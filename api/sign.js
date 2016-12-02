@@ -76,6 +76,7 @@ router.get('/logout',function(req,res){
 	req.session.isLogin = false;
 	res.clearCookie('connect.sid');
 	res.json({retCode:0,msg:'退出成功',data:null});
+	res.end();
 });
 
 //注册

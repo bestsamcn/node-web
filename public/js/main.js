@@ -237,15 +237,6 @@
 				alertInfo('验证码为4位');
 				return false;
 			}
-			// var obj = {
-			// 	account: userName.val(),
-			// 	password: password.val(),
-			// 	code:code.val()
-			// }
-			// var obj = {
-			// 	name:userName.val(),
-			// 	password:password.val()
-			// }
 			$.ajax({
 				type: 'post',
 				dataType: 'json',
@@ -324,7 +315,6 @@
 			$.ajax({
 				type: 'post',
 				dataType: 'json',
-				// contentType:'application/x-www-form-urlencoded;charset=utf-8',
 				url: NODE+'/sign/register',
 				data: $('#register-form').serialize(),
 				xhrFields:{
@@ -346,6 +336,33 @@
 		registerBtn.on('click',postInfo);
 	}
 
+	//退出
+	var logout = function(){
+        document.getElementById('logout-btn').onclick = function(){
+        	alert()
+        }
+		$('#logout-btn').on('click',function(){
+			alert()
+			$.ajax({
+				type: 'get',
+				dataType: 'json',
+				url: NODE+'/sign/logout',
+				data:{},
+				success: function(res) {
+					if(res.retCode ===0){
+						window.location.href='/';
+						return;
+					}
+					alertInfo(res.msg || '退出失败');
+				},
+				error:function(res){
+					alertInfo('退出失败');
+				}
+			})
+		})
+		
+	}
+
 
 	$(function() {
 		fullHeight();
@@ -360,6 +377,7 @@
 
 		userLogin();
 		userRegister();
+		logout();
 	});
 
 
