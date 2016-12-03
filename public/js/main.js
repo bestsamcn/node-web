@@ -197,7 +197,7 @@
 
 
 	var JAVA = 'http://10.28.2.62:8080/swycnd/pipes';
-	var NODE = 'http://10.28.5.197:3000/api';
+	var NODE = 'http://localhost:3000/api';
 
 	//用户登录
 	var userLogin = function() {
@@ -240,7 +240,7 @@
 			$.ajax({
 				type: 'post',
 				dataType: 'json',
-				url: NODE+'/sign/login',
+				url: NODE+'/user/login',
 				data: $('#login-form').serialize(),
 				success: function(res) {
 					if(res.retCode === 0){
@@ -315,7 +315,7 @@
 			$.ajax({
 				type: 'post',
 				dataType: 'json',
-				url: NODE+'/sign/register',
+				url: NODE+'/user/register',
 				data: $('#register-form').serialize(),
 				xhrFields:{
 					widthGredentials:true
@@ -323,7 +323,10 @@
 				success: function(res) {
 					console.log(res)
 					if(res.retCode ===0){
-						window.location.href='/login';
+						alertInfo('注册成功,即将重定向');
+						setTimeout(function(){
+							window.location.href='/sign/login';
+						},2000)
 						return;
 					}
 					alertInfo(res.msg || '注册失败');
@@ -338,15 +341,14 @@
 
 	//退出
 	var logout = function(){
-        document.getElementById('logout-btn').onclick = function(){
-        	alert()
-        }
-		$('#logout-btn').on('click',function(){
-			alert()
+ 		var logoutBtn = document.getElementById('logout-btn');
+ 		if(!logoutBtn) return;
+ 		logoutBtn.addEventListener('click',function(){
+ 			alert()
 			$.ajax({
 				type: 'get',
 				dataType: 'json',
-				url: NODE+'/sign/logout',
+				url: NODE+'/user/logout',
 				data:{},
 				success: function(res) {
 					if(res.retCode ===0){
@@ -359,8 +361,118 @@
 					alertInfo('退出失败');
 				}
 			})
-		})
-		
+ 		},false);
+	}
+
+	//更新个人信息
+	var updateInfo = function(){
+		var oForm = document.getElementById('update-form');
+		if(!oForm) return;
+		var oGenderValue = oForm.gender.value;
+		var oBtn = document.getElementById('update-btn');
+		var postInfo = function(e){
+			e.preventDefault();
+			if(oForm.realName.value !== ''){
+				if(oForm.realName.value.length < 2){
+					alertInfo('用户名不能少于2位');
+					oForm.realName.blur();
+					oForm.realName.focus();
+					return;
+				}
+			}
+			if(oForm.email.value !== ''){
+				//645298225@qq.com
+				if(!/^\w+@\w+\.\w+$/g.test(oForm.email.value)){
+					alertInfo('邮箱格式错误');
+					oForm.email.blur();
+					oForm.email.focus();
+					return;
+				}
+			}
+			if(oForm.mobile.value !== ''){
+				if(!/^1[3-9]{1}[0-9]{9}$/.test(oForm.mobile.value)){
+					alertInfo('手机号码格式错误');
+					oForm.mobile.blur();
+					oForm.mobile.focus();
+					return;
+				}
+			}
+			if(!oForm.realName.value && !oForm.email.value && !oForm.mobile.value && oForm.gender.value === oGenderValue){
+				alertInfo('请修改后再提交');
+				return;
+			}
+			$.ajax({
+				type:'post',
+				dataType:'json',
+				url:NODE+'/user/update',
+				data:$(oForm).serialize(),
+				success:function(res){
+					if(res.retCode === 0 ){
+						alertInfo('更新成功');
+						oGenderValue = oForm.gender.value;
+						return;
+					}
+					alertInfo(res.msg || '更新失败');
+				},
+				error:function(){
+					alertInfo('更新失败');
+				}
+			})
+		}
+		oBtn.addEventListener('click',function(e){
+			postInfo(e)
+		},false)
+	}
+
+	//修改密码
+	var modifyPassword = function(){
+		var oForm= document.getElementById('modify-password');
+		if(!oForm) return;
+		var postInfo = function(){
+			if(oForm.opassword.value.length < 6){
+				alertInfo('密码不能少于6位');
+				oForm.opassword.blur();
+				oForm.opassword.focus();
+				return;
+			}
+			if(oForm.npassword.value.length < 6){
+				alertInfo('密码不能少于6位');
+				oForm.npassword.blur();
+				oForm.npassword.focus();
+				return;
+			}
+			if(oForm.npassword.value === oForm.opassword.value){
+				alertInfo('新旧密码不能相同');
+				oForm.npassword.blur();
+				oForm.npassword.focus();
+				return;
+			}
+			if(oForm.npassword.value !== oForm.repassword.value){
+				alertInfo('新密码两次输入不一致');
+				oForm.repassword.blur();
+				oForm.repassword.focus();
+				return;
+			}
+			$.ajax({
+				type:'post',
+				dataType:'json',
+				url:NODE+ '/user/modifyPassword',
+				data:$(oForm).serialize(),
+				success:function(res){
+					if(res.retCode === 0 ){
+						alertInfo('修改成功,请用新密码登录');
+						return;
+					}
+					alertInfo(res.msg || '修改失败');
+				},
+				error:function(){
+					alertInfo('修改失败');
+				}
+			})
+		}
+		var oBtn = document.getElementById('modify-password');
+		if(!oBtn) return;
+		oBtn.addEventListener('click',postInfo,false);
 	}
 
 
@@ -378,6 +490,8 @@
 		userLogin();
 		userRegister();
 		logout();
+		updateInfo();
+		modifyPassword();
 	});
 
 

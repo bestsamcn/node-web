@@ -21,13 +21,11 @@ var UserSchema = new mongoose.Schema({
 		type:String,
 		require:false,
 		default:'',
-		unique:true
 	},
 	email:{
 		type:String,
 		require:false,
 		default:'',
-		unique:true
 	},
 	gender:{
 		type:Number,
@@ -46,6 +44,10 @@ var UserSchema = new mongoose.Schema({
 		type:Number,
 		require:true,
 		default:0
+	},
+	lastUpdateTime:{
+		type:Date,
+		require:false
 	}
 });
 

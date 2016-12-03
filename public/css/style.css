@@ -1257,4 +1257,35 @@ h1, h2, h3, h4, h5, h6, figure {
     width:130px;
   }
 }
+.gander{
+  height:100%;
+  width:100%;
+  display: -webkit-flex;
+  align-items:center;
+  justify-content: flex-start;
+
+}
+.gander label{
+  display: block;
+  margin-right: 10px;
+}
+.gander label input{
+  display: none;
+
+}
+.gander label span{
+  height:54px;
+  width:54px;
+  background:#eee;
+  display: block;
+  border-radius:100%;
+  color:#333;
+  line-height: 54px;
+  font-size: 14px;
+  text-align: center;
+}
+.gander label input:checked + span{
+  background:#1FB57B;
+  color:#fff;
+}
 /*# sourceMappingURL=style.css.map */

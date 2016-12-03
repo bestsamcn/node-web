@@ -12,13 +12,13 @@ router.get('/', function(req, res, next) {
 		loginInfo: req.session
 	});
 });
-router.get('/moidfyPassword', function(req, res, next) {
+router.get('/modifyPassword', function(req, res, next) {
 	if(!req.session.isLogin){
 		res.redirect('/');
 	}
-	res.render('tpl/moidfyPassword', {
+	res.render('tpl/modifyPassword', {
 		title: '修改密码',
-		routerName: 'moidfyPassword',
+		routerName: 'modifyPassword',
 		loginInfo: req.session
 	});
 });

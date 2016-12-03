@@ -11,37 +11,60 @@
 				<div class="col-md-3">
 					<h3>我的信息</h3>
 					<ul class="contact-info">
-						<li><i class="icon-user"></i>account</li>
-						<li><i class="icon-user-secret"></i>姓名</li>
-						<li><i class="sl-icon-phone"></i>+86 13008890154</li>
-						<li><i class="sl-icon-envelope-open"></i>645298225@qq.com</li>
-						<li><i class="icon-lock"></i><a href="./modifyPassword.html">修改密码</a></li>
+						<li><i class="icon-user"></i>{{loginInfo.user.account}}</li>
+						<li><i class="icon-user-secret"></i>{{loginInfo.user.realName ? loginInfo.user.realName :'请完善个人信息'}}</li>
+						<li><i class="sl-icon-phone"></i>+86 {{loginInfo.user.mobile || '请完善个人信息'}}</li>
+						<li><i class="sl-icon-envelope-open"></i>{{loginInfo.user.email || '请完善个人信息'}}</li>
+						<li><i class="icon-lock"></i><a href="/user/modifyPassword">修改密码</a></li>
 					</ul>
 				</div>
 				<div class="col-md-8 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 					<h3>完善信息</h3>
-					<div class="row">
+					<form class="row" id="update-form">
 						<div class="col-md-6">
 							<div class="form-group">
-								<input class="form-control" placeholder="姓名" type="text">
+								<input class="form-control" placeholder="姓名" name="realName" type="text">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<input class="form-control" placeholder="邮箱" type="text">
+								<input class="form-control" placeholder="邮箱" name="email" type="text">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<input class="form-control" placeholder="手机号码" type="text">
+								<input class="form-control" placeholder="手机号码" name="mobile" type="text">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<div  class="gander">
+									<label>
+										{{if loginInfo.user.gender === 1}}
+										<input class="form-control" checked name="gender" value="1" type="radio">
+										{{else}}
+										<input class="form-control" name="gender" value="1" type="radio">
+										{{/if}}
+										<span>男</span>
+										
+									</label>
+									<label class="gander">
+										{{if loginInfo.user.gender === 2}}
+										<input class="form-control" checked name="gender" value="2" type="radio">
+										{{else}}
+										<input class="form-control" name="gender" value="2" type="radio">
+										{{/if}}
+										<span>女</span>
+									</label>
+								</div>
 							</div>
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<input value="发送" class="btn btn-primary" type="submit">
+								<input value="发送" class="btn btn-primary" type="submit" id="update-btn">
 							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>

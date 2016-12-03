@@ -30,7 +30,7 @@ app.set('views', __dirname + '/views');
 
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, '/favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -39,22 +39,24 @@ app.use(bodyParser.urlencoded({
 
 app.use(cookieParser());
 
-var config={
-    name:'nsessionid',
-    secret:'node-1',
-    cookie : {
-        maxAge : 1000*60*60*24
+var config = {
+    name: 'nsessionid',
+    secret: 'node-1',
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24
     },
-    sessionStore : {
-       host : '10.28.5.197',
-       port : '6379',
-       db : 1,
-       ttl : 60*60*24,
-       logErrors : true
+    sessionStore: {
+        host: 'localhost',
+        port: '6379',
+        db: 1,
+        ttl: 60 * 60 * 24,
+        logErrors: true
     }
 }
+
+
 app.use(session({
-    name:config.name,
+    name: config.name,
     store: new RedisStore(config.sessionStore),
     resave: false,
     saveUninitialized: true,
@@ -63,12 +65,28 @@ app.use(session({
 }));
 
 //跨域
-app.use(cors({credentials: true, origin: true}));
+app.use(cors({ credentials: true, origin: true }));
 
 
 //___dirname最后没有斜杠 ，指定'/public'为静态文件目录后，引入静态文件可以使用'/publick/xxxx'
 //指定静态目录后，也会解决了mimetype的问题
 app.use('/public', express.static(__dirname + '/public'));
+
+//更新当前用户信息
+app.use(function(req, res, next) {
+    if (req.session.isLogin) {
+        var UserModel = require('./mongo/schema/User').UserModel;
+        UserModel.findOne({ _id: req.session.user._id }, function(e, d) {
+            if (d) {
+                req.session.user = d;
+                req.session.save();
+                return next()
+            }
+        })
+    }else{
+        next()
+    }
+})
 
 //router
 var indexRouter = require('./routes/index');
@@ -86,24 +104,24 @@ app.use('/contact', contactRouter);
 app.use('/picture', pictureRouter);
 app.use('/services', servicesRouter);
 
+
 //api
-var signApi = require('./api/sign');
+var userApi = require('./api/user');
 var randomApi = require('./api/random');
-app.use('/api/sign', signApi);
-app.use('/api/random',randomApi)
+app.use('/api/user', userApi);
+app.use('/api/random', randomApi)
 
 
 
 
 
-
-app.use(function (req, res, next) {
-  if (!req.session) {
-    return next(new Error('oh no')) // handle error
-  }
-  next() // otherwise continue
-})
-// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+        if (!req.session) {
+            return next(new Error('oh no')) // handle error
+        }
+        next() // otherwise continue
+    })
+    // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
