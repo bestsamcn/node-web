@@ -3,16 +3,15 @@ module.exports=function(grunt){
     grunt.initConfig({ 
         watch:{
             template:{
-                files:['views/**'],
+                files:['views/**','public/**'],
                 options:{
                     livereload:true
                 }
-            },
-            static:{
-                files:['public/**'],
-                options:{
-                    livereload:true
-                }
+            }
+        },
+        open: {
+            all: {
+                path: 'http://localhost:3000/'
             }
         },
         nodemon:{dev:{
@@ -25,7 +24,7 @@ module.exports=function(grunt){
             }
         },
         concurrent:{
-            tasks:['nodemon','watch'],
+            tasks:['nodemon','watch','open'],
             options:{
                logConcurrentOutput:true
             }
@@ -35,6 +34,7 @@ module.exports=function(grunt){
     grunt.loadNpmTasks('grunt-contrib-watch'); 
     grunt.loadNpmTasks('grunt-nodemon'); 
     grunt.loadNpmTasks('grunt-concurrent'); 
+    grunt.loadNpmTasks('grunt-open'); 
     //注册任务 
     grunt.registerTask('default',['concurrent']); 
 } 
