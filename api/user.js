@@ -15,14 +15,7 @@ router.post('/login',function(req,res){
 
 	var uaccount = req.body.account;
 	var upswd = req.body.password;
-	var ucode = req.body.code;
 
-	//检测验证码
-	if(ucode !== req.session.randomCode){
-		res.json({retCode:100001,msg:'验证码错误',data:null});
-		res.end();
-		return;
-	}
 
 	//数据格式验证
 	if(uaccount.length < 2 || uaccount.length > 24){

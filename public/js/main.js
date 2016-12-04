@@ -231,12 +231,12 @@
 				alertInfo('密码不能少于6位');
 				return false;
 			}
-			if(code.val().length !== 4){
-				code[0].blur();
-				code[0].focus();
-				alertInfo('验证码为4位');
-				return false;
-			}
+			// if(code.val().length !== 4){
+			// 	code[0].blur();
+			// 	code[0].focus();
+			// 	alertInfo('验证码为4位');
+			// 	return false;
+			// }
 			$.ajax({
 				type: 'post',
 				dataType: 'json',
