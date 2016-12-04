@@ -17,28 +17,28 @@
 					</ul>
 				</div>
 				<div class="col-md-8 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
-					<div class="row">
+					<form class="row" id="message-form">
 						<div class="col-md-6">
 							<div class="form-group">
-								<input class="form-control" placeholder="姓名" type="text">
+								<input class="form-control" placeholder="姓名" name="postName" type="text">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<input class="form-control" placeholder="邮箱" type="text">
+								<input class="form-control" placeholder="邮箱" name="postEmail" type="text">
 							</div>
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="信息"></textarea>
+								<textarea  class="form-control" id="" cols="30" rows="7" name="postContent" placeholder="信息"></textarea>
 							</div>
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<input value="发送" class="btn btn-primary" type="submit">
+								<input value="发送" class="btn btn-primary" id="post-btn" type="submit">
 							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>

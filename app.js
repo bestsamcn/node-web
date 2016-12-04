@@ -108,8 +108,10 @@ app.use('/services', servicesRouter);
 //api
 var userApi = require('./api/user');
 var randomApi = require('./api/random');
+var messageApi = require('./api/message');
 app.use('/api/user', userApi);
 app.use('/api/random', randomApi)
+app.use('/api/message', messageApi)
 
 
 

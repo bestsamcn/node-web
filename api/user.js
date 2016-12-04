@@ -115,7 +115,7 @@ router.post('/register',function(req,res){
 	var md5 = crypto.createHash('md5');
 	upswd = md5.update(upswd).digest('hex');
 
-	var User = new UserModel({
+	var UserEntity = new UserModel({
 		account:uaccount,
 		password:upswd,
 		mobile:umobile,
@@ -128,7 +128,7 @@ router.post('/register',function(req,res){
     		res.end();
     		return;
     	}
-    	User.save(function(e){
+    	UserEntity.save(function(e){
     		console.log(e)
 			if(e){
 				res.send(e.status);

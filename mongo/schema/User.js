@@ -50,6 +50,6 @@ var UserSchema = new mongoose.Schema({
 		require:false
 	}
 });
-
-exports.UserModel = mongoose.model('User',UserSchema)
+exports.UserSchema = UserSchema;
+exports.UserModel = mongoose.model('User',UserSchema);
 

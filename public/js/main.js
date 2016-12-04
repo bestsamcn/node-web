@@ -475,6 +475,53 @@
 		oBtn.addEventListener('click',postInfo,false);
 	}
 
+	//留言
+	var postMessage = function(){
+		var oForm = document.getElementById('message-form');
+		if(!oForm) return;
+		var oBtn = document.getElementById('post-btn');
+		var postInfo = function(e){
+			e.preventDefault();
+			
+			if(oForm.postName.value.length < 2){
+				alertInfo('姓名不能少于2位');
+				oForm.postName.blur();
+				oForm.postName.focus();
+				return;
+			}
+		
+		
+			//645298225@qq.com
+			if(!/^\w+@\w+\.\w+$/g.test(oForm.postEmail.value)){
+				alertInfo('邮箱格式错误');
+				oForm.postEmail.blur();
+				oForm.postEmail.focus();
+				return;
+			}
+			
+			$.ajax({
+				type:'post',
+				dataType:'json',
+				url:NODE+'/message/post',
+				data:$(oForm).serialize(),
+				success:function(res){
+					if(res.retCode === 0 ){
+						alertInfo('留言成功');
+						oForm.reset();
+						return;
+					}
+					alertInfo(res.msg || '留言失败');
+				},
+				error:function(){
+					alertInfo('留言失败');
+				}
+			})
+		}
+		oBtn.addEventListener('click',function(e){
+			postInfo(e)
+		},false)
+	}
+
 
 	$(function() {
 		fullHeight();
@@ -492,6 +539,7 @@
 		logout();
 		updateInfo();
 		modifyPassword();
+		postMessage();
 	});
 
 

@@ -21,7 +21,8 @@
     "mongoose": "^4.6.8",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
-    "tiny-lr": "^1.0.3"
+    "tiny-lr": "^1.0.3",
+    "xss": "^0.3.2"
   },
   "devDependencies": {
     "art-template": "^3.0.3",
