@@ -11,11 +11,14 @@
 				<div class="col-md-3">
 					<h3>我的信息</h3>
 					<ul class="contact-info">
-						<li><i class="icon-user"></i>{{loginInfo.user.account}}</li>
-						<li><i class="icon-user-secret"></i>{{loginInfo.user.realName ? loginInfo.user.realName :'请完善个人信息'}}</li>
-						<li><i class="sl-icon-phone"></i>+86 {{loginInfo.user.mobile || '请完善个人信息'}}</li>
-						<li><i class="sl-icon-envelope-open"></i>{{loginInfo.user.email || '请完善个人信息'}}</li>
+						<li><i class="icon-user"></i>{{session.user.account}}</li>
+						<li><i class="icon-user-secret"></i>{{session.user.realName ? session.user.realName :'请完善个人信息'}}</li>
+						<li><i class="sl-icon-phone"></i>+86 {{session.user.mobile || '请完善个人信息'}}</li>
+						<li><i class="sl-icon-envelope-open"></i>{{session.user.email || '请完善个人信息'}}</li>
 						<li><i class="icon-lock"></i><a href="/user/modifyPassword">修改密码</a></li>
+						{{if session.user.userType > 0}}
+						<li><i class="icon-lock"></i><a href="/admin">管理后台</a></li>
+						{{/if}}
 					</ul>
 				</div>
 				<div class="col-md-8 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
@@ -40,7 +43,7 @@
 							<div class="form-group">
 								<div  class="gander">
 									<label>
-										{{if loginInfo.user.gender === 1}}
+										{{if session.user.gender === 1}}
 										<input class="form-control" checked name="gender" value="1" type="radio">
 										{{else}}
 										<input class="form-control" name="gender" value="1" type="radio">
@@ -49,7 +52,7 @@
 										
 									</label>
 									<label class="gander">
-										{{if loginInfo.user.gender === 2}}
+										{{if session.user.gender === 2}}
 										<input class="form-control" checked name="gender" value="2" type="radio">
 										{{else}}
 										<input class="form-control" name="gender" value="2" type="radio">

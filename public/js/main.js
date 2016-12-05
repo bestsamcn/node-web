@@ -197,7 +197,7 @@
 
 
 	var JAVA = 'http://10.28.2.62:8080/swycnd/pipes';
-	var NODE = 'http://localhost:3000/api';
+	var NODE = 'http://10.28.5.197:3000/api';
 
 	//用户登录
 	var userLogin = function() {
@@ -461,6 +461,7 @@
 				success:function(res){
 					if(res.retCode === 0 ){
 						alertInfo('修改成功,请用新密码登录');
+						oForm.reset()
 						return;
 					}
 					alertInfo(res.msg || '修改失败');
@@ -472,7 +473,7 @@
 		}
 		var oBtn = document.getElementById('modify-password');
 		if(!oBtn) return;
-		oBtn.addEventListener('click',postInfo,false);
+		$(oBtn).on('click',postInfo)
 	}
 
 	//留言

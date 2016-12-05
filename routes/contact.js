@@ -6,8 +6,7 @@ router.get('/', function(req, res, next) {
 	console.log(req.session)
 	res.render('tpl/contact', {
 		title: '联系我们',
-		routerName: 'contact',
-		loginInfo: req.session
+		routerName: 'contact'
 	});
 });
 

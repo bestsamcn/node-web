@@ -53,6 +53,7 @@ router.post('/login',function(req,res){
 		})
 		req.session.user = d;
 		req.session.isLogin = true;
+		res.locals.session = req.session;
 		res.json({retCode:0,msg:'登录成功',data:null});
 		res.end();
 	});
@@ -62,6 +63,8 @@ router.post('/login',function(req,res){
 router.get('/logout',function(req,res){
 	req.session.user = null;
 	req.session.isLogin = false;
+	console.log(res.locals.session,'退出后');
+	res.locals.session = req.session;
 	res.clearCookie('nsesionid');
 	// res.json({retCode:0,msg:'退出成功',data:null});
 	res.redirect('/');
@@ -69,7 +72,7 @@ router.get('/logout',function(req,res){
 
 //注册
 router.post('/register',function(req,res){
-	console.log(req.body)
+	console.log(req.session)
 	var uaccount = req.body.account;
 	var upswd = req.body.password;
 	var ucode = req.body.code;

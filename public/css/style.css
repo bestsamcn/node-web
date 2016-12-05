@@ -1288,4 +1288,27 @@ h1, h2, h3, h4, h5, h6, figure {
   background:#1FB57B;
   color:#fff;
 }
+.admin-list .rm-btn{
+  position: absolute;
+  right:10px;
+  top:0;
+  height:100%;
+  width:50px;
+  text-align: right;
+  display: block;
+  line-height: 50px;
+}
+.table > thead > tr > th{
+  color:#333;
+  text-align: center;
+}
+.margin-top-10{
+  margin-top:10px;
+}
+.margin-bottom-10{
+  margin-bottom: 10px;
+}
+.pagination > li > a, .pagination > li > span{
+  color:#1FB57B
+}
 /*# sourceMappingURL=style.css.map */

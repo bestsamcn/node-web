@@ -1,7 +1,7 @@
 var config = {
-    mongodb: 'mongodb://localhost/users',
+    mongodb: 'mongodb://10.28.5.197/users',
     database: 'users',
-    server: 'localhost'
+    server: '10.28.5.197'
 }
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;

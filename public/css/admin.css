@@ -1,0 +1,23 @@
+.flex-list{
+	display: -webkit-flex;
+	justify-content:space-between;
+	align-items:center;
+	width:100%;
+}
+.flex-list .item{
+	width:33%;
+	height:150px;
+	display: -webkit-flex;
+	justify-content:center;
+	align-items:center;
+	color:#fff;
+}
+.flex-list .item:nth-of-type(1){
+	background:#1FB57B
+}
+.flex-list .item:nth-of-type(2){
+	background:#E85252
+}
+.flex-list .item:nth-of-type(3){
+	background:#30A4D8
+}

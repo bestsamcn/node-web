@@ -7,10 +7,13 @@ var _getMe = function(app){
 	            if (d) {
 	                req.session.user = d;
 	                req.session.save();
+	                res.locals.session = req.session;
 	                return next()
 	            }
 	        })
 	    }else{
+	    	//如果用户没登录，需要预留session作为判断，否则res.locals.session = undefined
+	    	res.locals.session = req.session;
 	        next()
 	    }
 	})

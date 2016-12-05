@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="/public/css/bootstrap.css">
     <!-- Theme style  -->
     <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/admin.css">
+    <link rel="stylesheet" href="/public/libs/font-awesome/css/font-awesome.css">
 
     <!-- Modernizr JS -->
     <script src="/public/js/modernizr-2.6.2.min.js"></script>
@@ -67,11 +69,10 @@
                         <li><a class="{{if routerName==='services'}}active{{/if}}" href="/services">服务</a></li>
                         <li><a class="{{if routerName==='about'}}active{{/if}}" href="/about">关于</a></li>
                         <li><a class="{{if routerName==='contact'}}active{{/if}}" href="/contact">联系</a></li>
-                        {{if !loginInfo.isLogin}}
+                        {{if !session.isLogin}}
                         <li><a class="{{if routerName==='login'}}active{{/if}}" href="/sign/login">登录</a></li>
                         <li><a class="{{if routerName==='register'}}active{{/if}}" href="/sign/register">注册</a></li>
-                        {{/if}}
-                        {{if !!loginInfo.isLogin}}
+                        {{else}}
                         <li><a class="{{if routerName==='user'}}active{{/if}}" href="/user">个人中心</a></li>
                         <li><a href="/api/user/logout">退出</a></li>
                         {{/if}}

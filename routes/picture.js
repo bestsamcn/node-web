@@ -6,8 +6,7 @@ router.get('/', function(req, res, next) {
 	console.log(req.session)
 	res.render('tpl/picture', {
 		title: '图片',
-		routerName: 'picture',
-		loginInfo: req.session
+		routerName: 'picture'
 	});
 });
 

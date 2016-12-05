@@ -6,8 +6,7 @@ router.get('/', function(req, res, next) {
 	console.log(req.session)
 	res.render('tpl/services', {
 		title: '服务',
-		routerName: 'services',
-		loginInfo: req.session
+		routerName: 'services'
 	});
 });
 
