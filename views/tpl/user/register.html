@@ -1,14 +1,14 @@
-{{include '../inc/header'}}
+{{include '../../inc/header'}}
 	<div id="fh5co-contact-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2>登录</h2>
+					<h2>注册</h2>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-sm-12  col-xs-12 ">
-					<form class="row" id="login-form">
+					<form class="row" id="register-form">
 						<div class="col-md-6 col-md-offset-3">
 							<div class="form-group">
 								<input class="form-control" placeholder="账号" name="account" type="text" id="account">
@@ -16,31 +16,41 @@
 						</div>
 						<div class="col-md-6 col-md-offset-3">
 							<div class="form-group">
-								<input class="form-control" placeholder="密码" name="password" type="password" id="password">
+								<input class="form-control" placeholder="手机号码(可选)" name="mobile" type="text" id="mobile">
 							</div>
 						</div>
-						<!-- <div class="col-md-6 col-md-offset-3">
+						<div class="col-md-6 col-md-offset-3">
+							<div class="form-group">
+								<input class="form-control" placeholder="密码" type="password" name="password" id="password">
+							</div>
+						</div>
+						<div class="col-md-6 col-md-offset-3">
+							<div class="form-group">
+								<input class="form-control" placeholder="确认密码" type="password" id="repassword">
+							</div>
+						</div>
+						<div class="col-md-6 col-md-offset-3">
 						    <div class="row">
 						    	<div class="form-group col-md-8 col-xs-8">
 									<input class="form-control" placeholder="验证码" name="code" type="text" id="code">
 								</div>
 								<div class="form-group col-md-4 col-xs-4">
-									<img src="http://localhost:3000/api/random/get" onclick="this.src='http://localhost:3000/api/random/get?m='+Math.random()" class="random-code">
+									<img src="http://127.0.0.1:3000/api/random/get" onclick="this.src='http://127.0.0.1:3000/api/random/get?m='+Math.random()" class="random-code">
 								</div>
 						    </div>
-						</div> -->
+						</div>
 						<div class="col-md-6 col-md-offset-3">
-							<a href="javascript:;" class="sub-btn" id="login-btn">登录</a>
+							<a href="javascript:;" class=" sub-btn" id="register-btn">注册</a>
 						</div>
 					</form>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-12 text-center margin-top-10">
-					<a class="show margin-top-10 font-12" href="/sign/register">还没有帐号？</a>
+					<a class="show margin-top-10 font-12" href="/sign/login">已经有帐号？</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div id="map" data-animate-effect="fadeIn"></div>
-{{include '../inc/footer'}}
+{{include '../../inc/footer'}}

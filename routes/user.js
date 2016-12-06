@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 	if(!req.session.isLogin){
 		res.redirect('/');
 	}
-	res.render('tpl/user', {
+	res.render('tpl/user/index', {
 		title: '用户中心',
 		routerName: 'user'
 	});
@@ -23,7 +23,7 @@ router.get('/modifyPassword', function(req, res, next) {
 	if(!req.session.isLogin){
 		res.redirect('/');
 	}
-	res.render('tpl/modifyPassword', {
+	res.render('tpl/user/modifyPassword', {
 		title: '修改密码',
 		routerName: 'modifyPassword'
 	});

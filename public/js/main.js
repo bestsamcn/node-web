@@ -197,7 +197,7 @@
 
 
 	var JAVA = 'http://10.28.2.62:8080/swycnd/pipes';
-	var NODE = 'http://10.28.5.197:3000/api';
+	var NODE = 'http://127.0.0.1:3000/api';
 
 	//用户登录
 	var userLogin = function() {

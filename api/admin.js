@@ -7,8 +7,7 @@ var UserModel = require('../mongo/schema/User').UserModel;
 
 //会员列表
 router.get('/getMemberList',function(req,res,next){
-	console.log(global.server.address().port,'端口')
-	if(!req.session.isLogin || req.session.user.userType < 1){
+	if(req.query.auth !== 'admin' && (!req.session.isLogin || req.session.user.userType < 1)){
 		res.sendStatus(404);
 		res.end();
 		return;
@@ -17,7 +16,6 @@ router.get('/getMemberList',function(req,res,next){
 	var _pageSize = parseInt(req.query.pageSize) || 10;
 	var _total = 0;
 	UserModel.find({}).skip(_page*_pageSize).limit(_pageSize).sort({_id:-1}).exec(function(err,data){
-		console.log(err,data,'分页')
 		if(err){
 			res.sendStatus(500);
 			res.end();

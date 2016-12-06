@@ -1,4 +1,4 @@
-{{include '../inc/header'}}
+{{include '../../inc/header'}}
 	<div id="fh5co-contact-section">
 		<div class="container">
 			<div class="row">
@@ -13,7 +13,7 @@
 					<ul class="contact-info">
 						<li><i class="icon-user"></i>{{session.user.account}}</li>
 						<li><i class="icon-user-secret"></i>{{session.user.userType | roleFilter }}</li>
-						<li><i class="sl-icon-phone"></i><a href="/admin/memberList/1">会员列表</a></li>
+						<li><i class="sl-icon-phone"></i><a href="/admin/memberList">会员列表</a></li>
 						<li><i class="sl-icon-envelope-open"></i><a href="/admin/adminList">管理员列表</a></li>
 						<li><i class="icon-lock"></i><a href="/user/modifyPassword">修改密码</a></li>
 						<li><i class="icon-lock"></i><a href="/admin">管理后台</a></li>
@@ -49,4 +49,4 @@
 		</div>
 	</div>
 	<div id="map" data-animate-effect="fadeIn"></div>
-{{include '../inc/footer'}}
+{{include '../../inc/footer'}}

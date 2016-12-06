@@ -55,7 +55,15 @@ app.use('/public', express.static(__dirname + '/public'));
 //更新当前用户信息
 require('./api/index').getMe(app);
 
-
+//api
+var userApi = require('./api/user');
+var randomApi = require('./api/random');
+var messageApi = require('./api/message');
+var adminApi = require('./api/admin');
+app.use('/api/user', userApi);
+app.use('/api/random', randomApi)
+app.use('/api/message', messageApi)
+app.use('/api/admin', adminApi)
 
 
 //router
@@ -76,15 +84,7 @@ app.use('/picture', pictureRouter);
 app.use('/services', servicesRouter);
 app.use('/admin', adminRouter);
 
-//api
-var userApi = require('./api/user');
-var randomApi = require('./api/random');
-var messageApi = require('./api/message');
-var adminApi = require('./api/admin');
-app.use('/api/user', userApi);
-app.use('/api/random', randomApi)
-app.use('/api/message', messageApi)
-app.use('/api/admin', adminApi)
+
 
 
 

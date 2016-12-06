@@ -20,3 +20,5 @@ var _getMe = function(app){
 }
 
 exports.getMe = _getMe;
+
+//初始化会员列表

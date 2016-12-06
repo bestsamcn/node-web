@@ -34,7 +34,7 @@ var UserSchema = new mongoose.Schema({
 	},
 	createLog:{
 		createTime:{
-			type:Date,
+			type:Number,
 			require:true
 		},
 		createIp:{
@@ -43,16 +43,16 @@ var UserSchema = new mongoose.Schema({
 		}
 	},
 	lastLoginTime:{
-		type:Date,
+		type:Number,
 		require:false
 	},
 	loginLogs:[{
 		loginTime:{
-			type:Date,
+			type:Number,
 			require:true
 		},
 		logoutTime:{
-			type:Date,
+			type:Number,
 			require:true
 		},
 		logIp:{
@@ -66,7 +66,7 @@ var UserSchema = new mongoose.Schema({
 		default:0
 	},
 	lastUpdateTime:{
-		type:Date,
+		type:Number,
 		require:false
 	}
 });

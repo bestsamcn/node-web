@@ -6,14 +6,14 @@ router.get('/login', function(req, res, next) {
     	res.redirect('/');
     	return;
     }
-	res.render('tpl/login', {
+	res.render('tpl/user/login', {
 		title: '登录',
 		routerName: 'login'
 	});
 });
 
 router.get('/register', function(req, res, next) {
-	res.render('tpl/register', {
+	res.render('tpl/user/register', {
 		title: '注册',
 		routerName: 'register'
 	});

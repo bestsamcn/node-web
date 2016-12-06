@@ -1,4 +1,4 @@
-{{include '../inc/header'}}
+{{include '../../inc/header'}}
 <div id="fh5co-contact-section">
 	<div class="container">
 		<div class="row">
@@ -21,7 +21,7 @@
 							</li>
 							<li>
 								<i class="sl-icon-phone"></i>
-								<a href="/admin/memberList/1">会员列表</a>
+								<a href="/admin/memberList">会员列表</a>
 							</li>
 							<li>
 								<i class="sl-icon-envelope-open"></i>
@@ -59,7 +59,7 @@
 									<th style="width: 3.5em;">操作</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody id="member-list-vm">
 							    {{if memberList.length > 0}}
 							    {{each memberList as $value $index}}
 								<tr>
@@ -67,7 +67,7 @@
 									<td>{{ $value.createLog.createTime | dateFormat :'yyyy.MM.dd hh:mm:ss'}}</td>
 									<td>{{ $value.lastLoginTime | dateFormat :'yyyy.MM.dd hh:mm:ss'}}</td>
 									<td>
-										<a href="/admin/memberList/memberDetail/1">
+										<a href="/admin/memberList/memberDetail">
 											<i class="fa fa-pencil"></i>
 										</a>
 										<a href="#myModal" role="button" data-toggle="modal">
@@ -88,4 +88,4 @@
 	</div>
 </div>
 
-{{include '../inc/footer'}}
+{{include '../../inc/footer'}}

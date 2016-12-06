@@ -1,5 +1,5 @@
 var _config = {
-	host:'10.28.5.197',
+	host:'127.0.0.1',
 	port:'3000',
 	redisConfig:{
 		name: 'JSESSIONID',
@@ -8,7 +8,7 @@ var _config = {
 	        maxAge: 1000 * 60 * 60 * 24
 	    },
 	    sessionStore: {
-	        host: '10.28.5.197',
+	        host: '127.0.0.1',
 	        port: '6379',
 	        db: 1,
 	        ttl: 60 * 60 * 24,
@@ -16,9 +16,9 @@ var _config = {
 	    }
 	},
 	mongoConfig:{
-		mongodb: 'mongodb://10.28.5.197/swyc',
+		mongodb: 'mongodb://127.0.0.1/swyc',
 	    database: 'swyc',
-	    server: '10.28.5.197'
+	    server: '127.0.0.1'
 	}
 }
 module.exports= _config;
