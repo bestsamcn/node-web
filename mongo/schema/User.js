@@ -25,21 +25,41 @@ var UserSchema = new mongoose.Schema({
 	email:{
 		type:String,
 		require:false,
-		default:'',
+		default:''
 	},
 	gender:{
 		type:Number,
 		require:true,
-		default:1,
+		default:1
 	},
-	createTime:{
-		type:Date,
-		require:true
+	createLog:{
+		createTime:{
+			type:Date,
+			require:true
+		},
+		createIp:{
+			type:String,
+			require:true
+		}
 	},
 	lastLoginTime:{
 		type:Date,
 		require:false
 	},
+	loginLogs:[{
+		loginTime:{
+			type:Date,
+			require:true
+		},
+		logoutTime:{
+			type:Date,
+			require:true
+		},
+		logIp:{
+			type:String,
+			require:true
+		}
+	}],
 	userType:{
 		type:Number,
 		require:true,

@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var crypto = require('crypto');
+var $$ = require('../utilTools');
 
 //mongoose
 var UserModel = require('../mongo/schema/User').UserModel;
@@ -61,13 +62,30 @@ router.post('/login',function(req,res){
 });
 //退出登录
 router.get('/logout',function(req,res){
-	req.session.user = null;
-	req.session.isLogin = false;
-	console.log(res.locals.session,'退出后');
-	res.locals.session = req.session;
-	res.clearCookie('nsesionid');
-	// res.json({retCode:0,msg:'退出成功',data:null});
-	res.redirect('/');
+	UserModel.findById({_id:req.session.user._id},function(err,doc){
+		if(err){
+			res.send(500);
+			res.end();
+			return;
+		}
+		var _logtIp = $$.getClientIp(req).match(/\d+\.\d+\.\d+\.\d+/)[0];
+		var _lastLoginTime = doc.lastLoginTime;
+		UserModel.findByIdAndUpdate(req.session.user._id, {$push:{'loginLogs':{loginTime:_lastLoginTime, logoutTime:Date.now(), logIp:_logtIp}}}, {safe:true, upsert:true, new:true}, function(err,mod){
+			if(err){
+				res.sendStatus(500);
+				res.end();
+				return;
+			}
+			console.log(mod,'退出日志')
+
+			req.session.user = null;
+			req.session.isLogin = false;
+			res.locals.session = req.session;
+			res.clearCookie('nsesionid');
+			// res.json({retCode:0,msg:'退出成功',data:null});
+			res.redirect('/');
+		});
+	});
 });
 
 //注册
@@ -77,6 +95,11 @@ router.post('/register',function(req,res){
 	var upswd = req.body.password;
 	var ucode = req.body.code;
 	var umobile = req.body.mobile;
+	// var uip = req.ip.match(/\d+\.\d+\.\d+\.\d+/)[0];
+	var uip = $$.getClientIp(req).match(/\d+\.\d+\.\d+\.\d+/)[0];
+	console.log(uip,'ip地址')
+	
+
 
 
 	//检测验证码
@@ -115,10 +138,14 @@ router.post('/register',function(req,res){
 		account:uaccount,
 		password:upswd,
 		mobile:umobile,
-		createTime:createTime
+		createLog:{
+			createTime:Date.now(),
+			createIp:uip
+		}
 	});
+	// $$.getIpInfo(uip,function(err,info){})
 
-    UserModel.findOne({account:uaccount},function(e,d){
+	UserModel.findOne({account:uaccount},function(e,d){
     	if(d){
     		res.json({retCode:4,msg:'用户名已经存在',data:null});
     		res.end();
@@ -135,6 +162,11 @@ router.post('/register',function(req,res){
 			res.end();
 		});
     })
+
+
+	
+
+    
 	
 })
 

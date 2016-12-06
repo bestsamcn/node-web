@@ -1,8 +1,6 @@
-var config = {
-    mongodb: 'mongodb://10.28.5.197/users',
-    database: 'users',
-    server: '10.28.5.197'
-}
+
+var config = require('../config').mongoConfig;
+
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.set('debug',true);

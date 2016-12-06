@@ -18,4 +18,5 @@ var _getMe = function(app){
 	    }
 	})
 }
+
 exports.getMe = _getMe;

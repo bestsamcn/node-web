@@ -6,14 +6,9 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 var cors = require('cors');
-
-
 var bodyParser = require('body-parser');
 
-
-
 var app = express();
-
 
 
 // view engine setup
@@ -39,20 +34,7 @@ app.use(bodyParser.urlencoded({
 
 //redis
 app.use(cookieParser());
-var config = {
-    name: 'JSESSIONID',
-    secret: 'node-1',
-    cookie: {
-        maxAge: 1000 * 60 * 60 * 24
-    },
-    sessionStore: {
-        host: '10.28.5.197',
-        port: '6379',
-        db: 1,
-        ttl: 60 * 60 * 24,
-        logErrors: true
-    }
-}
+var config = require('./config').redisConfig;
 app.use(session({
     name: config.name,
     store: new RedisStore(config.sessionStore),
@@ -73,6 +55,9 @@ app.use('/public', express.static(__dirname + '/public'));
 //更新当前用户信息
 require('./api/index').getMe(app);
 
+
+
+
 //router
 var indexRouter = require('./routes/index');
 var signRouter = require('./routes/sign');
@@ -91,14 +76,18 @@ app.use('/picture', pictureRouter);
 app.use('/services', servicesRouter);
 app.use('/admin', adminRouter);
 
-
 //api
 var userApi = require('./api/user');
 var randomApi = require('./api/random');
 var messageApi = require('./api/message');
+var adminApi = require('./api/admin');
 app.use('/api/user', userApi);
 app.use('/api/random', randomApi)
 app.use('/api/message', messageApi)
+app.use('/api/admin', adminApi)
+
+
+
 
 
 
