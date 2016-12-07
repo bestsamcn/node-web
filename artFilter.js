@@ -29,6 +29,9 @@ template.helper('roleFilter', function (role) {
  * @see http://yaniswang.com/frontend/2013/02/16/dateformat-performance/
  */
 template.helper('dateFormat', function (date, format) {
+    if(!arguments[0]){
+        return '暂无'
+    }
     date = new Date(date);
     var map = {
         "M": date.getMonth() + 1, //月份 

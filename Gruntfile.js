@@ -5,7 +5,8 @@ module.exports=function(grunt){
             template:{
                 files:['views/**','public/**'],
                 options:{
-                    livereload:true
+                    livereload:true,
+                    delay:1000
                 }
             }
         },

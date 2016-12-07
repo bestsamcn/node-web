@@ -23,6 +23,8 @@
 }
 .admin .user-detail label{
 	width:23%;
+	height:54px;
+	line-height: 54px;
 }
 .admin .user-detail .form-control{
 	width:77%;
@@ -72,4 +74,8 @@
 	background:#f1f1f1;
 	cursor: default;
 	border:1px solid #f1f1f1;
+}
+
+.margin-right-10{
+	margin-right: 10px;
 }

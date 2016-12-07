@@ -1,52 +1,51 @@
 {{include '../../inc/header'}}
-	<div id="fh5co-contact-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 text-left fh5co-heading">
-					<h2>管理后台</h2>
-					<p>User Center</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3">
-					<h3>我的信息</h3>
-					<ul class="contact-info">
-						<li><i class="icon-user"></i>{{session.user.account}}</li>
-						<li><i class="icon-user-secret"></i>{{session.user.userType | roleFilter }}</li>
-						<li><i class="sl-icon-phone"></i><a href="/admin/memberList">会员列表</a></li>
-						<li><i class="sl-icon-envelope-open"></i><a href="/admin/adminList">管理员列表</a></li>
-						<li><i class="icon-lock"></i><a href="/user/modifyPassword">修改密码</a></li>
-						<li><i class="icon-lock"></i><a href="/admin">管理后台</a></li>
-					</ul>
-				</div>
-				<div class="col-md-8 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
-					<h3>管理员列表</h3>
-					<div class="admin-list">
-						<ul class="list-group">
-						 	<li class="list-group-item">账号<span class="rm-btn">操作</span></li>
-						</ul>
-						<ul class="list-group">
-						 	<li class="list-group-item">sam<a href="#" class="rm-btn">删除</a></li>
-						 	<li class="list-group-item">dongdong<a href="#" class="rm-btn">删除</a></li>
-						 	<li class="list-group-item">best<a href="#" class="rm-btn">删除</a></li>
-						</ul>
+<div id="fh5co-contact-section">
+	<div class="container">
+		<div class="row">
+			{{include './sidebar'}}
+			<div class="col-md-8 col-xs-12 text-center">
+				<div class="row">
+					<div class="col-md-12 text-left fh5co-heading">
+						<h2>管理员列表</h2>
 					</div>
-					<form action="" class="text-center">
-						<h4>添加管理员</h4>
-						<div class="col-md-6 col-md-offset-3">
-							<div class="form-group">
-								<input class="form-control" placeholder="用户帐号" name="account" type="text">
-							</div>
+					<div class="admin-list col-md-12">
+						<div class="btn-toolbar list-toolbar margin-bottom-10">
+						    <a href="/admin/addAdmin" class="btn btn-primary"><i class="fa fa-plus margin-right-10"></i>添加管理员</a>
+						    <!-- <button class="btn btn-default">导入</button>
+						    <button class="btn btn-default">到出</button> -->
 						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<input value="添加" class="btn btn-primary" type="submit">
-							</div>
-						</div>
-					</form>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>账号</th>
+									<th>注册日期</th>
+									<th>最后登录日期</th>
+									<th style="width: 3.5em;">操作</th>
+								</tr>
+							</thead>
+							<tbody id="member-list-vm">
+							    
+								<tr>
+									<td>aaa</td>
+									<td>2016.12.03 20:30:16</td>
+									<td>2016.12.03 20:30:16</td>
+									<td>
+										<a href="/admin/memberList/memberDetail">
+											<i class="fa fa-pencil"></i>
+										</a>
+										<a href="#myModal" role="button" data-toggle="modal">
+											<i class="fa fa-trash-o"></i>
+										</a>
+									</td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="map" data-animate-effect="fadeIn"></div>
+</div>
+
 {{include '../../inc/footer'}}

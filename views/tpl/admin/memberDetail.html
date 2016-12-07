@@ -2,43 +2,7 @@
 <div id="fh5co-contact-section">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 col-xs-12">
-				<div class="row">
-					<div class="col-md-10 text-left fh5co-heading">
-						<h2>管理后台</h2>
-						<p>User Center</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-10 col-xs-12">
-						<h3>我的信息</h3>
-						<ul class="contact-info">
-							<li> <i class="icon-user"></i>
-								{{session.user.account}}
-							</li>
-							<li> <i class="icon-user-secret"></i>
-								{{session.user.userType | roleFilter }}
-							</li>
-							<li>
-								<i class="sl-icon-phone"></i>
-								<a href="/admin/memberList">会员列表</a>
-							</li>
-							<li>
-								<i class="sl-icon-envelope-open"></i>
-								<a href="/admin/adminList">管理员列表</a>
-							</li>
-							<li>
-								<i class="icon-lock"></i>
-								<a href="/user/modifyPassword">修改密码</a>
-							</li>
-							<li>
-								<i class="icon-lock"></i>
-								<a href="/admin">管理后台</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+			{{include './sidebar'}}
 			<div class="col-md-8 col-xs-12 text-center admin">
 				<div class="row">
 					<div class="col-md-12 text-left fh5co-heading">
@@ -50,9 +14,9 @@
 							<li class="active">
 								<a href="#home" data-toggle="tab">档案</a>
 							</li>
-							<li class="">
+							<!-- <li class="">
 								<a href="#profile" data-toggle="tab">密码</a>
-							</li>
+							</li> -->
 							<li class="">
 								<a href="#loginLog" data-toggle="tab">登录日志</a>
 							</li>
@@ -60,40 +24,57 @@
 								<a href="#others" data-toggle="tab">其他</a>
 							</li>
 						</ul>
-
 						<div class="row">
 							<div class="col-md-12">
 								<br>
 								<div id="myTabContent" class="tab-content user-detail">
 									<div class="tab-pane active" id="home">
-										<form id="tab">
+										<form id="admin-update-form">
+											<input type="hidden" value="{{ memberDetail._id}}" name="userId">
 											<div class="form-group row">
 												<label class="col-md-4 col-xs-12 col-lg-4 text-left">账号</label>
-												<input type="text"  placeholder="账号" name="account" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
+												<input type="text"  placeholder="账号" value="{{ memberDetail.account }}" name="account" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
 											<div class="form-group row">
 												<label class="col-md-4 col-xs-12 col-lg-4 text-left">手机号码</label>
-												<input type="text" placeholder="手机号码" name="mobile" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
+												<input type="text" placeholder="手机号码" value="{{ memberDetail.mobile }}" name="mobile" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
 											<div class="form-group row">
 												<label class="col-md-4 col-xs-12 col-lg-4 text-left">邮箱</label>
-												<input type="text" placeholder="邮箱" name="email" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
+												<input type="text" placeholder="邮箱" name="email" value="{{ memberDetail.email }}" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
 											<div class="form-group row">
 												<label class="col-md-4 col-xs-12 col-lg-4 text-left">真实姓名</label>
-												<input type="text" placeholder="realName" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
+												<input type="text" placeholder="realName" name="realName" value="{{ memberDetail.realName }}" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
 
 											<div class="form-group row">
 												<label class="col-md-4 col-xs-12 col-lg-4 text-left">用户角色</label>
 												<select name="userType" id="userType" class="form-control col-md-8 col-xs-12 col-lg-8">
-													<option value="0">普通会员</option>
+													{{if memberDetail.userType === 0}}
+													<option value="0" selected>普通会员</option>
 													<option value="1">管理员</option>
+													{{else}}
+													<option value="0">普通会员</option>
+													<option value="1" selected>管理员</option>
+													{{/if}}
+												</select>
+											</div>
+											<div class="form-group row">
+												<label class="col-md-4 col-xs-12 col-lg-4 text-left">性别</label>
+												<select name="gender" id="gender" class="form-control col-md-8 col-xs-12 col-lg-8">
+													{{if memberDetail.gender === 1}}
+													<option value="1" selected>男</option>
+													<option value="2">女</option>
+													{{else}}
+													<option value="1">男</option>
+													<option value="2" selected>女</option>
+													{{/if}}
 												</select>
 											</div>
 										</form>
 										<div class="btn-toolbar list-toolbar">
-											<a href="#myModal" data-toggle="modal" class="btn btn-primary">保存</a>
-											<a href="#myModal" data-toggle="modal" class="btn btn-danger">删除</a>
+											<a href="javascript:;"  class="btn btn-primary" id="admin-update-btn">保存</a>
+											<a href="javascript:;"  class="btn btn-danger" id="admin-delete-btn">删除</a>
 										</div>
 									</div>
-
+<!-- 
 									<div class="tab-pane" id="profile">
 										<form id="tab2">
 											<div class="form-group">
@@ -103,7 +84,7 @@
 												<a href="#myModal" data-toggle="modal" class="btn btn-primary">更新</a>
 											</div>
 										</form>
-									</div>
+									</div> -->
 									<div class="tab-pane user-detail" id="loginLog">
 										<div id="tab3">
 											<table class="table">
@@ -115,7 +96,7 @@
 														<th style="width: 3.5em;">操作</th>
 													</tr>
 												</thead>
-												<tbody>
+												<tbody id="user-loginlog-vm">
 													<tr>
 														<td>10.28.5.197</td>
 														<td>Tompson</td>
@@ -126,17 +107,23 @@
 															</a>
 														</td>
 													</tr>
+												</tbody>
+												<script type="text/html" id="user-loginlog-tpl">
+													<% if memberDetail.loginLogs.length > 0%>
+													<% each memberDetail.loginLogs as $value $index %>
 													<tr>
-														<td>10.28.5.197</td>
-														<td>Jacobs</td>
-														<td>ash11927</td>
+														<td><% $value.ip %></td>
+														<td><% $value.loginTime | dataFormat :'yyyy.MM.dd hh:mm:ss' %></td>
+														<td><% $value.logoutTime | dataFormat :'yyyy.MM.dd hh:mm:ss' %></td>
 														<td>
-															<a href="#myModal" role="button" data-toggle="modal">
+															<a href="javascript:;" data-userid="<% memberDetail._id %>" data-logid="$value._id" id="admin-delete-loginlog-btn" >
 																<i class="fa fa-trash-o"></i>
 															</a>
 														</td>
 													</tr>
-												</tbody>
+													<% /each %>
+													<% /if %>
+												</script>
 											</table>
 											<ul class="pagination pagination-sm text-center margin-top-10">
 											  <li><a href="#">«</a></li>
@@ -154,20 +141,11 @@
 											<form id="tab">
 												<div class="form-group row">
 													<label class="col-md-4 col-xs-12 col-lg-4 text-left">注册时间</label>
-													<input type="text"  placeholder="尚未有值" value="321654231" disabled name="createTime" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
+													<input type="text"  placeholder="尚未有值" value="{{ memberDetail.createLog.createTime | dateFormat :'yyyy.MM.dd hh:mm:ss' }}" disabled name="createTime" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
 												<div class="form-group row">
 													<label class="col-md-4 col-xs-12 col-lg-4 text-left">最后登录时间</label>
-													<input type="text" placeholder="尚未有值" value="321654231"  disabled name="lastLoginTime" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
-												<div class="form-group row">
-													<label class="col-md-4 col-xs-12 col-lg-4 text-left">性别</label>
-													<select name="userType" id="userType" class="form-control col-md-8 col-xs-12 col-lg-8">
-														<option value="0">普通会员</option>
-														<option value="1">管理员</option>
-													</select>
-													<div class="btn-toolbar list-toolbar">
-														<a href="#myModal" data-toggle="modal" class="btn btn-primary">更新</a>
-													</div>
-												</div>
+													<input type="text" placeholder="尚未有值" value="{{ memberDetail.lastLoginTime | dateFormat :'yyyy.MM.dd hh:mm:ss'}}"  disabled name="lastLoginTime" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
+												
 											</form>
 										</div>
 									</div>

@@ -1,0 +1,43 @@
+<div class="col-md-4 col-xs-12">
+	<div class="row">
+		<div class="col-md-10 text-left fh5co-heading">
+			<h2>管理后台</h2>
+			<p>User Center</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-xs-12">
+			<h3>我的信息</h3>
+			<ul class="contact-info">
+				<li> <i class="icon-user"></i>
+					{{session.user.account}}
+				</li>
+				<li> <i class="icon-user-secret"></i>
+					{{session.user.userType | roleFilter }}
+				</li>
+				<li>
+					<i class="sl-icon-phone"></i>
+					<a href="/admin/memberList">会员列表</a>
+				</li>
+				<li>
+					<i class="sl-icon-envelope-open"></i>
+					<a href="/admin/adminList">管理员列表</a>
+				</li>
+				<li>
+					<i class="icon-lock"></i>
+					<a href="/user/modifyPassword">修改密码</a>
+				</li>
+				<li>
+					<i class="icon-lock"></i>
+					<a href="/admin">管理后台</a>
+				</li>
+				<li>
+					<i class="icon-lock"></i>
+					<a href="/user">个人中心</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+		

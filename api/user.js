@@ -161,14 +161,8 @@ router.post('/register',function(req,res){
 			res.json({retCode:0,msg:'注册成功',data:null});
 			res.end();
 		});
-    })
-
-
-	
-
-    
-	
-})
+    });
+});
 
 //更新用户信息
 router.post('/update',function(req,res,next){

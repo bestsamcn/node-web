@@ -1,0 +1,38 @@
+{{include '../../inc/header'}}
+<div id="fh5co-contact-section">
+	<div class="container">
+		<div class="row">
+			{{include './sidebar'}}
+			<div class="col-md-8 col-xs-12 text-center">
+				<div class="row">
+					<div class="col-md-12 text-left fh5co-heading">
+						<h2>添加会员</h2>
+					</div>
+					<div class="admin col-md-12">
+						<form class="row user-detail" id="add-user-form">
+							<div class="form-group row">
+								<label class="col-md-4 col-xs-12 col-lg-4 text-left">账号</label>
+								<input type="text"  placeholder="账号" id="account" name="account" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
+							<div class="form-group row">
+								<label class="col-md-4 col-xs-12 col-lg-4 text-left">密码</label>
+								<input type="text" placeholder="密码" id="password" name="password" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
+							<div class="form-group row">
+								<label class="col-md-4 col-xs-12 col-lg-4 text-left">用户角色</label>
+								<select name="userType" id="userType" class="form-control col-md-8 col-xs-12 col-lg-8">
+									<option value="0">普通会员</option>
+									<option value="1">管理员</option>
+								</select>
+							</div>
+							<div class="col-md-6 col-md-offset-3">
+								<a href="javascript:;" class=" sub-btn" id="add-btn">添加</a>
+							</div>
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{include '../../inc/footer'}}
