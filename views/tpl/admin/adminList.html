@@ -34,13 +34,22 @@
 									<td><% $value.setAdminTime | dateFormat:'yyyy.MM.dd hh:mm:ss' %></td>
 									<td><% $value.lastLoginTime | dateFormat:'yyyy.MM.dd hh:mm:ss' %></td>
 									<td>
-										<% if (userInfo.userType === 2 || userInfo.id === $value._id)  %>
+										<% if userInfo.userType === 2 %>
 										<a href="/admin/memberList/memberDetail/<% $value._id %>">
 											<i class="fa fa-pencil"></i>
 										</a>
 										<a href="javascript:;" data-bind="<% $value._id %>">
 											<i class="fa fa-trash-o"></i>
 										</a>
+										<% else %>
+											<% if $value._id === userInfo.id %>
+											<a href="/admin/memberList/memberDetail/<% $value._id %>">
+												<i class="fa fa-pencil"></i>
+											</a>
+											<a href="javascript:;" data-bind="<% $value._id %>">
+												<i class="fa fa-trash-o"></i>
+											</a>
+											<% /if %>
 										<% /if%>
 									</td>
 								</tr>

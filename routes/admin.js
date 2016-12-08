@@ -18,7 +18,7 @@ router.all('*', function(req, res, next) {
 	next()
 });
 router.get('/', function(req, res, next) {
-	requestify.request('http://10.28.5.197:3000/api/admin/getWebPreview',{
+	requestify.request('http://127.0.0.1:3000/api/admin/getWebPreview',{
 		method:'GET',
 		headers:{
 			authSecret:globalConfig.authSecret
@@ -40,7 +40,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/memberList', function(req, res, next) {
 	// cosole.log(res.locals)
-	requestify.get('http://10.28.5.197:3000/api/admin/getMemberList?auth=admin').then(function(response) {
+	requestify.get('http://127.0.0.1:3000/api/admin/getMemberList?auth=admin').then(function(response) {
 	    // Get the response body
 	    if(response.code !== 200){
 	    	res.sendStatus(500);
@@ -88,7 +88,7 @@ router.get('/memberList/memberDetail/:id', function(req, res, next) {
 		res.end();
 		return;
 	}
-	requestify.request('http://10.28.5.197:3000/api/admin/getUserDetail',{
+	requestify.request('http://127.0.0.1:3000/api/admin/getUserDetail',{
 		method:'GET',
 		headers:{
 			authSecret:globalConfig.authSecret
@@ -121,6 +121,21 @@ router.get('/adminList', function(req, res, next) {
 	});
 });
 
+//留言列表
+router.get('/messageList', function(req, res, next) {
+	res.render('tpl/admin/messageList', {
+		title: '留言列表',
+		routerName: 'messageList'
+	});
+});
+
+//留言详情
+router.get('/messageDetail', function(req, res, next) {
+	res.render('tpl/admin/messageDetail', {
+		title: '留言详情',
+		routerName: 'messageDetail'
+	});
+});
 
 
 module.exports = router;

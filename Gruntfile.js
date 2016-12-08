@@ -12,7 +12,7 @@ module.exports=function(grunt){
         },
         open: {
             all: {
-                path: 'http://10.28.5.197:3000/'
+                path: 'http://127.0.0.1:3000/'
             }
         },
         nodemon:{dev:{

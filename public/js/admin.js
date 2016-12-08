@@ -171,8 +171,6 @@ window.Modal = function () {
 
         $.extend(ops, options);
 
-        console.log(alr);
-
         var html = alr.html().replace(reg, function (node, key) {
             return {
                 Title: ops.title,
@@ -239,7 +237,7 @@ var memberPageClick = function(){
         memberListPager(pageIndex);
     })
 }
-var NODE = 'http://10.28.5.197:3000/api'
+var NODE = 'http://127.0.0.1:3000/api'
 
 //添加会员
 var addUser = function(){
@@ -326,6 +324,7 @@ var delUser = function(userid,callBack){
                         callBack && callBack();
                         return;
                     }
+                    alertInfo(res.msg)
                 },
                 error:function(){
                     alertInfo('删除失败')
@@ -421,6 +420,11 @@ var updateUser = function(){
                 console.log(res)
                 if(res.retCode === 0){
                     alertInfo('更新成功');
+                    if(parseInt(updateForm.userType.value) === 0 && window.userInfo.account === updateForm.account.value){
+                        setTimeout(function(){
+                            window.location.href='/user';
+                        },1000);
+                    }
                     return;
                 }
                 alertInfo('更新失败');
@@ -534,7 +538,7 @@ var addAdmin = function(){
                     },1000);
                     return;
                 }
-                alertInfo('添加管理员失败');
+                alertInfo(res.msg);
             },
             error:function(){
                 alertInfo('添加管理员失败');

@@ -197,7 +197,7 @@
 
 
 	var JAVA = 'http://10.28.2.62:8080/swycnd/pipes';
-	var NODE = 'http://10.28.5.197:3000/api';
+	var NODE = 'http://127.0.0.1:3000/api';
 
 	//用户登录
 	var userLogin = function() {
@@ -409,7 +409,9 @@
 				success:function(res){
 					if(res.retCode === 0 ){
 						alertInfo('更新成功');
-						oGenderValue = oForm.gender.value;
+						setTimeout(function(){
+							window.location.reload();
+						},1000)
 						return;
 					}
 					alertInfo(res.msg || '更新失败');
@@ -461,7 +463,10 @@
 				success:function(res){
 					if(res.retCode === 0 ){
 						alertInfo('修改成功,请用新密码登录');
-						oForm.reset()
+						oForm.reset();
+						setTimeout(function(){
+							window.location.href='/api/user/logout';
+						},1500);
 						return;
 					}
 					alertInfo(res.msg || '修改失败');
@@ -471,7 +476,7 @@
 				}
 			})
 		}
-		var oBtn = document.getElementById('modify-password');
+		var oBtn = document.getElementById('modify-btn');
 		if(!oBtn) return;
 		$(oBtn).on('click',postInfo)
 	}

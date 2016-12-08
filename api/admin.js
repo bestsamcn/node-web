@@ -17,7 +17,7 @@ router.get('/getMemberList',function(req,res,next){
 	var _pageIndex = parseInt(req.query.pageIndex)-1 || 0;
 	var _pageSize = parseInt(req.query.pageSize) || 10;
 	var _total = 0;
-	UserModel.find({}).skip(_pageIndex*_pageSize).limit(_pageSize).sort({_id:-1}).exec(function(err,data){
+	UserModel.find({userType:0}).skip(_pageIndex*_pageSize).limit(_pageSize).sort({_id:-1}).exec(function(err,data){
 		if(err){
 			res.sendStatus(500);
 			res.end();
@@ -175,7 +175,11 @@ router.post('/updateUser',function(req,res,next){
 	}
 	if((req.get('authSecret') && req.get('authSecret') === globalConfig.authSecret) || (req.session.isLogin && req.session.user.userType>0)){
 		var user_id = req.body.userId;
-
+		if(req.session.user.userType !== 2 && (req.session.user.userType === 1 && req.session.user._id != user_id)){
+			res.json({retCode:100024,msg:'权限不足',data:null});
+			res.end();
+			return;
+		}
 
 		UserModel.findById(user_id,function(ferr,fdoc){
 			if(ferr){
@@ -189,7 +193,11 @@ router.post('/updateUser',function(req,res,next){
 			var umobile = req.body.mobile || fdoc.mobile;
 			var uemail = req.body.email || fdoc.email;
 			var ugender = parseInt(req.body.gender) || fdoc.gender;
-			var uuserType = parseInt(req.body.userType) || fdoc.userType;
+			var uuserType = parseInt(req.body.userType);
+			var usetAdminTime = null;
+			if(uuserType === 1){
+				usetAdminTime = new Date().getTime();
+			}
 
 	   		if(uaccount.length < 2 || uaccount.length > 24){
 				res.json({retCode:100002,msg:'用户名格式错误',data:null});
@@ -243,16 +251,18 @@ router.post('/updateUser',function(req,res,next){
 				mobile:umobile,
 				email:uemail,
 				gender:ugender,
-				userType:uuserType
+				userType:uuserType,
+				setAdminTime:usetAdminTime
 			},function(uerr,udoc){
 				//d{ok:boolean,nMoidify:number,n:number}
+				console.log(uerr,udoc)
 				if(uerr){
-					res.send(500);
+					res.sendStatus(500);
 					res.end();
 					return;
 				}
 				if(!udoc.ok){
-					res.send(500);
+					res.sendStatus(500);
 					res.end();
 					return;
 				}
@@ -344,7 +354,7 @@ router.get('/delUserLoginLog',function(req,res,next){
 //获取管理员列表
 router.get('/getAdminList',function(req,res,next){
 	if((req.get('authSecret') && req.get('authSecret') === globalConfig.authSecret) || (req.session.isLogin && req.session.user.userType>0)){
-		UserModel.find({userType:{$in:[1,2]}},function(ferr,fdoc){
+		UserModel.find({userType:{$in:[1]}},function(ferr,fdoc){
 			if(ferr){
 				res.sendStatus(404);
 				res.end();
@@ -371,11 +381,16 @@ router.post('/addAdmin',function(req,res,next){
 		var _account = req.body.account;
 		UserModel.findOne({account:_account},function(ferr,fdoc){
 			if(ferr){
+				res.send(500);
+				res.end();
+				return;
+			}
+			if(!fdoc){
 				res.json({retCode:100021,msg:'无该用户信息',data:fdoc});
 				res.end();
 				return;
 			}
-			if(fdoc.userType>0){
+			if(fdoc.userType > 0){
 				res.json({retCode:100022,msg:'该用户已是管理员',data:fdoc});
 				res.end();
 				return;
@@ -413,7 +428,8 @@ router.get('/delAdmin',function(req,res,next){
 			return;
 		}
 		//只有超管和管理员自己才能删除管理员
-		if(req.session.user.userType !== 2 && (req.session.user.userType < 1 || req.session.user._id !== user_id)){
+		//req.session.user._id不是字符串类型
+		if(req.session.user.userType !== 2 && (req.session.user.userType === 1 && req.session.user._id != user_id)){
 			res.json({retCode:100024,msg:'权限不足',data:null});
 			res.end();
 			return;
@@ -476,20 +492,21 @@ router.get('/getWebPreview',function(req,res,next){
 			var oneDayTime = 1000*60*60*24;
 			//昨天的整天的时间戳范围是(todayTime-oneDayTime)<= yestodayTime < todayTime
 			var yestodayTime = todayTime-oneDayTime;
-			UserModel.count({'createLog.createTime':{$in:[yestodayTime,todayTime]}},function(cierr,cicol){
+			UserModel.count({ 'createLog.createTime' : { $gt : yestodayTime, $lte : todayTime  } },function(cierr,cicol){
 				if(cierr){
 					res.sendStatus(500);
 					res.end();
 					return;
 				}
-				_yesRegMember = cicol
-				UserModel.count({lastLoginTime:{$in:[yestodayTime,todayTime]}},function(clerr,cicol){
-					if(clerr){
+				_yesRegMember = cicol;
+				//1.匹配loginTime在昨天时间戳范围内。2.以userId为分组合并登录记录。3.总组数即是昨天用户登录个数
+				LoginLogModel.aggregate([{ $match : { loginTime : { $gt : yestodayTime, $lte : todayTime } } }, { $group: {"_id":"$userId" , count:{$sum:1}} } ]).exec(function(aerr,acol){
+					if(aerr){
 						res.sendStatus(500);
 						res.end();
 						return;
 					}
-					_yesLogMember = cicol
+					_yesLogMember = acol.length
 					res.json({retCode:0,msg:'查询成功',data:{totalMember:_totalMember, yesRegMember:_yesRegMember, yesLogMember:_yesLogMember }});
 					res.end();
 					return;
