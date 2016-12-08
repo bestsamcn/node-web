@@ -30,7 +30,7 @@
 								<div id="myTabContent" class="tab-content user-detail">
 									<div class="tab-pane active" id="home">
 										<form id="admin-update-form">
-											<input type="hidden" value="{{ memberDetail._id}}" name="userId">
+											<input type="hidden" id="userId" value="{{ memberDetail._id}}" name="userId">
 											<div class="form-group row">
 												<label class="col-md-4 col-xs-12 col-lg-4 text-left">账号</label>
 												<input type="text"  placeholder="账号" value="{{ memberDetail.account }}" name="account" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
@@ -97,44 +97,30 @@
 													</tr>
 												</thead>
 												<tbody id="user-loginlog-vm">
-													<tr>
-														<td>10.28.5.197</td>
-														<td>Tompson</td>
-														<td>the_mark7</td>
-														<td>
-															<a href="#myModal" role="button" data-toggle="modal">
-																<i class="fa fa-trash-o"></i>
-															</a>
-														</td>
-													</tr>
 												</tbody>
 												<script type="text/html" id="user-loginlog-tpl">
-													<% if memberDetail.loginLogs.length > 0%>
-													<% each memberDetail.loginLogs as $value $index %>
+													<% if loginLogs.length > 0%>
+													<% each loginLogs as $value $index %>
 													<tr>
-														<td><% $value.ip %></td>
-														<td><% $value.loginTime | dataFormat :'yyyy.MM.dd hh:mm:ss' %></td>
-														<td><% $value.logoutTime | dataFormat :'yyyy.MM.dd hh:mm:ss' %></td>
+														<td><% $value.logIp %></td>
+														<td><% $value.loginTime | dateFormat :'yyyy.MM.dd hh:mm:ss' %></td>
+														<td><% $value.logoutTime | dateFormat :'yyyy.MM.dd hh:mm:ss' %></td>
 														<td>
-															<a href="javascript:;" data-userid="<% memberDetail._id %>" data-logid="$value._id" id="admin-delete-loginlog-btn" >
+															<a href="javascript:;" data-logid="<% $value._id %>" id="admin-delete-loginlog-btn" >
 																<i class="fa fa-trash-o"></i>
 															</a>
 														</td>
 													</tr>
 													<% /each %>
+													<% else %>
+													<p style="width:100%;text-align:center;line-height: 40px;">暂无数据</p>
 													<% /if %>
 												</script>
 											</table>
-											<ul class="pagination pagination-sm text-center margin-top-10">
-											  <li><a href="#">«</a></li>
-											  <li><a href="#">1</a></li>
-											  <li><a href="#">2</a></li>
-											  <li><a href="#">3</a></li>
-											  <li><a href="#">4</a></li>
-											  <li><a href="#">5</a></li>
-											  <li><a href="#">»</a></li>
-											</ul>
+											
 										</div>
+										<div class="mt-pagination" id="loginlogs-pagination">
+		            					</div>
 									</div>
 									<div class="tab-pane user-detail" id="others">
 										<div id="tab4">
@@ -145,7 +131,6 @@
 												<div class="form-group row">
 													<label class="col-md-4 col-xs-12 col-lg-4 text-left">最后登录时间</label>
 													<input type="text" placeholder="尚未有值" value="{{ memberDetail.lastLoginTime | dateFormat :'yyyy.MM.dd hh:mm:ss'}}"  disabled name="lastLoginTime" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
-												
 											</form>
 										</div>
 									</div>

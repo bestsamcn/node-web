@@ -18,28 +18,35 @@
 							<thead>
 								<tr>
 									<th>账号</th>
-									<th>注册日期</th>
+									<th>设置日期</th>
 									<th>最后登录日期</th>
 									<th style="width: 3.5em;">操作</th>
 								</tr>
 							</thead>
-							<tbody id="member-list-vm">
-							    
+							<tbody id="admin-list-vm">
+
+							</tbody>
+							<script type="text/html" id="admin-list-tpl">
+								<% if adminList.length > 0 %>
+								<% each adminList as $value $index %>
 								<tr>
-									<td>aaa</td>
-									<td>2016.12.03 20:30:16</td>
-									<td>2016.12.03 20:30:16</td>
+									<td><% $value.account %></td>
+									<td><% $value.setAdminTime | dateFormat:'yyyy.MM.dd hh:mm:ss' %></td>
+									<td><% $value.lastLoginTime | dateFormat:'yyyy.MM.dd hh:mm:ss' %></td>
 									<td>
-										<a href="/admin/memberList/memberDetail">
+										<% if (userInfo.userType === 2 || userInfo.id === $value._id)  %>
+										<a href="/admin/memberList/memberDetail/<% $value._id %>">
 											<i class="fa fa-pencil"></i>
 										</a>
-										<a href="#myModal" role="button" data-toggle="modal">
+										<a href="javascript:;" data-bind="<% $value._id %>">
 											<i class="fa fa-trash-o"></i>
 										</a>
+										<% /if%>
 									</td>
 								</tr>
-								
-							</tbody>
+								<% /each %>
+								<% /if %>
+							</script>
 						</table>
 					</div>
 				</div>

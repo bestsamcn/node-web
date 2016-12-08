@@ -6,6 +6,7 @@ var $$ = require('../utilTools');
 
 //mongoose
 var UserModel = require('../mongo/schema/User').UserModel;
+var LoginLogModel = require('../mongo/schema/LoginLog').LoginLogModel;
 
 
 // var http  = require('http');
@@ -32,51 +33,69 @@ router.post('/login',function(req,res){
 
 	var md5 = crypto.createHash('md5');
 	upswd = md5.update(upswd).digest('hex');
-	UserModel.findOne({account:uaccount},function(e,d){
-		if(e){
+	UserModel.findOne({account:uaccount},function(ferr,fdoc){
+		if(ferr){
 			res.send(500);
 			res.end();
 			return
 		}
-		if(!d){
+		if(!fdoc){
 			res.json({retCode:1,msg:'用户名不存在',data:null});
 			res.end();
 			return
 		}
-		if(upswd !== d.password){
+		if(upswd !== fdoc.password){
 			res.json({retCode:2,msg:'密码错误',data:null});
 			res.end();
 			return
 		}
 		var uLastLoginTime = new Date().getTime();
-		UserModel.update({account:uaccount},{lastLoginTime:uLastLoginTime},function(ee,dd){
-			console.log(ee,dd,'更新登录信息')
-		})
-		req.session.user = d;
-		req.session.isLogin = true;
-		res.locals.session = req.session;
-		res.json({retCode:0,msg:'登录成功',data:null});
-		res.end();
+		UserModel.update({account:uaccount},{lastLoginTime:uLastLoginTime},function(uerr,udoc){
+			if(uerr){
+				res.sendStatus(500);
+				res.end();
+				return;
+			}
+			if(!udoc.ok){
+				res.sendStatus(500);
+				res.end();
+				return;
+			}
+			req.session.user = fdoc;
+			req.session.isLogin = true;
+			res.locals.session = req.session;
+			res.json({retCode:0,msg:'登录成功',data:null});
+			res.end();
+		});
 	});
 
 });
 //退出登录
 router.get('/logout',function(req,res){
-	UserModel.findById({_id:req.session.user._id},function(err,doc){
-		if(err){
+	UserModel.findById({_id:req.session.user._id},function(ferr,fdoc){
+		//ferr -> Object || Null
+		//fdoc -> Null || Entity
+		if(ferr){
 			res.send(500);
 			res.end();
 			return;
 		}
-		var _logtIp = $$.getClientIp(req).match(/\d+\.\d+\.\d+\.\d+/)[0];
-		var _lastLoginTime = doc.lastLoginTime;
-		UserModel.findByIdAndUpdate(req.session.user._id, {$push:{'loginLogs':{loginTime:_lastLoginTime, logoutTime:Date.now(), logIp:_logtIp}}}, {safe:true, upsert:true, new:true}, function(err,mod){
-			if(err){
+		var _logIp = $$.getClientIp(req).match(/\d+\.\d+\.\d+\.\d+/)[0];
+		var _lastLoginTime = fdoc.lastLoginTime;
+		var LoginLogEntity = new LoginLogModel({
+			userId:fdoc._id,
+			loginTime:_lastLoginTime,
+			logoutTime:Date.now(),
+			logIp:_logIp
+		});
+		LoginLogEntity.save(function(serr,sdoc){
+			//serr -> Object || Null
+			//sdoc -> Null || Entity
+			if(serr){
 				res.sendStatus(500);
 				res.end();
 				return;
 			}
-			console.log(mod,'退出日志')
 
 			req.session.user = null;
 			req.session.isLogin = false;
@@ -271,7 +290,6 @@ router.post('/modifyPassword',function(req,res,next){
 			res.end();
 			return;
 		}
-		console.log(d)
 		if(d){
 			UserModel.update({_id:req.session.user._id},{password:npswd},function(re,rd){
 				if(re){
@@ -288,13 +306,35 @@ router.post('/modifyPassword',function(req,res,next){
 		    		res.end();
 		    		return;
 				}
-			})
+			});
 		}else{
 			res.json({retCode:100013,msg:'无登录信息',data:null});
     		res.end();
     		return;
 		}
-	})
-})
+	});
+});
 
+//获取当前登录用户
+router.get('/getCurrentUser',function(req,res,next){
+	res.setHeader('content-type', 'text/javascript');
+	if(!req.session.isLogin){
+		res.send('window.userInfo = null');
+		res.end();
+		return;
+	}
+	_userInfo = {};
+	_userInfo.id = req.session.user._id.toString();
+	_userInfo.account = req.session.user.account;
+	_userInfo.userType = req.session.user.userType;
+	_userInfo.gender = req.session.user.gender;
+	_userInfo.email = req.session.user.email;
+	_userInfo.realName = req.session.user.realName;
+	_userInfo.mobile = req.session.user.mobile;
+	var str = 'window.userInfo = '+ JSON.stringify(_userInfo);
+	res.send(str);
+	res.end();
+	
+
+});
 module.exports = router

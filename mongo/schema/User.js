@@ -46,24 +46,14 @@ var UserSchema = new mongoose.Schema({
 		type:Number,
 		require:false
 	},
-	loginLogs:[{
-		loginTime:{
-			type:Number,
-			require:true
-		},
-		logoutTime:{
-			type:Number,
-			require:true
-		},
-		logIp:{
-			type:String,
-			require:true
-		}
-	}],
 	userType:{
 		type:Number,
 		require:true,
 		default:0
+	},
+	setAdminTime:{
+		type:Number,
+		require:false
 	},
 	lastUpdateTime:{
 		type:Number,

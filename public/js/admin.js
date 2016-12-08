@@ -43,7 +43,6 @@ var commonPage = function (config) {
         }
         ////当前页page<total时，出现下一张按钮
         if (page < total) {
-            console.log(page)
             str = str + ' ' + '<a href="javascript:;" data-bind="'+total+'">'+total +'</a>'+' '+'<a href="javascript:;" data-bind="'+(parseInt(page)+1)+'">下一页</a>';
         }
         return str;
@@ -220,7 +219,7 @@ var memberListPager = function(index,size){
                     //第1页，
                 })(_pageIndex, _totalPage);
                 $('#mt-pagination').html(pageStr);
-                var html = template('member-list-tpl',{memberList:res.data});
+                var html = template('member-list-tpl',{memberList:res.data,userInfo:window.userInfo});
                 memberListVm.html(html);
                 return;
             }
@@ -311,39 +310,64 @@ var addUser = function(){
     addBtn.on('click',postInfo);
 }
 
-//删除操作
-var deleteUser = function(){
+//删除会员
+var delUser = function(userid,callBack){
+    if(!userid) return
+    Modal.confirm({msg: '确定删除该会员？'}).on(function(e){
+        if(!!e){
+            $.ajax({
+                type:'get',
+                data:{id:userid},
+                dataType:'json',
+                url:NODE+'/admin/delUser',
+                success:function(res){
+                    if(res.retCode === 0){
+                        alertInfo('删除成功');
+                        callBack && callBack();
+                        return;
+                    }
+                },
+                error:function(){
+                    alertInfo('删除失败')
+                }
+            });
+        }
+    });
+}
+
+//用户列表删除用户
+var memberListDelUser = function(){
     var memberListVm= $('#member-list-vm');
     memberListVm.on('click','a.delete-btn',function(){
         var _userid = $(this).attr('data-id');
         var $this = $(this);
-        Modal.confirm({msg: '确定删除该会员？'}).on(function(e){
-            if(!!e){
-                $.ajax({
-                    type:'get',
-                    data:{id:_userid},
-                    dataType:'json',
-                    url:NODE+'/admin/delUser',
-                    success:function(res){
-                        if(res.retCode === 0){
-                            alertInfo('删除成功');
-                            $this.parent().parent().remove();
-                            return;
-                        }
-                    },
-                    error:function(){
-                        alertInfo('删除失败')
-                    }
-                })
-            }
+        delUser(_userid,function(){
+            $this.parent().parent().remove();
         });
-    })
+    });
+}
+
+//用户详情删除用户
+var profileDelUser = function(){
+    var userInput =  $('#userId');
+    var delBtn = $('#admin-delete-btn');
+    var _userId = userInput.val();
+    if(!userInput[0] || !delBtn[0] || !_userId) return;
+    delBtn.on('click',function(){
+        delUser(_userId,function(){
+            setTimeout(function(){
+                window.location.href='/admin/memberList';
+            },1000)
+        });
+    });
+   
 }
 
 //修改用户信息
 var updateUser = function(){
     var updateBtn = $('#admin-update-btn');
     var updateForm = $('#admin-update-form')[0];
+
     var postInfo = function(){
         if(!updateBtn[0] || !updateForm) return;
         if(updateForm.account.value === '' || updateForm.account.value.length < 2){
@@ -411,18 +435,22 @@ var updateUser = function(){
 
 //用户登录日志
 var loginPageList = function(index,size){
-    var pager = $('#mt-pagination');
-    var memberListVm = $('#member-list-vm');
+    var pager = $('#loginlogs-pagination');
+    var loginlogVm = $('#user-loginlog-vm');
+    var _userId = $('#userId').val();
+    if(!_userId){
+        loginlogVm.html('无该用户数据');
+        return;
+    }
     var _pageIndex = index || 1, _pageSize = size || 10;
-    if(!pager[0] || !memberListVm[0]) return;
+    if(!pager[0] || !loginlogVm[0]) return;
     $.ajax({
         type:'get',
         dataType:'json',
-        data:{pageIndex:_pageIndex,pageSize:_pageSize},
-        url:NODE+'/admin/getMemberList',
+        data:{userId:_userId,pageIndex:_pageIndex,pageSize:_pageSize},
+        url:NODE+'/admin/getUserLoginLogs',
         success:function(res){
             if(res.retCode ===0 ){
-
                 var _totalPage = Math.ceil(res.total/_pageSize);
                 var pageStr = commonPage({
                     active: 'active',
@@ -430,9 +458,9 @@ var loginPageList = function(index,size){
                     showPage: 2
                     //第1页，
                 })(_pageIndex, _totalPage);
-                $('#mt-pagination').html(pageStr);
-                var html = template('member-list-tpl',{memberList:res.data});
-                memberListVm.html(html);
+                $('#loginlogs-pagination').html(pageStr);
+                var html = template('user-loginlog-tpl',{loginLogs:res.data});
+                loginlogVm.html(html);
                 return;
             }
             alertInfo('获取分页失败');
@@ -443,20 +471,142 @@ var loginPageList = function(index,size){
     });
 }
 var loginPagerClick = function(){
-    var pager = $('#mt-pagination')
+    var pager = $('#loginlogs-pagination')
     pager.on('click','a',function(){
         var $this = $(this);
         var pageIndex = $this.attr('data-bind');
         if(!pageIndex) return;
         loginPageList(pageIndex);
-    })
+    });
 }
 
+//删除用户登录日志
+var delUserLoginLog = function(){
+    var loginlogVm = $('#user-loginlog-vm');
+    if(!loginlogVm[0]) return;
+    loginlogVm.on('click','a',function(){
+        var $this = $(this);
+        var _logId = $this.attr('data-logid');
+        if(!_logId) return;
+        Modal.confirm({msg: '确定删除该登录日志？'}).on(function(e){
+            if(!e) return;
+            $.ajax({
+                type:'get',
+                dataType:'json',
+                data:{id:_logId},
+                url:NODE+'/admin/delUserLoginLog',
+                success:function(res){
+                    if(res.retCode === 0){
+                        alertInfo('删除成功');
+                        $this.parent().parent().remove();
+                        return;
+                    }
+                },
+                error:function(){
+                    alertInfo('删除失败')
+                }
+            });
+        });
+    });
+}
+
+//添加管理员
+var addAdmin = function(){
+    var addAdminForm = $('#add-admin-form');
+    if(!addAdminForm[0]) return;
+    var postInfo = function(){
+        if(addAdminForm[0].account.value.length < 2){
+            addAdminForm[0].account.blur();
+            addAdminForm[0].account.focus();
+            alertInfo('用户帐号不能少于两位');
+            return;
+        }
+        $.ajax({
+            type:'post',
+            dataType:'json',
+            data:{account:addAdminForm[0].account.value},
+            url:NODE+'/admin/addAdmin',
+            success:function(res){
+                if(res.retCode === 0){
+                    alertInfo('添加管理员成功');
+                    setTimeout(function(){
+                        window.location.href='/admin/adminList';
+                    },1000);
+                    return;
+                }
+                alertInfo('添加管理员失败');
+            },
+            error:function(){
+                alertInfo('添加管理员失败');
+            }
+        });
+    }
+    $('#add-admin-btn').on('click',postInfo);
+}
+
+//获取管理员列表
+var getAdminList = function(){
+    var adminListVm = $('#admin-list-vm');
+    if(!adminListVm[0]) return;
+    $.ajax({
+        type:'get',
+        url:NODE+'/admin/getAdminList',
+        dataType:'json',
+        data:{},
+        success:function(res){
+            if(res.retCode === 0){
+                var html = template('admin-list-tpl',{adminList:res.data,userInfo:userInfo});
+                adminListVm.html(html);
+            }
+        },
+        error:function(){
+            return
+        }
+    });
+}
+
+//删除管理员
+var delAdmin= function(){
+    var adminListVm = $('#admin-list-vm');
+    if(!adminListVm[0]) return;
+    adminListVm.on('click','a',function(){
+        var $this = $(this);
+        var _adminId = $this.attr('data-bind');
+        if(!_adminId) return;
+        Modal.confirm({msg: '删除后将转为普通会员，确定删除该管理员？'}).on(function(e){
+            if(!e) return;
+            $.ajax({
+                type:'get',
+                dataType:'json',
+                data:{id:_adminId},
+                url:NODE+'/admin/delAdmin',
+                success:function(res){
+                    if(res.retCode === 0){
+                        alertInfo('删除管理员成功');
+                        $this.parent().parent().remove();
+                        window.location.href='/user'
+                        return;
+                    }
+                },
+                error:function(){
+                    alertInfo('删除管理员失败')
+                }
+            });
+        });
+    });
+}
 
 $(function(){
 	memberListPager(1,10);
     memberPageClick();
     addUser();
-    deleteUser();
+    memberListDelUser();
+    profileDelUser();
     updateUser();
+    loginPageList(1);
+    loginPagerClick();
+    delUserLoginLog();
+    addAdmin();
+    getAdminList();
+    delAdmin();
 })

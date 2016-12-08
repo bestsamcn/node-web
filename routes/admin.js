@@ -18,10 +18,24 @@ router.all('*', function(req, res, next) {
 	next()
 });
 router.get('/', function(req, res, next) {
-	res.render('tpl/admin/index', {
-		title: '管理后台',
-		routerName: 'admin'
+	requestify.request('http://10.28.5.197:3000/api/admin/getWebPreview',{
+		method:'GET',
+		headers:{
+			authSecret:globalConfig.authSecret
+		},
+		dataType:'json'
+	}).then(function(mres){
+		var body = JSON.parse(mres.body);
+		res.render('tpl/admin/index', {
+			title: '管理后台',
+			routerName: 'admin',
+			webPreview:body.data
+		});
+	}).fail(function(err){
+		res.sendStatus(err.code);
+		res.end();
 	});
+	
 });
 
 router.get('/memberList', function(req, res, next) {
