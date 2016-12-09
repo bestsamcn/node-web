@@ -61,13 +61,13 @@
 }
 .mt-pagination a:hover{
 	color:#fff;
-	background:#0090ff;
-	border:1px solid #0090ff;
+	background:#1FB57B;
+	border:1px solid #1FB57B;
 }
 .mt-pagination a.active{
 	color:#fff;
-	background:#0090ff;
-	border:1px solid #0090ff;
+	background:#1FB57B;
+	border:1px solid #1FB57B;
 }
 .mt-pagination a.disabled{
 	color:#333;

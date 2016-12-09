@@ -95,6 +95,22 @@ template.helper('dateFormat', function (date, format) {
     });
     return format;
 });
+
+//文字省略
+template.helper('textEllipsis', function (str,len) {
+    if(!arguments[0]){
+        return '暂无'
+    }
+    if(len <1) return;
+    var afterSlice = '';
+    if(str.length > len ){
+        var afterSlice = str.substring(0,len) + '...';
+    }else{
+        afterSlice = str;
+    }
+    return afterSlice;
+});
+
 //alert
 var alertInfo = function(msg){
     if(!!document.getElementById('alertInfo')) return;
@@ -193,7 +209,7 @@ window.Modal = function () {
     }
 
 }();
-
+var NODE = 'http://10.28.5.197:3000/api'
 template.config('openTag', '<%');
 template.config('closeTag', '%>');
 var memberListPager = function(index,size){
@@ -201,6 +217,7 @@ var memberListPager = function(index,size){
     var memberListVm = $('#member-list-vm');
     var _pageIndex = index || 1, _pageSize = size || 10;
     if(!pager[0] || !memberListVm[0]) return;
+
     $.ajax({
         type:'get',
         dataType:'json',
@@ -237,7 +254,7 @@ var memberPageClick = function(){
         memberListPager(pageIndex);
     })
 }
-var NODE = 'http://127.0.0.1:3000/api'
+
 
 //添加会员
 var addUser = function(){
@@ -600,6 +617,208 @@ var delAdmin= function(){
     });
 }
 
+//留言各种分页
+var messageModule = function(){
+    if(!window.userInfo || window.userInfo.userType < 1 || !/^\/admin\/messageList$/g.test(window.location.pathname)) return;
+    //all vm
+    var allMsgVM= $('#message-all-vm');
+    var isReadVM = $('#message-isread-vm');
+    var noReadVM = $('#message-noread-vm');
+
+    //all page
+    var allMsgPage = $('#message-all-pagination');
+    var noReadPage = $('#message-noread-pagination');
+    var isReadPage = $('#message-isread-pagination');
+
+    //全部留言
+    var getAllMsg = function(index,size){
+        var _pageIndex = index || 1, _pageSize = size || 5;
+        $.ajax({
+            type:'get',
+            dataType:'json',
+            data:{pageIndex:_pageIndex,pageSize:_pageSize},
+            url:NODE+'/admin/getMessageList',
+            success:function(res){
+                if(res.retCode ===0 ){
+                    var _totalPage = Math.ceil(res.total/_pageSize);
+                    var pageStr = commonPage({
+                        active: 'active',
+                        //左右显示两个
+                        showPage: 2
+                        //第1页，
+                    })(_pageIndex, _totalPage);
+                    allMsgPage.html(pageStr);
+                    var html = template('message-all-tpl',{allMsgList:res.data});
+                    allMsgVM.html(html);
+                    return;
+                }
+                alertInfo(res.msg || '获取分页失败');
+            },
+            error:function(){
+                alertInfo('获取分页失败');
+            }
+        });
+    }
+    getAllMsg(1);
+    allMsgPage.on('click','a',function(){
+        var $this = $(this);
+        var pageIndex = $this.attr('data-bind');
+        if(!pageIndex) return;
+        getAllMsg(pageIndex);
+    });
+
+    //未查看的
+    var getNoreadMsg = function(index,size){
+        var _pageIndex = index || 1, _pageSize = size || 5;
+        $.ajax({
+            type:'get',
+            dataType:'json',
+            data:{pageIndex:_pageIndex,pageSize:_pageSize,isRead:0},
+            url:NODE+'/admin/getMessageList',
+            success:function(res){
+                if(res.retCode ===0 ){
+                    var _totalPage = Math.ceil(res.total/_pageSize);
+                    var pageStr = commonPage({
+                        active: 'active',
+                        //左右显示两个
+                        showPage: 2
+                        //第1页，
+                    })(_pageIndex, _totalPage);
+                    noReadPage.html(pageStr);
+                    var html = template('message-noread-tpl',{noReadList:res.data});
+                    noReadVM.html(html);
+                    return;
+                }
+                alertInfo(res.msg || '获取分页失败');
+            },
+            error:function(){
+                alertInfo('获取分页失败');
+            }
+        });
+    }
+    getNoreadMsg(1,5);
+    noReadPage.on('click','a',function(){
+        var $this = $(this);
+        var pageIndex = $this.attr('data-bind');
+        if(!pageIndex) return;
+        getNoreadMsg(pageIndex);
+    });
+
+    //已经查看的
+    var getIsreadMsg = function(index,size){
+        var _pageIndex = index || 1, _pageSize = size || 5;
+        $.ajax({
+            type:'get',
+            dataType:'json',
+            data:{pageIndex:_pageIndex,pageSize:_pageSize,isRead:1},
+            url:NODE+'/admin/getMessageList',
+            success:function(res){
+                if(res.retCode ===0 ){
+                    var _totalPage = Math.ceil(res.total/_pageSize);
+                    var pageStr = commonPage({
+                        active: 'active',
+                        //左右显示两个
+                        showPage: 2
+                        //第1页，
+                    })(_pageIndex, _totalPage);
+                    isReadPage.html(pageStr);
+                    var html = template('message-isread-tpl',{isReadList:res.data});
+                    isReadVM.html(html);
+                    return;
+                }
+                alertInfo(res.msg || '获取分页失败');
+            },
+            error:function(){
+                alertInfo('获取分页失败');
+            }
+        });
+    }
+    getIsreadMsg(1,5);
+    isReadPage.on('click','a',function(){
+        var $this = $(this);
+        var pageIndex = $this.attr('data-bind');
+        if(!pageIndex) return;
+        getIsreadMsg(pageIndex);
+    });
+
+}
+
+//删除留言
+var delMessage = function(){
+    if(!window.userInfo || window.userInfo.userType < 1 || !/^\/admin\/messageList(.*)$/g.test(window.location.pathname)) return;
+    var postInfo = function(id,_this){
+        if(!id) return;
+        Modal.confirm({msg: '确定删除该留言？'}).on(function(e){
+            if(!e) return;
+            $.ajax({
+                type:'get',
+                dataType:'json',
+                data:{id:id},
+                url:NODE+'/admin/delMessage',
+                success:function(res){
+                    if(res.retCode === 0){
+                        alertInfo('删除留言成功');
+                        _this.parent().parent().remove();
+                        setTimeout(function(){
+                            window.location.reload()
+                        },1000)
+                        return;
+                    }
+                    alertInfo(res.msg || '删除失败');
+                },
+                error:function(){
+                    alertInfo('删除失败')
+                }
+            });
+        });
+    }
+    var allMsgVM= $('#message-all-vm');
+    var isReadVM = $('#message-isread-vm');
+    var noReadVM = $('#message-noread-vm');
+    allMsgVM.on('click','.admin-delete-message-btn',function(){
+        var $this = $(this);
+        var _id = $this.attr('data-msgid');
+        postInfo(_id,$this)
+    });
+    isReadVM.on('click','.admin-delete-message-btn',function(){
+        var $this = $(this);
+        var _id = $this.attr('data-msgid');
+        postInfo(_id,$this)
+    });
+    noReadVM.on('click','.admin-delete-message-btn',function(){
+        var $this = $(this);
+        var _id = $this.attr('data-msgid');
+        postInfo(_id,$this)
+    });
+    $('#message-delete-btn').on('click',function(){
+        var $this = $(this);
+        var _id = $this.attr('data-bind');
+        if(!_id) return;
+        Modal.confirm({msg: '确定删除该留言？'}).on(function(e){
+            if(!e) return;
+            $.ajax({
+                type:'get',
+                dataType:'json',
+                data:{id:_id},
+                url:NODE+'/admin/delMessage',
+                success:function(res){
+                    if(res.retCode === 0){
+                        alertInfo('删除留言成功');
+                        setTimeout(function(){
+                            window.location.href='/admin/messageList';
+                        },1000)
+                        return;
+                    }
+                    alertInfo(res.msg || '删除失败');
+                },
+                error:function(){
+                    alertInfo('删除失败')
+                }
+            });
+        });
+    })
+}
+
 $(function(){
 	memberListPager(1,10);
     memberPageClick();
@@ -613,4 +832,6 @@ $(function(){
     addAdmin();
     getAdminList();
     delAdmin();
+    messageModule();
+    delMessage();
 })

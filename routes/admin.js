@@ -18,7 +18,7 @@ router.all('*', function(req, res, next) {
 	next()
 });
 router.get('/', function(req, res, next) {
-	requestify.request('http://127.0.0.1:3000/api/admin/getWebPreview',{
+	requestify.request('http://'+globalConfig.host+':3000/api/admin/getWebPreview',{
 		method:'GET',
 		headers:{
 			authSecret:globalConfig.authSecret
@@ -40,27 +40,12 @@ router.get('/', function(req, res, next) {
 
 router.get('/memberList', function(req, res, next) {
 	// cosole.log(res.locals)
-	requestify.get('http://127.0.0.1:3000/api/admin/getMemberList?auth=admin').then(function(response) {
-	    // Get the response body
-	    if(response.code !== 200){
-	    	res.sendStatus(500);
-	    	res.end();
-	    	return;
-	    }
-	    var body = JSON.parse(response.body)
-	    console.log(body.length,'刷刷的发生率打开')
-	    res.render('tpl/admin/memberList', {
-			title: '会员列表',
-			routerName: 'memberList',
-			memberList: body.data
-		});
-	    
 
-	},function(err){
-		res.sendStatus(500);
-    	res.end();
-    	return;
+	res.render('tpl/admin/memberList', {
+		title: '会员列表',
+		routerName: 'memberList'
 	});
+	
 });
 
 //添加会员
@@ -88,7 +73,7 @@ router.get('/memberList/memberDetail/:id', function(req, res, next) {
 		res.end();
 		return;
 	}
-	requestify.request('http://127.0.0.1:3000/api/admin/getUserDetail',{
+	requestify.request('http://'+globalConfig.host+':3000/api/admin/getUserDetail',{
 		method:'GET',
 		headers:{
 			authSecret:globalConfig.authSecret
@@ -99,8 +84,6 @@ router.get('/memberList/memberDetail/:id', function(req, res, next) {
 		dataType:'json'
 	}).then(function(mres){
 		var body = JSON.parse(mres.body);
-		console.log(body,'返回sadfsadfsadf');
-
 		res.render('tpl/admin/memberDetail', {
 			title: '会员详情',
 			routerName: 'memberDetail',
@@ -130,10 +113,31 @@ router.get('/messageList', function(req, res, next) {
 });
 
 //留言详情
-router.get('/messageDetail', function(req, res, next) {
-	res.render('tpl/admin/messageDetail', {
-		title: '留言详情',
-		routerName: 'messageDetail'
+router.get('/messageList/messageDetail/:id', function(req, res, next) {
+	if(!req.params.id || req.params.id.length !== 24){
+		res.sendStatus(404);
+		res.end();
+		return;
+	}
+	requestify.request('http://'+globalConfig.host+':3000/api/admin/getMessageDetail',{
+		method:'GET',
+		headers:{
+			authSecret:globalConfig.authSecret
+		},
+		params:{
+			id:req.params.id
+		},
+		dataType:'json'
+	}).then(function(mres){
+		var body = JSON.parse(mres.body);
+		res.render('tpl/admin/messageDetail', {
+			title: '留言详情',
+			routerName: 'messageDetail',
+			messageDetail:body.data
+		});
+	}).fail(function(err){
+		res.sendStatus(err.code);
+		res.end();
 	});
 });
 

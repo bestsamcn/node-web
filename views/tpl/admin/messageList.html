@@ -3,44 +3,194 @@
 	<div class="container">
 		<div class="row">
 			{{include './sidebar'}}
-			<div class="col-md-8 col-xs-12 text-center">
+			<div class="col-md-8 col-xs-12 text-center admin">
 				<div class="row">
 					<div class="col-md-12 text-left fh5co-heading">
-						<h2>留言列表</h2>
+						<h2>会员详情</h2>
 					</div>
-					<div class="admin-list col-md-12">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>姓名</th>
-									<th>邮箱</th>
-									<th>会员</th>
-									<th style="width: 3.5em;">操作</th>
-								</tr>
-							</thead>
-							<tbody id="message-list-vm">
-								<tr>
-									<td>sam</td>
-									<td>567@qq.com</td>
-									<td>2016.10.12 11:12:33</td>
-									<td>
-										<a href="/admin/messageDetail">
-											<i class="fa fa-eye"></i>
-										</a>
-										<a href="javascript:;" class="delete-btn" data-id="<% $value._id %>">
-											<i class="fa fa-trash-o"></i>
-										</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+					<div class="main-content">
+
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="#all-msg" data-toggle="tab">所有留言</a>
+							</li>
+							<li class="">
+								<a href="#is-read-msg" data-toggle="tab">未查看留言</a>
+							</li>
+							<li class="">
+								<a href="#no-read-msg" data-toggle="tab">已查看留言</a>
+							</li>
+						</ul>
+						<div class="row">
+							<div class="col-md-12">
+								<br>
+								<div id="myTabContent" class="tab-content user-detail">
+									<div class="tab-pane active" id="all-msg">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>姓名</th>
+													<th>邮箱</th>
+													<th>预览</th>
+													<th>时间</th>
+													<th>会员</th>
+													<th style="width: 3.5em;">操作</th>
+												</tr>
+											</thead>
+											<tbody id="message-all-vm">
+											</tbody>
+											<script type="text/html" id="message-all-tpl">
+												<% if allMsgList.length > 0%>
+												<% each allMsgList as $value $index %>
+												<tr style="<% ($value.isRead && 'background:#f1f1f1') %>">
+													<td><% $value.realName %></td>
+													<td><% $value.email %></td>
+													<td><% $value.content | textEllipsis:15 %></td>
+													<td><% $value.createTime | dateFormat :'yyyy.MM.dd' %></td>
+													<td><a href="<% $value.isMember ? '/admin/memberList/memberDetail/'+$value.member : 'javascript:;' %>"><% $value.isMember ? '查看' : '无' %></a></td>
+													<td>
+														<a href="/admin/messageList/messageDetail/<% $value._id %>">
+															<% if $value.isRead %>
+															<i class="fa fa-check"></i>
+															<% else %>
+															<i class="fa fa-eye"></i>
+															<% /if %>
+														</a>
+														<a href="javascript:;" data-msgid="<% $value._id %>" class="admin-delete-message-btn" >
+															<i class="fa fa-trash-o"></i>
+														</a>
+													</td>
+												</tr>
+												<% /each %>
+												<% else %>
+												<p style="width:100%;text-align:center;line-height: 40px;">暂无数据</p>
+												<% /if %>
+											</script>
+										</table>
+										<div class="mt-pagination" id="message-all-pagination">
+		            					</div>
+									</div>
+									<div class="tab-pane user-detail" id="is-read-msg">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>姓名</th>
+													<th>邮箱</th>
+													<th>预览</th>
+													<th>时间</th>
+													<th>会员</th>
+													<th style="width: 3.5em;">操作</th>
+												</tr>
+											</thead>
+											<tbody id="message-noread-vm">
+											</tbody>
+											<script type="text/html" id="message-noread-tpl">
+												<% if noReadList.length > 0%>
+												<% each noReadList as $value $index %>
+												<tr style="<% ($value.isRead && 'background:#f1f1f1') %>">
+													<td><% $value.realName %></td>
+													<td><% $value.email %></td>
+													<td><% $value.content | textEllipsis:15 %></td>
+													<td><% $value.createTime | dateFormat :'yyyy.MM.dd' %></td>
+													<td><a href="<% $value.isMember ? '/admin/memberList/memberDetail/'+$value.member : 'javascript:;' %>"><% $value.isMember ? '查看' : '无' %></a></td>
+													<td>
+														<a href="/admin/messageList/messageDetail/<% $value._id %>">
+															<% if $value.isRead %>
+															<i class="fa fa-check"></i>
+															<% else %>
+															<i class="fa fa-eye"></i>
+															<% /if %>
+														</a>
+														<a href="javascript:;" data-msgid="<% $value._id %>" class="admin-delete-message-btn" >
+															<i class="fa fa-trash-o"></i>
+														</a>
+													</td>
+												</tr>
+												<% /each %>
+												<% else %>
+												<p style="width:100%;text-align:center;line-height: 40px;">暂无数据</p>
+												<% /if %>
+											</script>
+										</table>
+										<div class="mt-pagination" id="message-noread-pagination">
+		            					</div>
+									</div>
+									<div class="tab-pane user-detail" id="no-read-msg">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>姓名</th>
+													<th>邮箱</th>
+													<th>预览</th>
+													<th>时间</th>
+													<th>会员</th>
+													<th style="width: 3.5em;">操作</th>
+												</tr>
+											</thead>
+											<tbody id="message-isread-vm">
+											</tbody>
+											<script type="text/html" id="message-isread-tpl">
+												<% if isReadList.length > 0%>
+												<% each isReadList as $value $index %>
+												<tr style="<% ($value.isRead && 'background:#f1f1f1') %>">
+													<td><% $value.realName %></td>
+													<td><% $value.email %></td>
+													<td><% $value.content | textEllipsis:15 %></td>
+													<td><% $value.createTime | dateFormat :'yyyy.MM.dd' %></td>
+													<td><a href="<% $value.isMember ? '/admin/memberList/memberDetail/'+$value.member : 'javascript:;' %>"><% $value.isMember ? '查看' : '无' %></a></td>
+													<td>
+														<a href="/admin/messageList/messageDetail/<% $value._id %>">
+															<% if $value.isRead %>
+															<i class="fa fa-check"></i>
+															<% else %>
+															<i class="fa fa-eye"></i>
+															<% /if %>
+														</a>
+														<a href="javascript:;" data-msgid="<% $value._id %>" class="admin-delete-message-btn" >
+															<i class="fa fa-trash-o"></i>
+														</a>
+													</td>
+												</tr>
+												<% /each %>
+												<% else %>
+												<p style="width:100%;text-align:center;line-height: 40px;">暂无数据</p>
+												<% /if %>
+											</script>
+										</table>
+										<div class="mt-pagination" id="message-isread-pagination">
+		            					</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="modal small fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+										<h3 id="myModalLabel">确认删除？</h3>
+									</div>
+									<div class="modal-body">
+
+										<p class="error-text">
+											<i class="fa fa-warning modal-icon"></i>
+											此乃危险操作，请确认！
+										</p>
+									</div>
+									<div class="modal-footer">
+										<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
+										<button class="btn btn-danger" data-dismiss="modal">Delete</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
 					</div>
-					<div class="mt-pagination" id="mt-pagination">
-		            </div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
 {{include '../../inc/footer'}}

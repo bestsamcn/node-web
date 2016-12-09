@@ -1,5 +1,6 @@
 module.exports=function(grunt){ 
     //任务配置 
+    var globalConfig = require('./config');
     grunt.initConfig({ 
         watch:{
             template:{
@@ -12,7 +13,7 @@ module.exports=function(grunt){
         },
         open: {
             all: {
-                path: 'http://127.0.0.1:3000/'
+                path: 'http://'+globalConfig.host+':3000/'
             }
         },
         nodemon:{dev:{

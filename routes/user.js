@@ -5,7 +5,7 @@ var router = express.Router();
 //权限管理
 router.all('*', function(req, res, next) {
 	if(!req.session.isLogin){
-		res.send(404);
+		res.redirect('/sign/login');
 		return;
 	}
 	next()

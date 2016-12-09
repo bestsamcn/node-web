@@ -6,18 +6,18 @@
 			<div class="col-md-8 col-xs-12 text-center">
 				<div class="row">
 					<div class="col-md-12 text-left fh5co-heading">
-						<h2>留言列表</h2>
+						<h2 >留言列表</h2>
 					</div>
-					<div class="admin-list col-md-12">
-						<h4>留言人：sam</h4>
-						<p>邮箱：654@qq.com</p>
-						<div class="message-box">
-							广东省深圳市福田区车公庙天祥大厦CD座9C1
+					<div class="admin-list col-md-12 fh5co-heading">
+						<h4 class="text-left">留言人：{{ messageDetail.realName }}</h4>
+						<p class="text-justify">邮箱：{{ messageDetail.email }}</p>
+						<div class="message-box text-justify margin-top-20">
+							内容：{{ messageDetail.content }}
 						</div>
 					</div>
-					<div>
-						<a href="/admin/messageList">返回列表</a>
-						<a href="javascript:;" id="message-delete-btn">删除</a>
+					<div class="col-xs-12 col-md-12 text-left">
+						<a class="btn btn-primary margin-top-20" href="/admin/messageList">返回列表</a>
+						<a class="btn btn-danger margin-top-20" href="javascript:;" id="message-delete-btn" data-bind="{{ messageDetail._id }}">删除</a>
 					</div>
 				</div>
 			</div>

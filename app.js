@@ -85,14 +85,6 @@ app.use('/services', servicesRouter);
 app.use('/admin', adminRouter);
 
 
-
-
-
-
-
-
-
-
 app.use(function(req, res, next) {
         if (!req.session) {
             return next(new Error('oh no')) // handle error
