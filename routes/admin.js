@@ -141,5 +141,17 @@ router.get('/messageList/messageDetail/:id', function(req, res, next) {
 	});
 });
 
+//全部的登录日志
+router.get('/loginLogsList',function(req,res,next){
+	if(!req.session.isLogin || req.session.user.userType !== 2){
+		res.sendStatus(401);
+		res.end();
+		return;
+	}
+	res.render('tpl/admin/loginLogsList', {
+		title: '留言详情',
+		routerName: 'loginLogsList'
+	});
+})
 
 module.exports = router;

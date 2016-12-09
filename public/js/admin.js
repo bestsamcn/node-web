@@ -816,8 +816,82 @@ var delMessage = function(){
                 }
             });
         });
-    })
+    });
 }
+
+//所有登录日志
+var getAllLoginLosList = function(index,size){
+    if(window.userInfo.userType !==2 || !/^\/admin\/loginLogsList$/g.test(window.location.pathname)) return;
+    var pager = $('#loginlogs-pagination');
+    var loginlogVm = $('#allloginlogs-list-vm');
+    var _pageIndex = index || 1, _pageSize = size || 5;
+    if(!pager[0] || !loginlogVm[0]) return;
+    $.ajax({
+        type:'get',
+        dataType:'json',
+        data:{pageIndex:_pageIndex,pageSize:_pageSize},
+        url:NODE+'/admin/getAllLoginLogs',
+        success:function(res){
+            if(res.retCode ===0 ){
+                var _totalPage = Math.ceil(res.total/_pageSize);
+                var pageStr = commonPage({
+                    active: 'active',
+                    //左右显示两个
+                    showPage: 2
+                    //第1页，
+                })(_pageIndex, _totalPage);
+                $('#loginlogs-pagination').html(pageStr);
+                var html = template('allloginlogs-list-tpl',{loginLogsList:res.data});
+                loginlogVm.html(html);
+                return;
+            }
+            alertInfo('获取分页失败');
+        },
+        error:function(){
+            alertInfo('获取分页失败');
+        }
+    });
+}
+var allLoginLogsPageClick = function(){
+    var pager = $('#loginlogs-pagination')
+    pager.on('click','a',function(){
+        var $this = $(this);
+        var pageIndex = $this.attr('data-bind');
+        if(!pageIndex) return;
+        getAllLoginLosList(pageIndex);
+    });
+}
+
+//删除用户登录日志
+var delOneOfAllLoginLogsList = function(){
+    var loginlogVm = $('#allloginlogs-list-vm');
+    if(!loginlogVm[0]) return;
+    loginlogVm.on('click','a',function(){
+        var $this = $(this);
+        var _logId = $this.attr('data-bind');
+        if(!_logId) return;
+        Modal.confirm({msg: '确定删除该登录日志？'}).on(function(e){
+            if(!e) return;
+            $.ajax({
+                type:'get',
+                dataType:'json',
+                data:{id:_logId},
+                url:NODE+'/admin/delUserLoginLog',
+                success:function(res){
+                    if(res.retCode === 0){
+                        alertInfo('删除成功');
+                        $this.parent().parent().remove();
+                        return;
+                    }
+                },
+                error:function(){
+                    alertInfo('删除失败')
+                }
+            });
+        });
+    });
+}
+
 
 $(function(){
 	memberListPager(1,10);
@@ -834,4 +908,8 @@ $(function(){
     delAdmin();
     messageModule();
     delMessage();
+    getAllLoginLosList();
+    delUserLoginLog();
+    delOneOfAllLoginLogsList();
+    allLoginLogsPageClick()
 })

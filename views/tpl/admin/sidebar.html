@@ -27,6 +27,12 @@
 					<i class="sl-icon-envelope-open"></i>
 					<a href="/admin/messageList">留言列表</a>
 				</li>
+				{{ if session.user.userType === 2 }}
+				<li>
+					<i class="sl-icon-envelope-open"></i>
+					<a href="/admin/loginLogsList">登录日志</a>
+				</li>
+				{{ /if }}
 				<li>
 					<i class="icon-lock"></i>
 					<a href="/admin">管理后台</a>
