@@ -13,9 +13,8 @@ var MessageSchema = new mongoose.Schema({
 		require:true
 	},
 	createTime:{
-		type:Date,
-		require:true,
-		default:Date.now
+		type:Number,
+		require:true
 	},
 	content:{
 		type:String,
@@ -27,8 +26,14 @@ var MessageSchema = new mongoose.Schema({
 		default:false
 	},
 	readTime:{
-		type:Date,
+		type:Number,
 		require:false
+	},
+	readBody:{
+		type:Schema.ObjectId,
+		ref:'User',
+		require:false,
+		default:null
 	},
 	isMember:{
 		type:Boolean,

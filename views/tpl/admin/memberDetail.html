@@ -6,7 +6,7 @@
 			<div class="col-md-8 col-xs-12 text-center admin">
 				<div class="row">
 					<div class="col-md-12 text-left fh5co-heading">
-						<h2>会员详情</h2>
+						<h2>{{ (memberDetail.userType > 0) ? '管理员信息' : '会员信息' }}</h2>
 					</div>
 					<div class="main-content">
 
@@ -43,7 +43,7 @@
 											<div class="form-group row">
 												<label class="col-md-4 col-xs-12 col-lg-4 text-left">真实姓名</label>
 												<input type="text" placeholder="realName" name="realName" value="{{ memberDetail.realName }}" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
-
+											{{ if memberDetail.userType !== 2 }}
 											<div class="form-group row">
 												<label class="col-md-4 col-xs-12 col-lg-4 text-left">用户角色</label>
 												<select name="userType" id="userType" class="form-control col-md-8 col-xs-12 col-lg-8">
@@ -56,6 +56,12 @@
 													{{/if}}
 												</select>
 											</div>
+											{{else}}
+											<div class="form-group row">
+												<label class="col-md-4 col-xs-12 col-lg-4 text-left">用户角色</label>
+												<input type="text" disabled value="超级管理员" class="form-control col-md-8 col-xs-12 col-lg-8">
+											</div>
+											{{ /if }}
 											<div class="form-group row">
 												<label class="col-md-4 col-xs-12 col-lg-4 text-left">性别</label>
 												<select name="gender" id="gender" class="form-control col-md-8 col-xs-12 col-lg-8">
@@ -71,7 +77,9 @@
 										</form>
 										<div class="btn-toolbar list-toolbar">
 											<a href="javascript:;"  class="btn btn-primary" id="admin-update-btn">保存</a>
-											<a href="javascript:;"  class="btn btn-danger" id="admin-delete-btn">删除</a>
+											{{ if memberDetail.userType !== 2 }}
+											<a href="javascript:;" data-bind="{{ memberDetail.userType }}"  class="btn btn-danger" id="admin-delete-btn">删除</a>
+											{{ /if }}
 										</div>
 									</div>
 <!-- 

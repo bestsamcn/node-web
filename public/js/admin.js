@@ -209,7 +209,7 @@ window.Modal = function () {
     }
 
 }();
-var NODE = 'http://10.28.5.197:3000/api'
+var NODE = 'http://127.0.0.1:3000/api'
 template.config('openTag', '<%');
 template.config('closeTag', '%>');
 var memberListPager = function(index,size){
@@ -326,15 +326,17 @@ var addUser = function(){
 }
 
 //删除会员
-var delUser = function(userid,callBack){
+var delUser = function(userid,userType,callBack){
     if(!userid) return
-    Modal.confirm({msg: '确定删除该会员？'}).on(function(e){
+    var _msg = userType === 1 ? '删除后将转为普通会员，确定删除该管理员' : '确定删除该会员？';
+    var _url = userType === 0 ? (NODE+'/admin/delUser') : (NODE+'/admin/delAdmin');
+    Modal.confirm({msg: _msg}).on(function(e){
         if(!!e){
             $.ajax({
                 type:'get',
                 data:{id:userid},
                 dataType:'json',
-                url:NODE+'/admin/delUser',
+                url:_url,
                 success:function(res){
                     if(res.retCode === 0){
                         alertInfo('删除成功');
@@ -357,7 +359,7 @@ var memberListDelUser = function(){
     memberListVm.on('click','a.delete-btn',function(){
         var _userid = $(this).attr('data-id');
         var $this = $(this);
-        delUser(_userid,function(){
+        delUser(_userid,0,function(){
             $this.parent().parent().remove();
         });
     });
@@ -368,11 +370,22 @@ var profileDelUser = function(){
     var userInput =  $('#userId');
     var delBtn = $('#admin-delete-btn');
     var _userId = userInput.val();
+    
     if(!userInput[0] || !delBtn[0] || !_userId) return;
     delBtn.on('click',function(){
-        delUser(_userId,function(){
+        var _userType = parseInt($(this).attr('data-bind'));
+        delUser(_userId,_userType,function(){
             setTimeout(function(){
-                window.location.href='/admin/memberList';
+                if(_userType === 1){
+                    if(window.userInfo.userType === 2){
+                        window.location.href='/admin/adminList';
+                    }else{
+                        window.location.href='/user';
+                    }
+                    
+                }else{
+                    window.location.href='/admin/memberList';
+                }
             },1000)
         });
     });
@@ -383,6 +396,7 @@ var profileDelUser = function(){
 var updateUser = function(){
     var updateBtn = $('#admin-update-btn');
     var updateForm = $('#admin-update-form')[0];
+    var adminDeleteBtn = $('#admin-delete-btn');
 
     var postInfo = function(){
         if(!updateBtn[0] || !updateForm) return;
@@ -442,6 +456,7 @@ var updateUser = function(){
                             window.location.href='/user';
                         },1000);
                     }
+                    adminDeleteBtn.attr('data-bind',updateForm.userType.value);
                     return;
                 }
                 alertInfo('更新失败');
@@ -605,7 +620,11 @@ var delAdmin= function(){
                     if(res.retCode === 0){
                         alertInfo('删除管理员成功');
                         $this.parent().parent().remove();
-                        window.location.href='/user'
+                        if(window.userInfo.id === _adminId){
+                            setTimeout(function(){
+                                window.location.href='/user';
+                            },1500)
+                        }
                         return;
                     }
                 },
@@ -821,7 +840,8 @@ var delMessage = function(){
 
 //所有登录日志
 var getAllLoginLosList = function(index,size){
-    if(window.userInfo.userType !==2 || !/^\/admin\/loginLogsList$/g.test(window.location.pathname)) return;
+
+    if(!window.userInfo || window.userInfo.userType !==2 || !/^\/admin\/loginLogsList$/g.test(window.location.pathname)) return;
     var pager = $('#loginlogs-pagination');
     var loginlogVm = $('#allloginlogs-list-vm');
     var _pageIndex = index || 1, _pageSize = size || 5;

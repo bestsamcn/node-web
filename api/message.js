@@ -15,7 +15,7 @@ router.post('/post',function(req,res,next){
 		upostContent = req.body.postContent,
 		u_id = null;
 
-	if(req.session.isLogin){
+	if(req.session.isLogin && req.session.user.userType === 0){
 		u_id = req.session.user._id;
 	}
 	if(!upostName || upostName.length < 2){
@@ -35,13 +35,14 @@ router.post('/post',function(req,res,next){
 		realName:upostName,
 		email:upostEmail,
 		content:xss(upostContent),
+		createTime:new Date().getTime(),
 		isMember:!!u_id,
 		member:u_id
 	});
 
-	MessageEntity.save(function(e,d){
-		if(!e){
-			if(d){
+	MessageEntity.save(function(serr,sdoc){
+		if(!serr){
+			if(sdoc){
 				res.json({retCode:0,msg:'留言成功',data:null});
 				res.end();
 				return;

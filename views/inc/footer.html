@@ -68,7 +68,9 @@
 	<script src="/public/js/jquery.waypoints.min.js"></script>
 	<!-- MAIN JS -->
 	<script src="/public/js/main.js"></script>
+	{{ if (session.isLogin && session.user.userType > 0) }}
 	<script src="/public/js/admin.js"></script>
+	{{ /if }}
 	</body>
 </html>
 
