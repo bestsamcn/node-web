@@ -18,6 +18,7 @@ var commonPage = function (config) {
     }
     return function (page, total) {
         //当前页
+        page = parseInt(page),total = parseInt(total);
         var str = '<a href="javascript:;" data-bind="'+page+'" class="'+config.active+'">' + page + '</a>';
         for (var i = 1; i <= config.showPage; i++) {
             //page-i>1证明page>config.showPage,所以page-i,在当前page的左边，循环config.showPage次
@@ -844,7 +845,7 @@ var getAllLoginLosList = function(index,size){
     if(!window.userInfo || window.userInfo.userType !==2 || !/^\/admin\/loginLogsList$/g.test(window.location.pathname)) return;
     var pager = $('#loginlogs-pagination');
     var loginlogVm = $('#allloginlogs-list-vm');
-    var _pageIndex = index || 1, _pageSize = size || 5;
+    var _pageIndex = index || 1, _pageSize = size || 10;
     if(!pager[0] || !loginlogVm[0]) return;
     $.ajax({
         type:'get',

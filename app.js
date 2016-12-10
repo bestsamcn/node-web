@@ -48,7 +48,6 @@ app.use(session({
 app.use(cors({ credentials: true, origin: true }));
 
 
-
 //指定静态目录后，也会解决了mimetype的问题
 app.use('/public', express.static(__dirname + '/public'));
 
