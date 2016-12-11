@@ -12,15 +12,15 @@
 				<li> <i class="icon-user"></i>
 					{{session.user.account}}
 				</li>
-				<li> <i class="icon-user-secret"></i>
+				<li> <i class="icon-user-md "></i>
 					{{session.user.userType | roleFilter }}
 				</li>
 				<li>
-					<i class="sl-icon-phone"></i>
+					<i class="sl-icon-people"></i>
 					<a href="/admin/memberList">会员列表</a>
 				</li>
 				<li>
-					<i class="sl-icon-envelope-open"></i>
+					<i class="icon-sitemap"></i>
 					<a href="/admin/adminList">管理员列表</a>
 				</li>
 				<li>
@@ -34,11 +34,11 @@
 				</li>
 				{{ /if }}
 				<li>
-					<i class="icon-lock"></i>
+					<i class="icon-user-secret"></i>
 					<a href="/admin">管理后台</a>
 				</li>
 				<li>
-					<i class="icon-lock"></i>
+					<i class="icon-home"></i>
 					<a href="/user">个人中心</a>
 				</li>
 			</ul>

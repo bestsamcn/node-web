@@ -240,7 +240,8 @@ router.post('/updateUser', function(req, res, next) {
     }
     if ((req.get('authSecret') && req.get('authSecret') === globalConfig.authSecret) || (req.session.isLogin && req.session.user.userType > 0)) {
         var user_id = req.body.userId;
-        if (req.session.user.userType !== 2 && (req.session.user.userType === 1 && req.session.user._id != user_id)) {
+        //这是修改管理员信息
+        if (req.session.user.userType < 1 && user_id != req.session.user._id) {
             res.json({
                 retCode: 100024,
                 msg: '权限不足',
