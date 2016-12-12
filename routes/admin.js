@@ -3,6 +3,9 @@ var router = express.Router();
 var http = require('http');
 var config = require('../config');
 var requestify = require('requestify');
+var getAllAdmins = require('../api/index').getAllAdmins;
+var $$ = require('../utilTools');
+
 var UserModel = require('../mongo/schema/User').UserModel;
 //请求密钥
 var globalConfig =require('../config');
@@ -15,9 +18,9 @@ router.all('*', function(req, res, next) {
 		res.send(401);
 		return;
 	}
-	next()
+	next();
 });
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
 	requestify.request('http://'+globalConfig.host+':3000/api/admin/getWebPreview',{
 		method:'GET',
 		headers:{
@@ -38,9 +41,8 @@ router.get('/', function(req, res, next) {
 	
 });
 
-router.get('/memberList', function(req, res, next) {
-	// cosole.log(res.locals)
-
+//会员列表
+router.get('/memberList', function(req, res) {
 	res.render('tpl/admin/memberList', {
 		title: '会员列表',
 		routerName: 'memberList'
@@ -49,7 +51,7 @@ router.get('/memberList', function(req, res, next) {
 });
 
 //添加会员
-router.get('/addUser',function(req,res,next){
+router.get('/addUser',function(req,res){
 	res.render('tpl/admin/addUser',{
 		title:'添加会员',
 		routerName:'addUser'
@@ -66,23 +68,31 @@ router.get('/addAdmin',function(req,res,next){
 
 
 //会员详情
-router.get('/memberList/memberDetail/:id', function(req, res, next) {
-
+router.get('/memberList/memberDetail/:id', getAllAdmins, function(req, res) {
+	console.log(req.session.adminIdList,'管理员id列表');
 	if(!req.params.id || req.params.id.length !== 24){
 		res.sendStatus(404);
 		res.end();
 		return;
 	}
+	//判断id是否是用户自己赋值到地址栏，并且id隶属管理员，但是不是该管理员的id，这是不允许的。但是超级管理员除外
+	if(req.session.user.userType !== 2 && $$.inArray(req.params.id ,req.session.adminIdList) && req.session.user._id != req.params.id){
+		res.sendStatus(401);
+		res.end();
+		return;
+	}
+	
 	requestify.request('http://'+globalConfig.host+':3000/api/admin/getUserDetail',{
 		method:'GET',
 		headers:{
-			authSecret:globalConfig.authSecret
+			authSecret:globalConfig.authSecret,
 		},
 		params:{
 			id:req.params.id
 		},
 		dataType:'json'
 	}).then(function(mres){
+
 		var body = JSON.parse(mres.body);
 		res.render('tpl/admin/memberDetail', {
 			title: '会员详情',
@@ -97,7 +107,7 @@ router.get('/memberList/memberDetail/:id', function(req, res, next) {
 });
 
 //管理员列表
-router.get('/adminList', function(req, res, next) {
+router.get('/adminList', function(req, res) {
 	res.render('tpl/admin/adminList', {
 		title: '管理员列表',
 		routerName: 'adminList'
@@ -105,7 +115,7 @@ router.get('/adminList', function(req, res, next) {
 });
 
 //留言列表
-router.get('/messageList', function(req, res, next) {
+router.get('/messageList', function(req, res) {
 	res.render('tpl/admin/messageList', {
 		title: '留言列表',
 		routerName: 'messageList'
@@ -113,7 +123,8 @@ router.get('/messageList', function(req, res, next) {
 });
 
 //留言详情
-router.get('/messageList/messageDetail/:id', function(req, res, next) {
+router.get('/messageList/messageDetail/:id', function(req, res) {
+
 	if(!req.params.id || req.params.id.length !== 24){
 		res.sendStatus(404);
 		res.end();
@@ -142,7 +153,7 @@ router.get('/messageList/messageDetail/:id', function(req, res, next) {
 });
 
 //全部的登录日志
-router.get('/loginLogsList',function(req,res,next){
+router.get('/loginLogsList',function(req,res){
 	if(!req.session.isLogin || req.session.user.userType !== 2){
 		res.sendStatus(401);
 		res.end();

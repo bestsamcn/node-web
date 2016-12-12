@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var crypto = require('crypto');
 var $$ = require('../utilTools');
+var loginInterceptor = require('./index').loginInterceptor;
 
 //mongoose
 var UserModel = require('../mongo/schema/User').UserModel;
@@ -71,7 +72,7 @@ router.post('/login',function(req,res){
 
 });
 //退出登录
-router.get('/logout',function(req,res){
+router.get('/logout', loginInterceptor, function(req,res){
 	UserModel.findById({_id:req.session.user._id},function(ferr,fdoc){
 		//ferr -> Object || Null
 		//fdoc -> Null || Entity
@@ -184,13 +185,7 @@ router.post('/register',function(req,res){
 });
 
 //更新用户信息
-router.post('/update',function(req,res,next){
-
-	if(!req.session.isLogin){
-		res.send(404);
-		res.end();
-		return;
-	}
+router.post('/update', loginInterceptor, function(req,res,next){
 
 	var urealName = req.body.realName || req.session.user.realName;
 	var umobile = req.body.mobile || req.session.user.mobile;
@@ -250,12 +245,8 @@ router.post('/update',function(req,res,next){
 });
 
 //修改密码
-router.post('/modifyPassword',function(req,res,next){
-	if(!req.session.isLogin){
-		res.send(404);
-		res.end();
-		return;
-	}
+router.post('/modifyPassword', loginInterceptor, function(req,res,next){
+	
 
 	var opswd = req.body.opassword,
 		npswd = req.body.npassword,

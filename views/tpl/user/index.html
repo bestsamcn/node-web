@@ -16,7 +16,7 @@
 						<li><i class="sl-icon-phone"></i>+86 {{session.user.mobile || '请完善个人信息'}}</li>
 						<li><i class="sl-icon-envelope-open"></i>{{session.user.email || '请完善个人信息'}}</li>
 						<li><i class="icon-unlock"></i><a href="/user/modifyPassword">修改密码</a></li>
-						<li><i class="icon-lock"></i><a href="/user">个人中心</a></li>
+						<li><i class="icon-home"></i><a href="/user">个人中心</a></li>
 						{{if session.user.userType > 0}}
 						<li><i class="icon-user-secret"></i><a href="/admin">管理后台</a></li>
 						{{/if}}

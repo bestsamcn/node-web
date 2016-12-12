@@ -1314,6 +1314,9 @@ h1, h2, h3, h4, h5, h6, figure {
 .margin-bottom-10{
   margin-bottom: 10px;
 }
+.margin-bottom-0{
+  margin-bottom: 0;
+}
 .pagination > li > a, .pagination > li > span{
   background:#1FB57B
 }
@@ -1321,3 +1324,14 @@ h1, h2, h3, h4, h5, h6, figure {
   background:#1FB57B
 }
 /*# sourceMappingURL=style.css.map */
+
+.banner{
+  width:100%;
+  height:500px;
+  background:url(/public/images/banner.jpg) no-repeat center;
+}
+
+.news-list{
+  margin-top: 6em;
+  margin-bottom: 6em;
+}

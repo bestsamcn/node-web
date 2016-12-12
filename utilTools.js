@@ -59,4 +59,24 @@ var _getIpInfo = function(ip, cb) {
 		}
 	}).on('error', function(e) { cb(e); });
 };
+
+/**
+ * 判断元素是否在数组中
+ * ele 元素 ； arr 数组
+ */
+var _inArray = function(ele,arr){
+    var b = false;
+    if(arguments.length !== 2) return;
+    if(!util.isArray(arr)) return;
+    for(var i = 0;i<arr.length;i++){
+        if(arr[i] === ele){
+            b = true;
+            break;
+        }
+    }
+
+    return b
+}
+
 exports.getIpInfo = _getIpInfo;
+exports.inArray = _inArray;

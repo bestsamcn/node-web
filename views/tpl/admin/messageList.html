@@ -47,7 +47,7 @@
 													<td><% $value.email %></td>
 													<td><% $value.content | textEllipsis:15 %></td>
 													<td><% $value.createTime | dateFormat :'yyyy.MM.dd' %></td>
-													<td><a href="<% $value.isMember ? '/admin/memberList/memberDetail/'+$value.member : 'javascript:;' %>"><% $value.isMember ? '查看' : '无' %></a></td>
+													<td><a href="<% ($value.isMember && $value.member.userType ===0) ? '/admin/memberList/memberDetail/'+$value.member._id : 'javascript:;' %>"><% ($value.isMember && $value.member.userType ===0)  ? '查看' : '无' %></a></td>
 													<td>
 														<a href="/admin/messageList/messageDetail/<% $value._id %>">
 															<% if $value.isRead %>
