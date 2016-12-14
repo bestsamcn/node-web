@@ -1,0 +1,12 @@
+{
+	"apps": [{
+		"name": "swyc",
+		"script": "bin/www",
+		"log_date_format": "YYYY-MM-DD HH:mm:SS",
+		"log_file": "logs/swyc.log",
+		"error_file": "logs/swyc-err.log",
+		"out_file": "logs/swyc-out.log",
+		"pid_file": "logs/swyc.pid",
+		"watch": true
+	}]
+}
