@@ -210,7 +210,7 @@ window.Modal = function () {
     }
 
 }();
-var NODE = 'http://10.28.5.197:3000/api'
+var NODE = '/api'
 template.config('openTag', '<%');
 template.config('closeTag', '%>');
 var memberListPager = function(index,size){

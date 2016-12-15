@@ -7,13 +7,14 @@
 var app = require('../app');
 var debug = require('debug')('node-1:server');
 var http = require('http');
+var globalConfig = require('../config');
 
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || globalConfig.port);
 app.set('port', port);
 
 /**
@@ -86,6 +87,6 @@ function onListening() {
     var addr = server.address();
     var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
     debug('Listening on ' + bind);
-    console.log('web runing on:');
-    console.log('localhost:' + addr.port);
+    console.log('web runing on:' + bind);
+    console.log(globalConfig.host);
 }

@@ -1,6 +1,6 @@
 var _config = {
-	host:'10.28.5.197',
-	port:'3000',
+	host:'www.swyc.com',
+	port:'80',
 	redisConfig:{
 		name: 'JSESSIONID',
 	    secret: 'node-1',
@@ -9,7 +9,7 @@ var _config = {
 	        httpOnly:true
 	    },
 	    sessionStore: {
-	        host: '10.28.5.197',
+	        host: '127.0.0.1',
 	        port: '6379',
 	        db: 1,
 	        ttl: 60 * 60 * 24,
@@ -17,10 +17,10 @@ var _config = {
 	    }
 	},
 	mongoConfig:{
-		mongodb: 'mongodb://admin:123123@10.28.5.197/swyc',
+		mongodb: 'mongodb://127.0.0.1/swyc',
 		// mongodb: 'mongodb://10.28.5.197/swyc',
 	    database: 'swyc',
-	    server: '10.28.5.197'
+	    server: '127.0.0.1'
 	},
 	authSecret:'080994c0cce4b706'
 }
