@@ -27,17 +27,17 @@
 					<form class="row" id="update-form">
 						<div class="col-md-6">
 							<div class="form-group">
-								<input class="form-control" placeholder="姓名" name="realName" type="text">
+								<input class="form-control" placeholder="姓名" name="realName" value="{{ session.user.realName }}" type="text">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<input class="form-control" placeholder="邮箱" name="email" type="text">
+								<input class="form-control" placeholder="邮箱" name="email" value="{{ session.user.email }}" type="text">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<input class="form-control" placeholder="手机号码" name="mobile" type="text">
+								<input class="form-control" placeholder="手机号码" name="mobile" value="{{ session.user.mobile }}" type="text">
 							</div>
 						</div>
 						<div class="col-md-6">

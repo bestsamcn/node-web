@@ -5,7 +5,8 @@ var _config = {
 		name: 'JSESSIONID',
 	    secret: 'node-1',
 	    cookie: {
-	        maxAge: 1000 * 60 * 60 * 24
+	        maxAge: 1000 * 60 * 60 * 24,
+	        httpOnly:true
 	    },
 	    sessionStore: {
 	        host: '10.28.5.197',
@@ -16,7 +17,8 @@ var _config = {
 	    }
 	},
 	mongoConfig:{
-		mongodb: 'mongodb://10.28.5.197/swyc',
+		mongodb: 'mongodb://admin:123123@10.28.5.197/swyc',
+		// mongodb: 'mongodb://10.28.5.197/swyc',
 	    database: 'swyc',
 	    server: '10.28.5.197'
 	},

@@ -21,6 +21,7 @@
     "mine": "^0.1.0",
     "mongoose": "^4.6.8",
     "morgan": "~1.7.0",
+    "pm2": "^2.1.6",
     "requestify": "^0.2.5",
     "serve-favicon": "~2.3.0",
     "tiny-lr": "^1.0.3",
