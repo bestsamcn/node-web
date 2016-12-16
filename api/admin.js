@@ -2,10 +2,13 @@ var express = require('express');
 var router = express.Router();
 var crypto = require('crypto');
 var $$ = require('../utilTools');
+var isIncludeSensitive = require('./index').isIncludeSensitive;
+
 
 var UserModel = require('../mongo/schema/User').UserModel;
 var LoginLogModel = require('../mongo/schema/LoginLog').LoginLogModel;
 var MessageModel = require('../mongo/schema/Message').MessageModel;
+var AccessLogModel = require('../mongo/schema/AccessLog').AccessLogModel;
 var globalConfig = require('../config');
 
 //admin接口拦截器
@@ -58,17 +61,14 @@ router.get('/getMemberList', function(req, res, next) {
 //添加会员
 router.post('/addUser', function(req, res) {
     var uaccount = req.body.account;
-    var upswd = req.body.password;
-    var uuserType = parseInt(req.body.userType) || 0;
-    if (uuserType > 1) {
-        res.json({
-            retCode: 401,
-            msg: '你的权限不足',
-            data: null
-        });
+
+    //敏感字符拦截
+    if(isIncludeSensitive(uaccount)){
+        res.json({retCode:100027,msg:'不能包含敏感字符',data:null});
         res.end();
-        return
+        return;
     }
+
     // var uip = req.ip.match(/\d+\.\d+\.\d+\.\d+/)[0];
     var uip = $$.getClientIp(req).match(/\d+\.\d+\.\d+\.\d+/)[0];
 
@@ -82,24 +82,24 @@ router.post('/addUser', function(req, res) {
         res.end();
         return;
     }
-    if (upswd.length < 6 || upswd.length > 24) {
-        res.json({
-            retCode: 100003,
-            msg: '密码格式错误',
-            data: null
-        });
-        res.end();
-        return;
-    }
+    // if (upswd.length < 6 || upswd.length > 24) {
+    //     res.json({
+    //         retCode: 100003,
+    //         msg: '密码格式错误',
+    //         data: null
+    //     });
+    //     res.end();
+    //     return;
+    // }
 
     var createTime = new Date().getTime();
     var md5 = crypto.createHash('md5');
-    upswd = md5.update(upswd).digest('hex');
+    upswd = md5.update('123123').digest('hex');
 
     var UserEntity = new UserModel({
         account: uaccount,
         password: upswd,
-        userType: uuserType,
+        userType: 0,
         createLog: {
             createTime: Date.now(),
             createIp: uip
@@ -110,6 +110,11 @@ router.post('/addUser', function(req, res) {
     UserModel.findOne({
         account: uaccount
     }, function(e, d) {
+        if(e){
+            res.send(e.status);
+            res.end();
+            return
+        }
         if (d) {
             res.json({
                 retCode: 4,
@@ -120,7 +125,6 @@ router.post('/addUser', function(req, res) {
             return;
         }
         UserEntity.save(function(e) {
-            console.log(e)
             if (e) {
                 res.send(e.status);
                 res.end();
@@ -241,7 +245,7 @@ router.post('/updateUser', function(req, res, next) {
         if (ferr) {
             res.json({
                 retCode: 100020,
-                msg: '无该用户信息',
+                msg: '无此条记录',
                 data: null
             });
             res.end();
@@ -256,6 +260,14 @@ router.post('/updateUser', function(req, res, next) {
         var ugender = parseInt(req.body.gender) || fdoc.gender;
         var uuserType = parseInt(req.body.userType);
         var usetAdminTime = null;
+
+        //敏感字符拦截
+        if(isIncludeSensitive(uaccount, urealName)){
+            res.json({retCode:100027,msg:'不能包含敏感字符',data:null});
+            res.end();
+            return;
+        }
+
         if (uuserType === 1) {
             usetAdminTime = new Date().getTime();
         }
@@ -466,7 +478,7 @@ router.get('/delUserLoginLog', function(req, res, next) {
         if (ferr) {
             res.json({
                 retCode: 100020,
-                msg: '无此条登录日志',
+                msg: '无此条记录',
                 data: null
             });
             res.end();
@@ -854,5 +866,42 @@ router.get('/delMessage', function(req, res, next) {
     });
 });
 
-
+//获取访问日志列表
+router.get('/getAccessLogsList', function(req, res, next) {
+    if ((req.get('authSecret') && req.get('authSecret') === globalConfig.authSecret) || (req.session.isLogin && req.session.user.userType > 0)) {
+        var _pageIndex = parseInt(req.query.pageIndex) - 1 || 0;
+        var _pageSize = parseInt(req.query.pageSize) || 10;
+        var _total = 0;
+        AccessLogModel.find().populate('member').skip(_pageIndex * _pageSize).limit(_pageSize).sort({
+            _id: -1
+        }).exec(function(err, data) {
+            if (err) {
+                res.sendStatus(500);
+                res.end();
+                return;
+            }
+            AccessLogModel.count({}, function(mcerr, mccol) {
+                if (mcerr) {
+                    res.sendStatus(500);
+                    res.end();
+                    return;
+                }
+                _total = mccol || 0;
+                res.json({
+                    retCode: 0,
+                    msg: '查询成功',
+                    data: data,
+                    pageIndex: _pageIndex + 1,
+                    pageSize: _pageSize,
+                    total: _total
+                });
+                res.end()
+            });
+        });
+    } else {
+        res.sendStatus(401);
+        res.end();
+        return;
+    }
+});
 module.exports = router;

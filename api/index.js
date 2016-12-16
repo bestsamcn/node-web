@@ -1,5 +1,8 @@
 
 var UserModel = require('../mongo/schema/User').UserModel;
+var SensitiveModel = require('../mongo/schema/Sensitive').SensitiveModel;
+var AccessLogModel = require('../mongo/schema/AccessLog').AccessLogModel;
+var $$ = require('../utilTools');
 
 //更新个人信息
 var _globalConfig = require('../config');
@@ -48,8 +51,65 @@ var _loginInterceptor = function(req,res,next){
 	next();
 }
 
+//获取铭感词汇列表
+var _sensitiveInterceptor = function(req,res,next){
+	SensitiveModel.find({},function(ferr,fcol){
+		global.sensitiveList = [];
+		if(ferr){
+			next(ferr.code);
+			return;
+		}
+
+		for(var i = 0 ; i<fcol.length; i++){
+			global.sensitiveList.push(fcol[i].keywords)
+		}
+		next();
+	});
+}
+
+//判断是否包含敏感词
+var _isIncludeSensitive = function(){
+	var b = false;
+	if(arguments.length < 1){
+		return b;
+	}
+	for(var i=0; i< arguments.length; i++){
+		for(var j = 0 ; j<global.sensitiveList.length;j++){
+			if(arguments[i].indexOf(global.sensitiveList[j]) !== -1){
+				b = true;
+				break;
+			}
+		}
+	}
+	return b;
+}
+
+//用户访问日志
+var _userAccessLogs = function(req,res,next){
+	var _url = req.path;
+	if(!req.session.isLogin || req.session.user.userType !==0 || _url.indexOf('.') !== -1 || /^\/api/.test(_url)){
+		return next();
+	}
+	var _ip = $$.getClientIp(req).match(/\d+\.\d+\.\d+\.\d+/)[0];
+
+	AccessLogModel.create({
+		member:req.session.user._id,
+		accessIp:_ip,
+		accessUrl:_url
+	},function(err,doc){
+		console.log(doc,'asdfasdfasdfasdf')
+		if(err){
+			return next(err);
+		}
+		next();
+	})
+}
+
 exports.getMe = _getMe;
 exports.getAllAdmins = _getAllAdmins;
 exports.loginInterceptor = _loginInterceptor;
+exports.sensitiveInterceptor = _sensitiveInterceptor;
+exports.isIncludeSensitive = _isIncludeSensitive;
+exports.userAccessLogs = _userAccessLogs;
 
 //初始化会员列表

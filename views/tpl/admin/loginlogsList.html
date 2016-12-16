@@ -25,7 +25,7 @@
 							<script type="text/html" id="allloginlogs-list-tpl">
 								<% if loginLogsList.length > 0 %>
 							   	<% each loginLogsList as $value $index %>
-								<tr>
+								<tr style="<% ($index % 2 !=0) ? 'background:#f7f7f7' :''; %>">
 									<td><a href="/admin/memberList/memberDetail/<% $value.userId._id %>"><% $value.userId.account %></a></td>
 									<td><% $value.logIp %></td>
 									<td><% $value.loginTime | dateFormat :'yyyy.MM.dd hh:mm:ss' %></td>

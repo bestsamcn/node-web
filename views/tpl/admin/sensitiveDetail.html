@@ -1,0 +1,29 @@
+{{include '../../inc/header'}}
+<div id="fh5co-contact-section">
+	<div class="container">
+		<div class="row">
+			{{include './sidebar'}}
+			<div class="col-md-8 col-xs-12 text-center">
+				<div class="row">
+					<div class="col-md-12 text-left fh5co-heading">
+						<h2>编辑敏感词汇</h2>
+					</div>
+					<div class="admin col-md-12">
+						<form class="row user-detail" id="sensitive-detail-form">
+							<div class="form-group row">
+								<input type="hidden" id="sensitiveId" value="{{ sensitiveDetail._id }}">
+								<label class="col-md-4 col-xs-12 col-lg-4 text-left">名称</label>
+								<input type="text"  placeholder="名称" id="keywords" name="keywords" value="{{ sensitiveDetail.keywords }}" class="form-control col-md-8 col-xs-12 col-lg-8"></div>
+							<div class="col-md-6 col-md-offset-3">
+								<a href="javascript:;" class=" sub-btn" id="sensitive-detail-btn">更新</a>
+							</div>
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{include '../../inc/footer'}}

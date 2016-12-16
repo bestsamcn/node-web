@@ -4,6 +4,7 @@ var router = express.Router();
 var crypto = require('crypto');
 var $$ = require('../utilTools');
 var loginInterceptor = require('./index').loginInterceptor;
+var isIncludeSensitive = require('./index').isIncludeSensitive;
 
 //mongoose
 var UserModel = require('../mongo/schema/User').UserModel;
@@ -120,7 +121,12 @@ router.post('/register',function(req,res){
 	console.log(uip,'ip地址')
 	
 
-
+	//敏感字符拦截
+	if(isIncludeSensitive(uaccount)){
+		res.json({retCode:100027,msg:'不能包含敏感字符',data:null});
+		res.end();
+		return;
+	}
 
 	//检测验证码
 	if(ucode !== req.session.randomCode){
@@ -192,6 +198,13 @@ router.post('/update', loginInterceptor, function(req,res,next){
 	var uemail = req.body.email || req.session.user.email;
 	var ugender = parseInt(req.body.gender) || req.session.user.gender;
     console.log(ugender,'用户信息')
+
+    //敏感字符拦截
+	if(isIncludeSensitive(urealName)){
+		res.json({retCode:100027,msg:'不能包含敏感字符',data:null});
+		res.end();
+		return;
+	}
 
 	if(urealName !== ''){
 		if(urealName.length < 2){

@@ -17,7 +17,7 @@ var _config = {
 	    }
 	},
 	mongoConfig:{
-		mongodb: 'mongodb://127.0.0.1/swyc',
+		mongodb: 'mongodb://admin:123123@127.0.0.1/swyc',
 		// mongodb: 'mongodb://10.28.5.197/swyc',
 	    database: 'swyc',
 	    server: '127.0.0.1'

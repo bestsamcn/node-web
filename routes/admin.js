@@ -14,6 +14,7 @@ var globalConfig =require('../config');
 /* GET home page. */
 //权限管理
 router.all('*', function(req, res, next) {
+
 	if(!req.session.isLogin || req.session.user.userType<1){
 		res.send(401);
 		return;
@@ -163,6 +164,58 @@ router.get('/loginLogsList',function(req,res){
 		title: '留言详情',
 		routerName: 'loginLogsList'
 	});
-})
+});
+
+//敏感词汇
+router.get('/sensitiveList',function(req,res){
+	res.render('tpl/admin/sensitiveList', {
+		title: '敏感词汇',
+		routerName: 'sensitiveList'
+	});
+});
+//敏感词汇
+router.get('/addSensitive',function(req,res){
+	res.render('tpl/admin/addSensitive', {
+		title: '添加敏感词汇',
+		routerName: 'addSensitive'
+	});
+});
+//敏感词汇详情
+router.get('/sensitive/sensitiveDetail/:id',function(req,res){
+	if(!req.params.id || req.params.id.length !== 24){
+		res.sendStatus(404);
+		res.end();
+		return;
+	}
+	requestify.request('http://'+globalConfig.host+'/api/sensitive/getSensitiveDetail',{
+		method:'GET',
+		headers:{
+			authSecret:globalConfig.authSecret,
+		},
+		params:{
+			id:req.params.id
+		},
+		dataType:'json'
+	}).then(function(mres){
+		console.log(mres)
+		var body = JSON.parse(mres.body);
+		res.render('tpl/admin/sensitiveDetail', {
+			title: '敏感词汇详情',
+			routerName: 'sensitiveDetail',
+			sensitiveDetail:body.data
+		});
+	}).fail(function(err){
+		res.sendStatus(err.code);
+		res.end();
+	});
+});
+
+//敏感词汇
+router.get('/accessLogsList',function(req,res){
+	res.render('tpl/admin/accessLogsList', {
+		title: '访问日志',
+		routerName: 'accessLogsList'
+	});
+});
 
 module.exports = router;

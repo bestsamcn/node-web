@@ -36,7 +36,7 @@ var _getClientIp = function (req) {
     }
     return ipAddress;
 };
-exports.getClientIp = _getClientIp;
+
 
 /**
  * 根据 ip 获取获取地址信息
@@ -78,5 +78,19 @@ var _inArray = function(ele,arr){
     return b
 }
 
+/**
+ * 去除两侧空格
+ * str 输入 字符串
+ */
+ var _stringTrim = function(str){
+    if(!str){
+        return
+    }
+    return str.replace(/^\s+|\s+$/g,'');
+ }
+
+
+exports.getClientIp = _getClientIp;
 exports.getIpInfo = _getIpInfo;
 exports.inArray = _inArray;
+exports.stringTrim = _stringTrim;

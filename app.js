@@ -54,16 +54,20 @@ app.use('/public', express.static(__dirname + '/public'));
 
 //更新当前用户信息
 require('./api/index').getMe(app);
+app.use(require('./api/index').sensitiveInterceptor);
+app.use(require('./api/index').userAccessLogs);
 
 //api
 var userApi = require('./api/user');
 var randomApi = require('./api/random');
 var messageApi = require('./api/message');
 var adminApi = require('./api/admin');
+var sensitiveApi = require('./api/sensitive');
 app.use('/api/user', userApi);
-app.use('/api/random', randomApi)
-app.use('/api/message', messageApi)
-app.use('/api/admin', adminApi)
+app.use('/api/random', randomApi);
+app.use('/api/message', messageApi);
+app.use('/api/admin', adminApi);
+app.use('/api/sensitive', sensitiveApi);
 
 
 //router

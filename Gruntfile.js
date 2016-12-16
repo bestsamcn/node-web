@@ -6,14 +6,14 @@ module.exports=function(grunt){
             template:{
                 files:['views/**','public/**'],
                 options:{
-                    livereload:true,
+                    livereload:35730,
                     delay:1000
                 }
             }
         },
         open: {
             all: {
-                path: 'http://'+globalConfig.host+':3000/'
+                path: 'http://'+globalConfig.host
             }
         },
         nodemon:{dev:{

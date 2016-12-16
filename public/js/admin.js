@@ -913,6 +913,242 @@ var delOneOfAllLoginLogsList = function(){
     });
 }
 
+//添加敏感词汇
+var addSensitive = function(){
+    if(location.href.indexOf('addSensitive') === -1) return;
+    var addBtn = $('#add-sensitive-btn');
+    var oForm = $('#add-sensitive-form');
+    var keywords = $('#keywords');
+    var postInfo = function(){
+        if (keywords.val() === '' || keywords.val().replace(/^\s+|\s+$/g,'') === '') {
+            keywords[0].blur();
+            keywords[0].focus();
+            alertInfo('词汇不能为空');
+            return false;
+        }
+
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: NODE+'/sensitive/addSensitive',
+            data: {keywords:keywords.val()},
+            xhrFields:{
+                widthGredentials:true
+            },
+            success: function(res) {
+                console.log(res)
+                if(res.retCode ===0){
+                    oForm[0].reset();
+                    alertInfo('添加成功');
+                    setTimeout(function(){
+                        window.location.href='/admin/sensitiveList';
+                    },1000)
+                    return;
+                }
+                alertInfo(res.msg || '添加失败');
+            },
+            error:function(res){
+                alertInfo('添加失败');
+            }
+        });
+    }
+    addBtn.on('click',postInfo);
+}
+
+//敏感词汇分页
+var getSensitiveList = function(index,size){
+
+    // if(!window.userInfo || window.userInfo.userType < 1 || !/^\/sensitive\/getSensitiveList$/g.test(window.location.pathname)) return;
+    var pager = $('#sensitive-list-pagination');
+    var sesitiveVm = $('#sensitive-list-vm');
+    var _pageIndex = index || 1, _pageSize = size || 10;
+    if(!pager[0] || !sesitiveVm[0]) return;
+    $.ajax({
+        type:'get',
+        dataType:'json',
+        data:{pageIndex:_pageIndex,pageSize:_pageSize},
+        url:NODE+'/sensitive/getSensitiveList',
+        success:function(res){
+            console.log(res)
+            if(res.retCode ===0 ){
+                var _totalPage = Math.ceil(res.total/_pageSize);
+                var pageStr = commonPage({
+                    active: 'active',
+                    //左右显示两个
+                    showPage: 2
+                    //第1页，
+                })(_pageIndex, _totalPage);
+                pager.html(pageStr);
+                var html = template('sensitive-list-tpl',{sensitiveList:res.data});
+                sesitiveVm.html(html);
+                return;
+            }
+            alertInfo('获取分页失败');
+        },
+        error:function(){
+            alertInfo('获取分页失败');
+        }
+    });
+}
+var sensitivePageClick = function(){
+    var pager = $('#sensitive-list-pagination')
+    pager.on('click','a',function(){
+        var $this = $(this);
+        var pageIndex = $this.attr('data-bind');
+        if(!pageIndex) return;
+        getSensitiveList(pageIndex);
+    });
+}
+
+//更新敏感词汇信息
+var updateSensitive = function(){
+    var oForm = $('#sensitive-detail-form');
+    var keywords = $('#keywords');
+    var oBtn = $('#sensitive-detail-btn');
+    var senId = $('#sensitiveId');
+
+    var postInfo = function(){
+        if (keywords.val() === '' || keywords.val().replace(/^\s+|\s+$/g,'') === '') {
+            keywords[0].blur();
+            keywords[0].focus();
+            alertInfo('词汇不能为空');
+            return false;
+        }
+        if(senId.val() === ''){
+            alertInfo('异常');
+            return;
+        }
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: NODE+'/sensitive/updateSensitive',
+            data: {id:senId.val(),keywords:keywords.val()},
+            xhrFields:{
+                widthGredentials:true
+            },
+            success: function(res) {
+                console.log(res)
+                if(res.retCode ===0){
+                    alertInfo('更新成功');
+                    setTimeout(function(){
+                        window.location.href='/admin/sensitiveList';
+                    },1000)
+                    return;
+                }
+                alertInfo(res.msg || '更新失败');
+            },
+            error:function(res){
+                alertInfo('更新失败');
+            }
+        });
+    }
+    oBtn.on('click',postInfo);
+}
+
+//删除敏感词汇
+var delSensitive = function(_id){
+    if(!_id || _id.length !== 24) return;
+    $.ajax({
+        type: 'get',
+        dataType: 'json',
+        url: NODE+'/sensitive/delSensitive',
+        data: {id:_id},
+        xhrFields:{
+            widthGredentials:true
+        },
+        success: function(res) {
+            if(res.retCode ===0){
+                alertInfo('删除成功');
+                setTimeout(function(){
+                    window.location.href='/admin/sensitiveList';
+                },1000)
+                return;
+            }
+            alertInfo(res.msg || '删除失败');
+        },
+        error:function(res){
+            alertInfo('删除失败');
+        }
+    });
+}
+
+var sensitiveListDel = function(){
+    var sesitiveVm = $('#sensitive-list-vm');
+    sesitiveVm.on('click','.delete-sensitive-btn', function(){
+        var $this = $(this);
+        var _senId = $this.attr('data-senid');
+        if(!_senId) return;
+        Modal.confirm({msg: '确定删除该敏感词？'}).on(function(e){
+            if(!e) return;
+            $.ajax({
+                type:'get',
+                dataType:'json',
+                data:{id:_senId},
+                url:NODE+'/sensitive/delSensitive',
+                success:function(res){
+                    if(res.retCode === 0){
+                        alertInfo('删除成功');
+                        $this.parent().parent().remove();
+                        return;
+                    }
+                    alertInfo('删除失败')
+                },
+                error:function(){
+                    alertInfo('删除失败')
+                }
+            });
+        });
+    });
+}
+
+//访问日志分页
+var getAccessLogsList = function(index,size){
+
+    // if(!window.userInfo || window.userInfo.userType < 1 || !/^\/sensitive\/getSensitiveList$/g.test(window.location.pathname)) return;
+    var pager = $('#accesslogs-list-pagination');
+    var accesslogsVm = $('#accesslogs-list-vm');
+    var _pageIndex = index || 1, _pageSize = size || 10;
+    if(!pager[0] || !accesslogsVm[0]) return;
+    $.ajax({
+        type:'get',
+        dataType:'json',
+        data:{pageIndex:_pageIndex,pageSize:_pageSize},
+        url:NODE+'/admin/getAccessLogsList',
+        success:function(res){
+            console.log(res)
+            if(res.retCode ===0 ){
+                var _totalPage = Math.ceil(res.total/_pageSize);
+                var pageStr = commonPage({
+                    active: 'active',
+                    //左右显示两个
+                    showPage: 2
+                    //第1页，
+                })(_pageIndex, _totalPage);
+                pager.html(pageStr);
+                var html = template('accesslogs-list-tpl',{accesslogsList:res.data});
+                accesslogsVm.html(html);
+                return;
+            }
+            alertInfo('获取分页失败');
+        },
+        error:function(){
+            alertInfo('获取分页失败');
+        }
+    });
+}
+var accessLogsPageClick = function(){
+    var pager = $('#accesslogs-list-pagination');
+    pager.on('click','a',function(){
+ 
+        var $this = $(this);
+        var pageIndex = $this.attr('data-bind');
+        if(!pageIndex) return;
+        getAccessLogsList(pageIndex);
+    });
+}
+
+
+
 
 $(function(){
 	memberListPager(1,10);
@@ -932,5 +1168,13 @@ $(function(){
     getAllLoginLosList();
     delUserLoginLog();
     delOneOfAllLoginLogsList();
-    allLoginLogsPageClick()
+    allLoginLogsPageClick();
+    addSensitive();
+    getSensitiveList(1)
+    sensitivePageClick();
+    updateSensitive();
+    sensitiveListDel();
+    getAccessLogsList(1);
+    accessLogsPageClick();
+
 })
