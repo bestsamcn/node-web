@@ -12,6 +12,10 @@ var UserSchema = new mongoose.Schema({
 		type:String,
 		require:true
 	},
+	avatar:{
+		type:String,
+		require:false
+	},
 	realName:{
 		type:String,
 		require:false,

@@ -2,9 +2,15 @@
 	<div id="fh5co-contact-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 text-left fh5co-heading">
+				<div class="col-md-3 text-left fh5co-heading">
 					<h2>用户中心</h2>
 					<p>User Center</p>
+				</div>
+				<div class="col-md-4">
+					<label class="avatar">
+						<input type="file" id="upload-avatar" accept="image/gif,image/jpg,image/png" name="file">
+						<img id="avatar-img" src="/public/avatar/{{ (session.user.avatar || 'avatar.png') }}" alt="avatar">
+					</label>
 				</div>
 			</div>
 			<div class="row">

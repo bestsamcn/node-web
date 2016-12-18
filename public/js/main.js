@@ -532,6 +532,45 @@
 		},false)
 	}
 
+	//头像上传
+	var uploadAvatar = function(){
+		var avatarInput = $('#upload-avatar');
+		var avatarImg = $('#avatar-img');
+		avatarInput.on('change',function(e){
+			console.log($(this)[0].files[0])
+			var file = $(this)[0].files[0];
+			if(!/^image\/(png|jpg|gif)/ig.test(file.type)){
+				alertInfo('请上传图片类型');
+				return;
+			}
+			var M = 1024*1024*5;
+			if(file.size > 5*M){
+				alertInfo('图片不能大于5M');
+				return;
+			}
+			var formData = new FormData();
+			formData.append('avatar',file);
+			$.ajax({
+				type:'post',
+				data:formData,
+				cache:false,
+				contentType: false, 
+                processData: false,
+				url:NODE+'/user/uploadAvatar',
+				success:function(res){
+					if(res.retCode === 0){
+						alertInfo('更新成功');
+						avatarImg[0].src='/public/avatar/'+res.data.avatar;
+						return;
+					}
+					alertInfo('更新失败');
+				},
+				error:function(){
+					alertInfo('更新失败');
+				}
+			});
+		});
+	}
 
 	$(function() {
 		fullHeight();
@@ -550,6 +589,7 @@
 		updateInfo();
 		modifyPassword();
 		postMessage();
+		uploadAvatar();
 	});
 
 
