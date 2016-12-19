@@ -16,6 +16,7 @@
     "express": "~4.13.4",
     "formidable": "^1.0.17",
     "fs": "0.0.1-security",
+    "gm": "^1.23.0",
     "grunt-open": "^0.2.3",
     "jade": "~1.11.0",
     "mime": "^1.3.4",

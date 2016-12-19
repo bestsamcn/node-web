@@ -1354,3 +1354,9 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-top: 6em;
   margin-bottom: 6em;
 }
+.modal-body{
+  text-align: center;
+}
+.jcrop-holder{
+  margin:0 auto
+}

@@ -516,4 +516,18 @@ router.post('/uploadAvatar', loginInterceptor, function(req, res) {
     	});
     });
 });
+
+router.post('/uploadBase64Avatar', loginInterceptor, function(req, res) {
+	var tempStr = new Buffer(req.body.baseCode,'base64');
+	var md5 = crypto.createHash('md5');
+	var avatarName = md5.update(globalConfig.imageSecret+Date.now()).digest('hex')+'.png';
+	fs.writeFileSync('temp.png', tempStr);
+	var gm = require('gm');
+	console.log(req.body)
+	gm('temp.png').crop(parseInt(req.body.w), parseInt(req.body.h), parseInt(req.body.x2), parseInt(req.body.y2));
+	console.log(npic)
+	var avatarDir = 'public/avatar/';
+	fs.renameSync('temp.png',avatarDir+avatarName)
+	res.end(avatarName)
+});
 module.exports = router
