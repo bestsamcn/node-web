@@ -483,6 +483,7 @@ router.post('/uploadAvatar', loginInterceptor, function(req, res) {
     		res.end();
     		return;
     	}
+    	console.log(files.avatar)
     	var suffix = '';
     	switch(files.avatar.type){
     		case 'image/pjpeg':
@@ -503,31 +504,74 @@ router.post('/uploadAvatar', loginInterceptor, function(req, res) {
     	}
 
     	var md5 = crypto.createHash('md5');
-    	var avatarName = md5.update(globalConfig.imageSecret+Date.now()).digest('hex')+'.'+suffix;
-    	fs.renameSync(files.avatar.path,form.uploadDir+avatarName);
-    	UserModel.update({_id:req.session.user._id},{avatar:avatarName},function(uerr,edoc){
+    	var _avatarName = md5.update(globalConfig.imageSecret+Date.now()).digest('hex')+'.'+suffix;
+    	fs.renameSync(files.avatar.path,form.uploadDir+_avatarName);
+    	global.avatarName = _avatarName;
+    	res.json({retCode:0,msg:'上传成功',data:{avatarName:_avatarName}});
+    	res.end();
+    });
+});
+
+//接受图片剪切
+router.post('/avatarCrop', loginInterceptor, function(req, res) {
+	if(!global.avatarName){
+		res.sendStatus(404);
+		res.end('无图片信息');
+		return;
+	}
+	var md5 = crypto.createHash('md5');
+	var avatarDir = 'public/avatar/';
+	var _avatarName = md5.update(globalConfig.imageSecret+Date.now()).digest('hex')+'.png';
+	var gm = require('gm');
+	console.log(req.body.w, req.body.h, req.body.x2, req.body.y2);
+	//crop(width,height,startx,starty)
+	gm(avatarDir+global.avatarName).crop(req.body.w, req.body.h, req.body.x, req.body.y).write(avatarDir+_avatarName,function(e){
+		if(e){
+			console.log(e);
+			res.sendStatus(500);
+			res.end();
+			return;
+		}
+		UserModel.update({_id:req.session.user._id},{avatar:_avatarName},function(uerr,edoc){
     		if(uerr || !edoc.ok){
     			res.sendStatus(500);
     			res.end();
     			return;
     		}
-    		res.json({retCode:0,msg:'头像上传成功',data:{avatar:avatarName}});
+    		fs.unlink(avatarDir+global.avatarName);
+    		global.avatarName = null;
+    		res.json({retCode:0,msg:'头像上传成功',data:{avatarName:_avatarName}});
     		res.end();
     	});
-    });
+	});
 });
 
+//接受base64并剪切
 router.post('/uploadBase64Avatar', loginInterceptor, function(req, res) {
 	var tempStr = new Buffer(req.body.baseCode,'base64');
 	var md5 = crypto.createHash('md5');
+	var avatarDir = 'public/avatar/';
 	var avatarName = md5.update(globalConfig.imageSecret+Date.now()).digest('hex')+'.png';
 	fs.writeFileSync('temp.png', tempStr);
 	var gm = require('gm');
-	console.log(req.body)
-	gm('temp.png').crop(parseInt(req.body.w), parseInt(req.body.h), parseInt(req.body.x2), parseInt(req.body.y2));
-	console.log(npic)
-	var avatarDir = 'public/avatar/';
-	fs.renameSync('temp.png',avatarDir+avatarName)
-	res.end(avatarName)
+	console.log(req.body.w, req.body.h, req.body.x2, req.body.y2)
+	gm('temp.png').crop(req.body.w, req.body.h, req.body.x2, req.body.y2).write(avatarDir+avatarName,function(e){
+		if(e){
+			console.log(e);
+			res.sendStatus(500);
+			res.end();
+			return;
+		}
+		UserModel.update({_id:req.session.user._id},{avatar:avatarName},function(uerr,edoc){
+    		if(uerr || !edoc.ok){
+    			res.sendStatus(500);
+    			res.end();
+    			return;
+    		}
+    		fs.unlink('temp.png');
+    		res.json({retCode:0,msg:'头像上传成功',data:{avatar:avatarName}});
+    		res.end();
+    	});
+	});
 });
 module.exports = router

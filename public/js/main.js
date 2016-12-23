@@ -531,7 +531,59 @@
 			postInfo(e)
 		},false)
 	}
+// var reader = new FileReader();
+// 	reader.readAsDataURL(file)
+// 	reader.onload = function(e){
+// 		avatarData= e.target.result;
+// 		console.log(e)
+// 		var jcropImg = logBox.find('.modal-body');
+// 		var img = '<img id="haha" src="'+avatarData+'">';
+// 	    var jcropApi=null;
+//         jcropImg.html(img);   
+// 	    logBox.modal('show');
+// 	    if(logBox.hasClass('in')){
+// 	    	jcropImg.find('img').Jcrop({
+// 	    		aspectRatio:1,
+// 	    		setSelect:[0,0,100,100],
+// 	    		boxWidth:300,
+// 	    		touchSupport:true
+// 	    	},function(){
+//                 jcropApi = this;
+// 	    	});
+// 	    }
+// 	    var sendCoods = function(){
+//     		$('#send').off('click',sendCoods);
+//     		var coords = {};
+//     		var userImgSrc = '';
+//     		coords = jcropApi.tellSelect();
+//     		console.log(coords)
+//     		coords['baseCode'] = avatarData.substring(avatarData.indexOf(',')+1);
+// 	    	var request = $.ajax({
+//             	type:'post',
+//             	dataType:'json',
+//                 data:coords,
+//                 url:NODE+'/user/uploadBase64Avatar',
+//                 success:function(data){
+//                 	console.log(data)
+//                 	if(data.retCode !== 0){
+//                 		logBox.modal('hide');
+//                 		alertInfo(data.msg || '上传失败');
+//                 	}else{
+//                 		alertInfo(data.msg || '上传成功');
+//                 		avatarImg[0].src="/public/avatar/"+data.data.avatar;
+//                 		logBox.modal('hide');
+//                 	}
+//                 	jcropImg.html('');   
+//                 },
+//                 error:function(data){
+//                 	return false;
+                	
+//                 }
+//             });
+//     	}
+// 	    $('#send').on('click',sendCoods);
 
+// 	}
 	//头像上传
 	var uploadAvatar = function(){
 		var avatarInput = $('#upload-avatar');
@@ -539,60 +591,11 @@
 		var avatarData = '';
 		avatarInput.on('change',function(e){
 			var file = $(this)[0].files[0];
-			var reader = new FileReader();
+			
 			var logBox = $('#log-box');
 			var jropBox = $('#jcrop-box');
-			reader.readAsDataURL(file)
-			reader.onload = function(e){
-				avatarData= e.target.result;
-				var jcropImg = logBox.find('.modal-body');
-				var img = '<img id="haha" src="'+avatarData+'">';
-			    var jcropApi=null;
-                jcropImg.html(img);   
-			    logBox.modal('show');
-			    if(logBox.hasClass('in')){
-			    	jcropImg.find('img').Jcrop({
-			    		aspectRatio:1,
-			    		setSelect:[0,0,100,100],
-			    		boxWidth:300,
-			    		touchSupport:true
-			    	},function(){
-                        jcropApi = this;
-			    	});
-			    }
-			    var sendCoods = function(){
-		    		$('#send').off('click',sendCoods);
-		    		var coords = {};
-		    		var userImgSrc = '';
-		    		coords = jcropApi.tellSelect();
-		    		console.log(coords)
-		    		coords['baseCode'] = avatarData.substring(avatarData.indexOf(',')+1);
-			    	var request = $.ajax({
-                    	type:'post',
-                    	dataType:'json',
-                        data:coords,
-                        url:NODE+'/user/uploadBase64Avatar',
-                        success:function(data){
-                        	that.stuheadimg = data.data;
-                        	if(data.retCode !== 0){
-                        		$$.getMessages(data.retCode);
-                        		logBox.modal('hide');
-                        	}else{
-                        		$$.alertInfo('上传成功');
-                        		logBox.modal('hide');
-                        	}
-                        	jcropImg.html('');   
-                        },
-                        error:function(data){
-                        	return false;
-                        	
-                        }
-                    });
-		    	}
-			    $('#send').on('click',sendCoods);
 
-			}
-			return;
+			
 			if(!/^image\/(png|jpg|gif)/ig.test(file.type)){
 				alertInfo('请上传图片类型');
 				return;
@@ -613,8 +616,51 @@
 				url:NODE+'/user/uploadAvatar',
 				success:function(res){
 					if(res.retCode === 0){
-						alertInfo('更新成功');
-						avatarImg[0].src='/public/avatar/'+res.data.avatar;
+						var jcropImg = logBox.find('.modal-body');
+						var img = '<img id="haha" src="/public/avatar/'+res.data.avatarName+'">';
+					    var jcropApi=null;
+		                jcropImg.html(img);   
+					    logBox.modal('show');
+					    if(logBox.hasClass('in')){
+					    	jcropImg.find('img').Jcrop({
+					    		aspectRatio:1,
+					    		setSelect:[0,0,100,100],
+					    		boxWidth:300,
+					    		touchSupport:true
+					    	},function(){
+		                        jcropApi = this;
+					    	});
+					    }
+					    var sendCoods = function(){
+				    		$('#send').off('click',sendCoods);
+				    		var coords = {};
+				    		var userImgSrc = '';
+				    		coords = jcropApi.tellSelect();
+				    		console.log(coords)
+					    	var request = $.ajax({
+		                    	type:'post',
+		                    	dataType:'json',
+		                        data:coords,
+		                        url:NODE+'/user/avatarCrop',
+		                        success:function(data){
+		                        	console.log(data)
+		                        	if(data.retCode !== 0){
+		                        		logBox.modal('hide');
+		                        		alertInfo(data.msg || '上传失败');
+		                        	}else{
+		                        		alertInfo(data.msg || '上传成功');
+		                        		avatarImg[0].src="/public/avatar/"+data.data.avatarName;
+		                        		logBox.modal('hide');
+		                        	}
+		                        	jcropImg.html('');   
+		                        },
+		                        error:function(data){
+		                        	return false;
+		                        	
+		                        }
+		                    });
+				    	}
+					    $('#send').on('click',sendCoods);
 						return;
 					}
 					alertInfo('更新失败');
