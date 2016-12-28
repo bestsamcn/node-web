@@ -1,0 +1,44 @@
+.mall{
+	padding-top:6em;
+}
+.mall .work-inner .work-grid{
+	height:initial;
+}
+.mall .work-inner .goods-img img{
+	width:100%;
+}
+.mall .work-inner .work-grid:after{
+	padding-top:60%;
+}
+.mall .work-inner .goods-desc{
+	padding:10px;
+}
+.mall .work-inner .goods-desc .goods-date{
+	font-size: 14px;
+	display: block;
+}
+.mall .work-inner .goods-desc .goods-prize{
+	font-size: 12px;
+	display: block;
+	margin:0
+}
+.mall .work-inner .goods-desc .goods-prize span{
+	color:#d70b1c;
+	font-size:14px;
+}
+.mall .work-inner .goods-desc .goods-title{
+	font-size: 14px;
+	width:100%;
+	display:block;
+}
+.mall .work-inner .buy-btn{
+	width:80%;
+	margin:20px auto;
+	height:40px;
+	display: block;
+	text-align: center;
+	line-height: 40px;
+	color:#fff;
+	background:#1FB57B;
+	border-radius: 4px;
+}

@@ -78,6 +78,7 @@ var aboutRouter = require('./routes/about');
 var contactRouter = require('./routes/contact');
 var pictureRouter = require('./routes/picture');
 var servicesRouter = require('./routes/services');
+var mallRouter = require('./routes/mall');
 var adminRouter = require('./routes/admin');
 app.use('/', indexRouter);
 app.use('/sign', signRouter);
@@ -86,6 +87,7 @@ app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
 app.use('/picture', pictureRouter);
 app.use('/services', servicesRouter);
+app.use('/mall', mallRouter);
 app.use('/admin', adminRouter);
 
 
