@@ -3,6 +3,7 @@ var router = express.Router();
 var crypto = require('crypto');
 var $$ = require('../utilTools');
 var fs = require('fs');
+var keywordFilter = require('../keywordFilter/lib/index');
 var formidable = require('formidable');
 var loginInterceptor = require('./index').loginInterceptor;
 var isIncludeSensitive = require('./index').isIncludeSensitive;
@@ -148,11 +149,10 @@ router.post('/register', function(req, res) {
 	var umobile = req.body.mobile;
 	// var uip = req.ip.match(/\d+\.\d+\.\d+\.\d+/)[0];
 	var uip = $$.getClientIp(req).match(/\d+\.\d+\.\d+\.\d+/)[0];
-	console.log(uip, 'ip地址')
 
 
 	//敏感字符拦截
-	if (isIncludeSensitive(uaccount)) {
+	if (isIncludeSensitive(uaccount) || keywordFilter.hasKeyword(uaccount)) {
 		res.json({
 			retCode: 100027,
 			msg: '不能包含敏感字符',
@@ -260,7 +260,7 @@ router.post('/update', loginInterceptor, function(req, res, next) {
 	console.log(ugender, '用户信息')
 
 	//敏感字符拦截
-	if (isIncludeSensitive(urealName)) {
+	if (isIncludeSensitive(urealName) || keywordFilter.hasKeyword(urealName)) {
 		res.json({
 			retCode: 100027,
 			msg: '不能包含敏感字符',
@@ -523,7 +523,6 @@ router.post('/avatarCrop', loginInterceptor, function(req, res) {
 	var avatarDir = 'public/avatar/';
 	var _avatarName = md5.update(globalConfig.imageSecret+Date.now()).digest('hex')+'.png';
 	var gm = require('gm');
-	console.log(req.body.w, req.body.h, req.body.x2, req.body.y2);
 	//crop(width,height,startx,starty)
 	gm(avatarDir+global.avatarName).crop(req.body.w, req.body.h, req.body.x, req.body.y).write(avatarDir+_avatarName,function(e){
 		if(e){

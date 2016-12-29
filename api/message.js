@@ -3,6 +3,7 @@ var router = express.Router();
 var xss = require('xss');
 var isIncludeSensitive = require('./index').isIncludeSensitive;
 var MessageModel = require('../mongo/schema/Message').MessageModel;
+var keywordFilter = require('../keywordFilter/lib/index');
 //关联查询
 // MessageModel.findOne({realName:'sam'}).populate('member').exec(function(e,d){
 // 	console.log(d)
@@ -16,7 +17,7 @@ router.post('/post',function(req,res,next){
 		u_id = null;
 
 	//敏感字符拦截
-	if(isIncludeSensitive(upostName,upostContent)){
+	if(isIncludeSensitive(upostName,upostContent) || keywordFilter.hasKeyword(upostName) || keywordFilter.hasKeyword(upostContent)){
 		res.json({retCode:100027,msg:'不能包含敏感字符',data:null});
 		res.end();
 		return;
