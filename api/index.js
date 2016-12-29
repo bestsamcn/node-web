@@ -102,7 +102,7 @@ var _userAccessLogs = function(req,res,next){
 			return next(err);
 		}
 		next();
-	})
+	});
 }
 
 exports.getMe = _getMe;

@@ -1,6 +1,7 @@
 var http = require('http');
 var util = require('util');
 
+
 /**
  * 获取客户端ip，
  * param {req}
@@ -90,7 +91,10 @@ var _inArray = function(ele,arr){
  }
 
 
+
+
 exports.getClientIp = _getClientIp;
 exports.getIpInfo = _getIpInfo;
 exports.inArray = _inArray;
 exports.stringTrim = _stringTrim;
+

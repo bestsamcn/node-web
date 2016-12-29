@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var keywordFilter = require('../keywordFilter/lib/index');
 
 /* GET home page. */
 //权限管理
@@ -18,6 +18,13 @@ router.get('/', function(req, res, next) {
 	res.render('tpl/user/index', {
 		title: '用户中心',
 		routerName: 'user'
+	},function(rerr,rhtml){
+	    if(rerr){
+	        res.sendStatus(500);
+	        return;
+	    }
+	    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+	    res.send(filterHtml)
 	});
 });
 router.get('/modifyPassword', function(req, res, next) {
@@ -27,6 +34,13 @@ router.get('/modifyPassword', function(req, res, next) {
 	res.render('tpl/user/modifyPassword', {
 		title: '修改密码',
 		routerName: 'modifyPassword'
+	},function(rerr,rhtml){
+	    if(rerr){
+	        res.sendStatus(500);
+	        return;
+	    }
+	    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+	    res.send(filterHtml)
 	});
 });
 

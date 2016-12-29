@@ -10,11 +10,13 @@ var UserModel = require('../mongo/schema/User').UserModel;
 //请求密钥
 var globalConfig =require('../config');
 
+var keywordFilter = require('../keywordFilter/lib/index');
+
+
 
 /* GET home page. */
 //权限管理
 router.all('*', function(req, res, next) {
-
 	if(!req.session.isLogin || req.session.user.userType<1){
 		res.send(401);
 		return;
@@ -34,6 +36,13 @@ router.get('/', function(req, res) {
 			title: '管理后台',
 			routerName: 'admin',
 			webPreview:body.data
+		},function(rerr,rhtml){
+		    if(rerr){
+		        res.sendStatus(500);
+		        return;
+		    }
+		    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+		    res.send(filterHtml)
 		});
 	}).fail(function(err){
 		res.sendStatus(err.code);
@@ -47,6 +56,13 @@ router.get('/memberList', function(req, res) {
 	res.render('tpl/admin/memberList', {
 		title: '会员列表',
 		routerName: 'memberList'
+	},function(rerr,rhtml){
+	    if(rerr){
+	        res.sendStatus(500);
+	        return;
+	    }
+	    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+	    res.send(filterHtml)
 	});
 	
 });
@@ -56,6 +72,13 @@ router.get('/addUser',function(req,res){
 	res.render('tpl/admin/addUser',{
 		title:'添加会员',
 		routerName:'addUser'
+	},function(rerr,rhtml){
+	    if(rerr){
+	        res.sendStatus(500);
+	        return;
+	    }
+	    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+	    res.send(filterHtml)
 	});
 });
 
@@ -64,6 +87,13 @@ router.get('/addAdmin',function(req,res,next){
 	res.render('tpl/admin/addAdmin',{
 		title:'添加管理员',
 		routerName:'addAdmin'
+	},function(rerr,rhtml){
+	    if(rerr){
+	        res.sendStatus(500);
+	        return;
+	    }
+	    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+	    res.send(filterHtml)
 	});
 })
 
@@ -99,6 +129,13 @@ router.get('/memberList/memberDetail/:id', getAllAdmins, function(req, res) {
 			title: '会员详情',
 			routerName: 'memberDetail',
 			memberDetail:body.data
+		},function(rerr,rhtml){
+		    if(rerr){
+		        res.sendStatus(500);
+		        return;
+		    }
+		    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+		    res.send(filterHtml)
 		});
 	}).fail(function(err){
 		res.sendStatus(err.code);
@@ -112,6 +149,13 @@ router.get('/adminList', function(req, res) {
 	res.render('tpl/admin/adminList', {
 		title: '管理员列表',
 		routerName: 'adminList'
+	},function(rerr,rhtml){
+	    if(rerr){
+	        res.sendStatus(500);
+	        return;
+	    }
+	    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+	    res.send(filterHtml)
 	});
 });
 
@@ -120,6 +164,13 @@ router.get('/messageList', function(req, res) {
 	res.render('tpl/admin/messageList', {
 		title: '留言列表',
 		routerName: 'messageList'
+	},function(rerr,rhtml){
+	    if(rerr){
+	        res.sendStatus(500);
+	        return;
+	    }
+	    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+	    res.send(filterHtml)
 	});
 });
 
@@ -146,6 +197,13 @@ router.get('/messageList/messageDetail/:id', function(req, res) {
 			title: '留言详情',
 			routerName: 'messageDetail',
 			messageDetail:body.data
+		},function(rerr,rhtml){
+		    if(rerr){
+		        res.sendStatus(500);
+		        return;
+		    }
+		    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+		    res.send(filterHtml)
 		});
 	}).fail(function(err){
 		res.sendStatus(err.code);
@@ -163,6 +221,13 @@ router.get('/loginLogsList',function(req,res){
 	res.render('tpl/admin/loginLogsList', {
 		title: '留言详情',
 		routerName: 'loginLogsList'
+	},function(rerr,rhtml){
+	    if(rerr){
+	        res.sendStatus(500);
+	        return;
+	    }
+	    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+	    res.send(filterHtml)
 	});
 });
 
@@ -171,6 +236,13 @@ router.get('/sensitiveList',function(req,res){
 	res.render('tpl/admin/sensitiveList', {
 		title: '敏感词汇',
 		routerName: 'sensitiveList'
+	},function(rerr,rhtml){
+	    if(rerr){
+	        res.sendStatus(500);
+	        return;
+	    }
+	    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+	    res.send(filterHtml)
 	});
 });
 //敏感词汇
@@ -178,6 +250,13 @@ router.get('/addSensitive',function(req,res){
 	res.render('tpl/admin/addSensitive', {
 		title: '添加敏感词汇',
 		routerName: 'addSensitive'
+	},function(rerr,rhtml){
+	    if(rerr){
+	        res.sendStatus(500);
+	        return;
+	    }
+	    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+	    res.send(filterHtml)
 	});
 });
 //敏感词汇详情
@@ -203,6 +282,13 @@ router.get('/sensitive/sensitiveDetail/:id',function(req,res){
 			title: '敏感词汇详情',
 			routerName: 'sensitiveDetail',
 			sensitiveDetail:body.data
+		},function(rerr,rhtml){
+		    if(rerr){
+		        res.sendStatus(500);
+		        return;
+		    }
+		    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+		    res.send(filterHtml)
 		});
 	}).fail(function(err){
 		res.sendStatus(err.code);
@@ -215,6 +301,13 @@ router.get('/accessLogsList',function(req,res){
 	res.render('tpl/admin/accessLogsList', {
 		title: '访问日志',
 		routerName: 'accessLogsList'
+	},function(rerr,rhtml){
+	    if(rerr){
+	        res.sendStatus(500);
+	        return;
+	    }
+	    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+	    res.send(filterHtml)
 	});
 });
 

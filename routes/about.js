@@ -6,11 +6,20 @@
  */
 var express = require('express');
 var router = express.Router();
+var keywordFilter = require('../keywordFilter/lib/index');
+
 
 router.get('/', function(req, res, next) {
 	res.render('tpl/about', {
 		title: '关于我们',
 		routerName: 'about'
+	},function(rerr,rhtml){
+	    if(rerr){
+	        res.sendStatus(500);
+	        return;
+	    }
+	    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+	    res.send(filterHtml)
 	});
 });
 
