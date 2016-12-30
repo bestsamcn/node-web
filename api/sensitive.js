@@ -5,6 +5,13 @@ var globalConfig = require('../config');
 var SensitiveModel = require('../mongo/schema/Sensitive').SensitiveModel;
 var UserModel = require('../mongo/schema/User').UserModel;
 
+var fs = require('fs')
+var rootPath = process.cwd();
+
+
+
+
+
 /**
 * 全局权限控制
 */
@@ -31,18 +38,30 @@ router.post('/addSensitive',function(req,res){
 		res.end();
 		return;
 	}
-	SensitiveModel.create({
-		keywords:req.body.keywords,
-		admin:req.session.user._id
-	},function(cerr,cdoc){
-		console.log(cdoc)
-		if(cerr){
-			res.sendStatus(500);
-			res.end();
-			return;
-		}
-		res.json({retCode:0, msg:'添加敏感词汇成功' ,data:null})
-	});
+    SensitiveModel.findOne({keywords:req.body.keywords},function(ferr,fdoc){
+        if(ferr){
+            res.sendStatus(500);
+            res.end();
+            return;
+        }
+
+        if(fdoc){
+            res.json({retCode:100029, msg:'该词汇已存在' ,data:null});
+            return;
+        }
+        SensitiveModel.create({
+            keywords:req.body.keywords,
+            admin:req.session.user._id
+        },function(cerr,cdoc){
+            if(cerr){
+                res.sendStatus(500);
+                res.end();
+                return;
+            }
+            res.json({retCode:0, msg:'添加敏感词汇成功' ,data:null})
+        });
+    });
+	
 });
 
 

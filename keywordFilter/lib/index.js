@@ -5,7 +5,6 @@
 var keyword = require('./keywordMap');
 var filterMap = keyword.KeywordMap;
 var endTag = keyword.endTag;
-
 var keyfilter = module.exports;
 
 /**

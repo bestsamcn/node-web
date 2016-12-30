@@ -3,7 +3,9 @@ var router = express.Router();
 var crypto = require('crypto');
 var $$ = require('../utilTools');
 var isIncludeSensitive = require('./index').isIncludeSensitive;
+
 var keywordFilter = require('../keywordFilter/lib/index');
+
 
 
 var UserModel = require('../mongo/schema/User').UserModel;
@@ -64,7 +66,7 @@ router.post('/addUser', function(req, res) {
     var uaccount = req.body.account;
 
     //敏感字符拦截
-    if(isIncludeSensitive(uaccount) || keywordFilter.hasKeyword(uaccount)){
+    if(isIncludeSensitive(uaccount)){
         res.json({retCode:100027,msg:'不能包含敏感字符',data:null});
         res.end();
         return;
@@ -263,7 +265,7 @@ router.post('/updateUser', function(req, res, next) {
         var usetAdminTime = null;
 
         //敏感字符拦截
-        if(isIncludeSensitive(uaccount, urealName) || keywordFilter.hasKeyword(uaccount) || keywordFilter.hasKeyword(urealName)){
+        if(isIncludeSensitive(uaccount, urealName)){
             res.json({retCode:100027,msg:'不能包含敏感字符',data:null});
             res.end();
             return;

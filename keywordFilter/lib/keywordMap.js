@@ -4,12 +4,15 @@
 var fs = require('fs');
 var path = require('path');
 var HashMap = require('hashmap').HashMap;
-
+var filterMap;
+var endTag;
 var filePath = path.join(__dirname, '../config/keyword.txt');
-var filterMap = new HashMap();
+
+filterMap = new HashMap();
 var filterWordList = [];
-var endTag = '\0'; // 关键词结束符
+endTag = '\0'; // 关键词结束符
 var data = fs.readFileSync(filePath, {encoding: 'utf-8'});
+
 if (data) {
     filterWordList = data.split(/\r?\n/);
     for (var i = 0; i < filterWordList.length; i++) {
@@ -39,6 +42,5 @@ if (data) {
         }
     }
 }
-
 module.exports.KeywordMap = filterMap;
 module.exports.endTag = endTag;

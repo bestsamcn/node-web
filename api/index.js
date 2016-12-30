@@ -2,6 +2,9 @@
 var UserModel = require('../mongo/schema/User').UserModel;
 var SensitiveModel = require('../mongo/schema/Sensitive').SensitiveModel;
 var AccessLogModel = require('../mongo/schema/AccessLog').AccessLogModel;
+var fs = require('fs');
+var rootPath = process.cwd();
+
 var $$ = require('../utilTools');
 
 //更新个人信息
@@ -17,7 +20,7 @@ var _getMe = function(app){
 	                res.locals.session = req.session;
 	                return next()
 	            }
-	        })
+	        });
 	    }else{
 	    	//如果用户没登录，需要预留session作为判断，否则res.locals.session = undefined
 	    	res.locals.session = req.session;
@@ -59,10 +62,20 @@ var _sensitiveInterceptor = function(req,res,next){
 			next(ferr.code);
 			return;
 		}
-
+		var sensitiveListString = [];
 		for(var i = 0 ; i<fcol.length; i++){
-			global.sensitiveList.push(fcol[i].keywords)
+			//全局保留
+			global.sensitiveList.push(fcol[i].keywords);
+			//写进敏感词库
+			if(i === fcol.length-1){
+				sensitiveListString.push(fcol[i].keywords);
+			}else{
+				sensitiveListString.push(fcol[i].keywords+'\n');
+			}
+			
+			
 		}
+		// fs.writeFileSync(rootPath+'/keywordFilter/config/keyword.txt',sensitiveListString.join(''),{flags:'w+'});
 		next();
 	});
 }
@@ -97,7 +110,6 @@ var _userAccessLogs = function(req,res,next){
 		accessIp:_ip,
 		accessUrl:_url
 	},function(err,doc){
-		console.log(doc,'asdfasdfasdfasdf')
 		if(err){
 			return next(err);
 		}
