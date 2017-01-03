@@ -1,7 +1,7 @@
 require('../connect');
 var mongoose =  require('mongoose'),
     Schema = mongoose.Schema;
-//文章ID，作者，上传时间，末次修改时间，文章标题 ，文章内容（用fckeditor来维护），主题图片名，关键字，浏览次数。 
+//文章ID，作者，上传时间，末次修改时间，文章类别，文章标题 ，文章内容（用fckeditor来维护），主题图片名，关键字，浏览次数。 
 var ArticleSchema = new Schema({
 	author:{
 		type:Schema.ObjectId,
@@ -15,6 +15,11 @@ var ArticleSchema = new Schema({
 	lastEditTime:{
 		type:Number,
 		require:false
+	},
+	category:{
+		type:Number,
+		require:true,
+		default:1
 	},
 	title:{
 		type:String,
@@ -41,3 +46,4 @@ var ArticleSchema = new Schema({
 
 
 exports.ArticleSchema = ArticleSchema;
+exports.ArticleModel = ArticleSchema;

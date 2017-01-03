@@ -105,6 +105,7 @@ var pictureRouter = require('./routes/picture');
 var servicesRouter = require('./routes/services');
 var mallRouter = require('./routes/mall');
 var adminRouter = require('./routes/admin');
+var articleRouter = require('./routes/article');
 app.use('/', indexRouter);
 app.use('/sign', signRouter);
 app.use('/user', userRouter);
@@ -114,6 +115,7 @@ app.use('/picture', pictureRouter);
 app.use('/services', servicesRouter);
 app.use('/mall', mallRouter);
 app.use('/admin', adminRouter);
+app.use('/article', articleRouter);
 
 
 
