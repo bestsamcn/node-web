@@ -7,7 +7,8 @@ var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 var cors = require('cors');
 var bodyParser = require('body-parser');
-
+var redis = require('redis');
+var reidsdb = redis.createClient();
 var app = express();
 
 
@@ -46,7 +47,11 @@ app.use(session({
 }));
 
 //跨域
-app.use(cors({ credentials: true, origin: true }));
+app.use(cors({
+    credentials: true,
+    origin: true
+}));
+
 
 
 //指定静态目录后，也会解决了mimetype的问题
@@ -54,6 +59,26 @@ app.use('/public', express.static(__dirname + '/public'));
 
 //更新当前用户信息
 require('./api/index').getMe(app);
+
+//统计当前网站在线人数,放在路由前面，方便在路由中展示
+app.use(function(req, res, next) {
+    //以用户浏览器为标准，非会员登录
+    var ua = req.headers['user-agent'];
+    reidsdb.zadd('online', Date.now(), ua, next);
+});
+
+app.use(function(req, res, next) {
+    var min = 60 * 1000;
+    //上一分钟
+    var ago = Date.now() - min;
+    reidsdb.zrevrangebyscore('online', '+inf', ago, function(err, users) {
+        if (err) return next(err);
+        req.online = users;
+        app.locals.onlineNumber = users.length
+        next();
+    });
+});
+
 app.use(require('./api/index').sensitiveInterceptor);
 app.use(require('./api/index').userAccessLogs);
 
@@ -89,6 +114,7 @@ app.use('/picture', pictureRouter);
 app.use('/services', servicesRouter);
 app.use('/mall', mallRouter);
 app.use('/admin', adminRouter);
+
 
 
 app.use(function(req, res, next) {

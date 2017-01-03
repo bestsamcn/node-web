@@ -10,6 +10,7 @@ var keywordFilter = require('../keywordFilter/lib/index');
 
 
 router.get('/', function(req, res, next) {
+	console.log(req.online.length + ' users online');
 	res.render('tpl/about', {
 		title: '关于我们',
 		routerName: 'about'

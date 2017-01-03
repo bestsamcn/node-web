@@ -25,6 +25,7 @@
     "morgan": "~1.7.0",
     "multiparty": "^4.1.2",
     "pm2": "^2.1.6",
+    "redis": "^2.6.3",
     "requestify": "^0.2.5",
     "serve-favicon": "~2.3.0",
     "tiny-lr": "^1.0.3",
