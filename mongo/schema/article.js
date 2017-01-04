@@ -8,7 +8,12 @@ var ArticleSchema = new Schema({
 		ref:'User',
 		require:true
 	},
-	uploadTime:{
+	isHot:{
+		type:Number,
+		require:false,
+		default:1
+	},
+	deliverTime:{
 		type:Number,
 		require:true
 	},
@@ -35,15 +40,20 @@ var ArticleSchema = new Schema({
 	},
 	keywords:[{
 		type:String,
-		require:true
+		require:false
 	}],
 	browserTimes:{
 		type:Number,
-		require:true,
+		require:false,
 		default:0
-	}
+	},
+    comeFrom:{
+    	type:Number,
+    	require:false,
+    	default:'swyc.com'
+    }
 });
 
 
 exports.ArticleSchema = ArticleSchema;
-exports.ArticleModel = ArticleSchema;
+exports.ArticleModel = mongoose.model('Article',ArticleSchema);

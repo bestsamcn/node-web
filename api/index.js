@@ -29,6 +29,18 @@ var _getMe = function(app){
 	});
 }
 
+//管理员拦截器
+var _allowAdminOnly = function(req,res,next){
+	//如果头部没添加authSecret，或者authsecret不等于配置的密钥就返回
+	if ((req.get('authSecret') && req.get('authSecret') === globalConfig.authSecret) || (req.session.isLogin && req.session.user.userType > 0)) {
+	 	next();
+	}else{
+		res.sendStatus(401);
+        res.end();
+        return;
+	}
+}
+
 //获取所有管理员id中间件
 var _getAllAdmins = function(req,res,next){
     UserModel.find({ userType: {$in:[1,2]}}, function(ferr, fcol) {
@@ -123,5 +135,6 @@ exports.loginInterceptor = _loginInterceptor;
 exports.sensitiveInterceptor = _sensitiveInterceptor;
 exports.isIncludeSensitive = _isIncludeSensitive;
 exports.userAccessLogs = _userAccessLogs;
+exports.allowAdminOnly = _allowAdminOnly;
 
 //初始化会员列表

@@ -220,4 +220,20 @@ router.get('/accessLogsList',function(req,res){
 	});
 });
 
+//文章列表
+router.get('/articleList',function(req,res){
+	res.render('tpl/admin/articleList', {
+		title: '文章列表',
+		routerName: 'articleList'
+	});
+});
+
+//添加文章
+router.get('/addArticle',function(req,res){
+	res.render('tpl/admin/addArticle', {
+		title: '添加文章',
+		routerName: 'addArticle'
+	});
+});
+
 module.exports = router;
