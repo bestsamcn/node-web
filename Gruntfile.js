@@ -14,6 +14,9 @@ module.exports=function(grunt){
         open: {
             all: {
                 path: 'http://'+globalConfig.host
+            },
+            file : {
+              path : '/etc/hosts'
             }
         },
         nodemon:{dev:{

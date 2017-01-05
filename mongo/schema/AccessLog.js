@@ -4,7 +4,7 @@ var mongoose =  require('mongoose'),
 var UserSchema = require('./User').UserSchema;
 
 
-var AccessLogSchema = {
+var AccessLogSchema = new Schema({
 	member:{
 		type:Schema.ObjectId,
 		require:true,
@@ -23,7 +23,7 @@ var AccessLogSchema = {
 		type:String,
 		require:true
 	}
-}
+});
 
 exports.AccessLogSchema = AccessLogSchema;
 exports.AccessLogModel = mongoose.model('AccessLog',AccessLogSchema);
