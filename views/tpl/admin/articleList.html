@@ -17,19 +17,37 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th>账号</th>
-									<th>注册日期</th>
-									<th>最后登录日期</th>
+									<th>发布日期</th>
+									<th>标题</th>
+									<th>访问量</th>
 									<th style="width: 3.5em;">操作</th>
 								</tr>
 							</thead>
 							<tbody id="article-list-vm">
-								文章列表
+								
 							</tbody>
-						
+							<script type="text/html" id="article-list-tpl">
+								<% if dataList.length>0 %>
+		 						<% each dataList %>
+								<tr>
+									<td><% $value.deliverTime | dateFormat:'yyyy.MM.dd' %></td>
+									<td><% $value.title | textEllipsis:20 %></td>
+									<td><% $value.visitTimes %></td>
+									<td>
+										<a href="#<% $value._id %>">
+											<i class="fa fa-pencil"></i>
+										</a>
+										<a href="javascript:;" class="delete-btn" data-id="<% $value._id %>">
+											<i class="fa fa-trash-o"></i>
+										</a>
+									</td>
+								</tr>
+								<% /each %>
+								<% /if %>
+								</script>
 						</table>
 					</div>
-					<div class="mt-pagination" id="mt-pagination">
+					<div class="mt-pagination" id="article-list-pagination">
 		            </div>
 				</div>
 			</div>

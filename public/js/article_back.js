@@ -1,3 +1,4 @@
+
 var ue = UE.getEditor('editor');
 console.log(ue)
 SyntaxHighlighter.all()
@@ -5,6 +6,7 @@ SyntaxHighlighter.all()
 var addArticle = function(){
 	var catecoryType = $('#category'),
 		isHot = $('#is-hot'),
+		leadText = $('#lead-text'),
 		title = $('#title');
 	var addBtn = $('#add-article-btn');
 	var content = ue;
@@ -12,6 +14,7 @@ var addArticle = function(){
     	catecoryType[0].options[0].selected = true;
     	isHot[0].options[0].selected = true;
     	title.val('');
+    	leadText.val('');
     	ue.setContent('');
     	ue.reset();
     }
@@ -19,6 +22,7 @@ var addArticle = function(){
 		var _catecoryTypeVal = parseInt(catecoryType.val());
 		var _isHotVal = parseInt(isHot.val());
 		var _titleVal = title.val();
+		var _leadText = leadText.val();
 		var _contentVal = content.getContent();
 		if(_titleVal.length < 2){
 			alertInfo('标题不能为空');
@@ -34,10 +38,9 @@ var addArticle = function(){
 			category:_catecoryTypeVal,
 			isHot:_isHotVal,
 			title:_titleVal,
+			leadText:_leadText,
 			content:UE.utils.unhtml(_contentVal)
 		}
-		var reg = /(<|&lt;)img\s+src=(\"|&quot;)(.*\.(png|jpg|gif|bmp))\2\s+title=(\"|&quot;).*(\"|&quot;)\s+alt=\2(.*\.(png|jpg|gif|bmp))\2\/(>|&gt)/im;
-		console.log(_contentVal.match(reg))
 		$.ajax({
 			type:'post',
 			dataType:'json',
@@ -59,6 +62,8 @@ var addArticle = function(){
 	}
 	addBtn.on('click',_postInfo);
 }
+
+
 
 
 $(function(){

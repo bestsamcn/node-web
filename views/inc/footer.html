@@ -74,11 +74,12 @@
 	<script src="/public/js/jquery.waypoints.min.js"></script>
 	<!-- MAIN JS -->
 	<script src="/public/js/main.js"></script>
+	<script src="/public/js/article_front.js"></script>
 	{{ if (session.isLogin && session.user.userType > 0) }}
 	<script src="/public/js/admin.js"></script>
 	{{ /if }}
 	{{ if routerName === 'addArticle' }}
-    <script type="text/javascript" charset="utf-8" src="/public/js/article.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/public/js/article_back.js"></script>
     {{ /if }}
 	</body>
 </html>

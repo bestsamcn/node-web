@@ -38,6 +38,10 @@ var ArticleSchema = new Schema({
 		type:String,
 		require:false
 	},
+	leadText:{
+		type:String,
+		require:true
+	},
 	keywords:[{
 		type:String,
 		require:false
@@ -48,9 +52,16 @@ var ArticleSchema = new Schema({
 		default:0
 	},
     comeFrom:{
-    	type:String,
-    	require:false,
-    	default:'swyc.com'
+    	name:{
+    		type:String,
+	    	require:true,
+	    	default:'三万英尺传媒'
+    	},
+    	link:{
+    		type:String,
+	    	require:true,
+	    	default:'http://www.swyc.com'
+    	}
     }
 });
 
