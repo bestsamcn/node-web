@@ -7,8 +7,9 @@ var allowAdminOnly = require('./index').allowAdminOnly;
 var imageSize = require('image-size');
 var gm = require('gm');
 var crypto = require('crypto');
-
+var Q = require('q');
 var globalConfig = require('../config');
+
 
 
 /**
@@ -117,10 +118,9 @@ router.get('/getArticleList',function(req,res){
 });
 
 /**
-* 获取文章列表分页 /api/article/addArticle
-* 输入 {pageIndex [number],pageSize [number],category [number]}
-* 输出 100031=>无分类内容, 0=>发布成功
-* 输出 {pageIndex [number],,pageSize [number],category [number],total [number],data [array]}
+* 添加文章 /api/article/editArticle
+* 输入 {category [number],isHot [number],author [_id],title [string],content [string]}
+* 输出 100030=>内容不能为空, 0=>修改成功
 */
 router.get('/getArticleDetail', function(req, res) {
     var article_id = req.query.id;
@@ -146,5 +146,108 @@ router.get('/getArticleDetail', function(req, res) {
     });
 });
 
+/**
+* 获取文章列表分页 /api/article/editArticle
+* 输入 {pageIndex [number],pageSize [number],category [number]}
+* 输出 100031=>无分类内容, 0=>发布成功
+* 输出 {pageIndex [number],,pageSize [number],category [number],total [number],data [array]}
+*/
+router.post('/editArticle', function(req, res){
+	var _id = req.body.id,
+		_category = parseInt(req.body.category),
+		_isHot = parseInt(req.body.isHot),
+		_title = req.body.title,
+		_leadText = req.body.leadText,
+		_content = xss(req.body.content);
+	if(!_id){
+		res.json({ retCode:100033, msg:'文章缺少必要信息', data:null });
+		res.end();
+		return;
+	}
+	if(!_content){
+		res.json({ retCode:100030, msg:'文章内容不能为空', data:null });
+		res.end();
+		return;
+	}
+	if(!_title){
+		res.json({ retCode:100031, msg:'标题不能为空', data:null });
+		res.end();
+		return;
+	}
+	if(!_content){
+		res.json({ retCode:100032, msg:'导读不能为空', data:null });
+		res.end();
+		return;
+	}
+	var reg = /img\s{1}src=(\"|&quot;)\/public\/ueditor\/picture\/(\d{18}\.(gif|jpg|png|bmp))(\"|&quot;)/i;
+	//我发现node代码不能使用/开头的绝对路径，node会以磁盘为根目录
+	var _thumbnailDir = 'public/ueditor/picture/'+_content.match(reg)[2];
+
+	// var _thumbnailSize = imageSize(_thumbnailDir);
+	// console.log(_thumbnailSize.width, _thumbnailSize.height)
+	var md5 = crypto.createHash('md5');
+	var _thumbnailName = md5.update(globalConfig.imageSecret+Date.now()).digest('hex')+'.png';
+	var _thumbnail = 'public/ueditor/picture/'+_thumbnailName;
+	gm(_thumbnailDir).thumb(150, 100, _thumbnail, 8, function(terr){
+		if(terr){
+			res.sendStatus(500);
+			res.end();
+			return;
+		}
+		ArticleModel.findByIdAndUpdate(_id,{$set:{
+			isHot:_isHot,
+			category:_category,
+			title:_title,
+			content:_content,
+			leadText:_leadText,
+			thumbnail:_thumbnailName,
+			lastEdit:{
+				time:Date.now(),
+				editer:req.session.user._id
+			}}
+		},function(fuerr, fudoc){
+			if(fuerr){
+				res.sendStatus(500);
+				res.end();
+				return;
+			}
+			res.json({ retCode:0, msg:'文章修改成功', data:fudoc });
+			res.end();
+			return;
+		});
+	});
+});
+
+router.get('/delArticle', allowAdminOnly, function(req, res){
+	var _id = req.query.id;
+	//无id就结束请求
+	if(!_id || _id.length !== 24){
+		res.json({ retCode:100033, msg:'文章缺少必要信息', data:null });
+		res.end();
+		return;
+	}
+	//通过id查找文章并且删除
+	var findByIdAndRemove = function(){
+		var defer = Q.defer();
+		ArticleModel.findByIdAndRemove(_id, function(frerr,frdoc){
+			if(frerr){
+				defer.reject();
+				res.sendStatus(500);
+				res.end();
+				return;
+			}
+			defer.resolve(frdoc);
+		});
+		return defer.promise;
+	}
+	//删除成功回调
+	var removeSuccess = function(doc){
+		res.json({ retCode:0, msg:'文章删除成功', data:doc });
+		res.end();
+		return;
+	}
+	//执行
+	findByIdAndRemove().then(removeSuccess);
+});
 
 module.exports = router;

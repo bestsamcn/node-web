@@ -6,7 +6,7 @@
 			<p class="article-others">来源：<a href="{{ article.comeFrom.link }}">{{ article.comeFrom.name }}</a>
 			<span>时间：{{ article.deliverTime | dateFormat:'yyyy年MM月dd日' }}</span><span>阅读数：{{ article.visitTimes }}</span>
 			</p>
-			<p style="font-size:14px;">{{ article.leadText }}</p>
+			<p style="font-size:14px;text-align: justify;text-indent: 2em"><i class="leadding">导读</i>{{ article.leadText }}</p>
 		</div>
 	</div>
 	<div class="list row">

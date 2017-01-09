@@ -553,3 +553,15 @@
 .article .list img{
     max-width: 100%;
 }
+.leadding{
+    background: #FF293A;
+    padding: 1px 4px;
+    border-radius: 3px;
+    display: inline-block;
+    color: #fff;
+    font-size: 10px;
+    text-indent: 0;
+    margin-right: 10px;
+    font-style: normal;
+    vertical-align: top;
+}

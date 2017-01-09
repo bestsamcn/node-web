@@ -17,9 +17,16 @@ var ArticleSchema = new Schema({
 		type:Number,
 		require:true
 	},
-	lastEditTime:{
-		type:Number,
-		require:false
+	lastEdit:{
+		time:{
+			type:Number,
+			require:false
+		},
+		editer:{
+			type:Schema.ObjectId,
+			ref:'User',
+			require:false
+		}
 	},
 	category:{
 		type:Number,

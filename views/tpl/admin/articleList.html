@@ -34,7 +34,7 @@
 									<td><% $value.title | textEllipsis:20 %></td>
 									<td><% $value.visitTimes %></td>
 									<td>
-										<a href="#<% $value._id %>">
+										<a href="/admin/editArticle/<% $value._id %>">
 											<i class="fa fa-pencil"></i>
 										</a>
 										<a href="javascript:;" class="delete-btn" data-id="<% $value._id %>">
