@@ -64,12 +64,22 @@
     <script src="/public/libs/jquery-pager/jquery.pager.js"></script>
 	<script src="/public/libs/art-template/arttemplate.js"></script>
 	<script src="/public/libs/upload/js/jquery.Jcrop.min.js"></script>
+    {{ if routerName === 'addArticle' || routerName === 'editArticle'}}
+    <script type="text/javascript" charset="utf-8" src="/public/libs/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/public/libs/ueditor/ueditor.all.js"></script>
+    
     
 
+    {{ /if }}
+    {{ if routerName.toLowerCase().indexOf('article') !== -1 }}
+    <script src="/public/js/article_back.js"></script>
+    {{ /if }}
+	{{ routerName.toLowerCase().indexOf('article') !== -1 }}
 	<!-- Waypoints -->
 	<script src="/public/js/jquery.waypoints.min.js"></script>
 	<!-- MAIN JS -->
 	<script src="/public/js/main.js"></script>
+	<script src="/public/js/article_front.js"></script>
 	{{ if (session.isLogin && session.user.userType > 0) }}
 	<script src="/public/js/admin.js"></script>
 	{{ /if }}

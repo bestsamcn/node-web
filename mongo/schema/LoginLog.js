@@ -3,7 +3,7 @@ var mongoose =  require('mongoose'),
     Schema = mongoose.Schema;
 var UserSchema = require('./User').UserSchema;
 
-var LoginLogSchema = {
+var LoginLogSchema = new Schema({
 	userId:{
 		type:Schema.ObjectId,
 		ref:'User',
@@ -21,6 +21,6 @@ var LoginLogSchema = {
 		type:String,
 		require:true
 	}
-}
+});
 exports.LoginLogSchema = LoginLogSchema;
 exports.LoginLogModel = mongoose.model('LoginLog',LoginLogSchema);

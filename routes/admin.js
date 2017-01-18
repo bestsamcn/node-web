@@ -24,7 +24,7 @@ router.all('*', function(req, res, next) {
 	next();
 });
 router.get('/', function(req, res) {
-	requestify.request('http://'+globalConfig.host+'/api/admin/getWebPreview',{
+	requestify.request('http://'+globalConfig.host+':'+globalConfig.port+'/api/admin/getWebPreview',{
 		method:'GET',
 		headers:{
 			authSecret:globalConfig.authSecret
@@ -85,7 +85,7 @@ router.get('/memberList/memberDetail/:id', getAllAdmins, function(req, res) {
 		return;
 	}
 	
-	requestify.request('http://'+globalConfig.host+'/api/admin/getUserDetail',{
+	requestify.request('http://'+globalConfig.host+':'+globalConfig.port+'/api/admin/getUserDetail',{
 		method:'GET',
 		headers:{
 			authSecret:globalConfig.authSecret,
@@ -95,7 +95,6 @@ router.get('/memberList/memberDetail/:id', getAllAdmins, function(req, res) {
 		},
 		dataType:'json'
 	}).then(function(mres){
-
 		var body = JSON.parse(mres.body);
 		res.render('tpl/admin/memberDetail', {
 			title: '会员详情',
@@ -133,7 +132,7 @@ router.get('/messageList/messageDetail/:id', function(req, res) {
 		res.end();
 		return;
 	}
-	requestify.request('http://'+globalConfig.host+'/api/admin/getMessageDetail',{
+	requestify.request('http://'+globalConfig.host+':'+globalConfig.port+'/api/admin/getMessageDetail',{
 		method:'GET',
 		headers:{
 			authSecret:globalConfig.authSecret
@@ -189,7 +188,7 @@ router.get('/sensitive/sensitiveDetail/:id',function(req,res){
 		res.end();
 		return;
 	}
-	requestify.request('http://'+globalConfig.host+'/api/sensitive/getSensitiveDetail',{
+	requestify.request('http://'+globalConfig.host+':'+globalConfig.port+'/api/sensitive/getSensitiveDetail',{
 		method:'GET',
 		headers:{
 			authSecret:globalConfig.authSecret,
@@ -217,6 +216,53 @@ router.get('/accessLogsList',function(req,res){
 	res.render('tpl/admin/accessLogsList', {
 		title: '访问日志',
 		routerName: 'accessLogsList'
+	});
+});
+
+//文章列表
+router.get('/articleList',function(req,res){
+	res.render('tpl/admin/articleList', {
+		title: '文章列表',
+		routerName: 'articleList'
+	});
+});
+
+//添加文章
+router.get('/addArticle',function(req,res){
+	res.render('tpl/admin/addArticle', {
+		title: '添加文章',
+		routerName: 'addArticle'
+	});
+});
+
+//修改文章
+router.get('/editArticle/:id',function(req,res){
+	if(!req.params.id || req.params.id.length !== 24){
+		res.sendStatus(404);
+		res.end();
+		return;
+	}
+	requestify.request('http://'+globalConfig.host+':'+globalConfig.port+'/api/article/getArticleDetail',{
+		method:'GET',
+		dataType:'json',
+		params:{id:req.params.id}
+	}).then(function(mres){
+		var body = JSON.parse(mres.body);
+		res.render('tpl/admin/editArticle', {
+			title: '修改文章',
+			routerName: 'editArticle',
+			article:body.data
+		},function(rerr,rhtml){
+		    if(rerr){
+		        res.sendStatus(500);
+		        return;
+		    }
+		    var filterHtml = keywordFilter.hasKeyword(rhtml) ? keywordFilter.replaceKeyword(rhtml,'*') : rhtml;
+		    res.send(filterHtml)
+		});
+	}).fail(function(err){
+		res.sendStatus(err.code);
+		res.end();
 	});
 });
 

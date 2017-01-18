@@ -1,0 +1,60 @@
+{{include '../../inc/header'}}
+<div class="container article">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+			<h2>文章列表</h2>
+			<p>Article List</p>
+		</div>
+	</div>
+	<div class="list">
+		<ul id="article-list-vm">
+		</ul>
+		<script type="text/html" id="article-list-tpl">
+		 	<% if dataList.length>0 %>
+		 	<% each dataList %>
+			<li class="col-md-12 news clearfix">
+				<div class="row news-box">
+					<div class="col-md-3 news-img-wrap">
+						<a class="linkimgtxt" href="/article/articleDetail/<% $value._id %>" target="_blank" title="<% $value.title %>">
+							<img src="/public/ueditor/picture/<% $value.thumbnail %>"></a>
+					</div>
+					<div class="col-md-9 news-cont">
+						<div class="news-title-wrap">
+							<h3 class="news-title">
+								<a href="/article/articleDetail/<% $value._id %>" target="_blank" title="<% $value.title %>">
+								<% if $value.isHot === 2 %>
+								<i class="is-hot">置顶</i>
+								<% /if %>
+								<% $value.title %>
+								</a>
+							</h3>
+						</div>
+						<div class="news-summary-wrap">
+							<p class="news-summary">
+								<a href="/article/articleDetail/<% $value._id %>" target="_blank">
+									<% $value.leadText | textEllipsis : 200 %>
+								</a>
+								<a href="/article/articleDetail/<% $value._id %>" target="_blank">[详情]</a>
+							</p>
+						</div>
+						<div class="news-extra">
+							<span class="news-source">
+								来源：
+								<a href="<% $value.comeFrom.link %>" target="_blank"><% $value.comeFrom.name %></a>
+							</span>
+							<span class="news-time"><% $value.deliverTime | dateDesc %></span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<% /each %>
+			<% else %>
+			<p style="text-align: center;font-size: 14px; margin-top:10px;color:#333">暂无数据</p>
+			<% /if %>
+
+		</script>
+	</div>
+	<div class="mt-pagination" id="article-list-pagination">
+	</div>
+</div>
+{{include '../../inc/footer'}}

@@ -30,8 +30,11 @@ app.use(favicon(path.join(__dirname, '/favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended: false
+    extended: true
 }));
+
+
+
 
 //redis
 app.use(cookieParser());
@@ -74,7 +77,7 @@ app.use(function(req, res, next) {
     reidsdb.zrevrangebyscore('online', '+inf', ago, function(err, users) {
         if (err) return next(err);
         req.online = users;
-        app.locals.onlineNumber = users.length
+        app.locals.onlineNumber = users.length;
         next();
     });
 });
@@ -88,11 +91,13 @@ var randomApi = require('./api/random');
 var messageApi = require('./api/message');
 var adminApi = require('./api/admin');
 var sensitiveApi = require('./api/sensitive');
+var articleApi = require('./api/article');
 app.use('/api/user', userApi);
 app.use('/api/random', randomApi);
 app.use('/api/message', messageApi);
 app.use('/api/admin', adminApi);
 app.use('/api/sensitive', sensitiveApi);
+app.use('/api/article', articleApi);
 
 
 //router
@@ -105,6 +110,7 @@ var pictureRouter = require('./routes/picture');
 var servicesRouter = require('./routes/services');
 var mallRouter = require('./routes/mall');
 var adminRouter = require('./routes/admin');
+var articleRouter = require('./routes/article');
 app.use('/', indexRouter);
 app.use('/sign', signRouter);
 app.use('/user', userRouter);
@@ -114,8 +120,41 @@ app.use('/picture', pictureRouter);
 app.use('/services', servicesRouter);
 app.use('/mall', mallRouter);
 app.use('/admin', adminRouter);
+app.use('/article', articleRouter);
 
-
+//ueditor
+var ueditor = require("ueditor")
+// ueditor(path.join(__dirname, 'public'),图片存放的相对路径
+app.use('/ueditor/ue', ueditor(path.join(__dirname, ''), function(req, res, next) {
+    var ActionType = req.query.action;
+    if (ActionType === 'uploadimage' || ActionType === 'uploadfile' || ActionType === 'uploadvideo') {
+        //以下保存路径都在在public之下的相对路径
+        var file_url = '/public/ueditor/picture';
+        /*其他上传格式的地址*/
+        if (ActionType === 'uploadfile') {
+            //附件保存地址
+            file_url = '/public/ueditor/file'; 
+        }
+        if (ActionType === 'uploadvideo') {
+            //视频保存地址
+            file_url = '/public/ueditor/video/'; 
+        }
+        res.ue_up(file_url); 
+        res.setHeader('Content-Type', 'text/html');
+    }
+    
+    else if (ActionType === 'listimage') {
+        //当上传成功后，会返回图片显示在ue编辑器中，只用来绝对路径显示
+        var dir_url = '/public/ueditor/picture';
+        res.ue_list(dir_url); 
+    }
+    // 客户端发起其它请求
+    else {
+        res.setHeader('Content-Type', 'application/json');
+        //手动配置
+        res.redirect('/public/libs/ueditor/nodejs/config.json')
+    }
+}));
 
 app.use(function(req, res, next) {
         if (!req.session) {

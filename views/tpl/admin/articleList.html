@@ -1,0 +1,60 @@
+{{include '../../inc/header'}}
+<div id="fh5co-contact-section">
+	<div class="container">
+		<div class="row">
+			{{include './sidebar'}}
+			<div class="col-md-9 col-xs-12 text-center">
+				<div class="row">
+					<div class="col-md-12 text-left fh5co-heading">
+						<h2>文章列表</h2>
+					</div>
+					<div class="admin-list col-md-12">
+						<div class="btn-toolbar list-toolbar margin-bottom-10">
+						    <a href="/admin/addArticle" class="btn btn-primary"><i class="fa fa-plus margin-right-10"></i>发布新文章</a>
+						    <!-- <button class="btn btn-default">导入</button>
+						    <button class="btn btn-default">到出</button> -->
+						</div>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>发布日期</th>
+									<th>标题</th>
+									<th>访问量</th>
+									<th style="width: 3.5em;">操作</th>
+								</tr>
+							</thead>
+							<tbody id="article-list-vm">
+								
+							</tbody>
+							<script type="text/html" id="article-list-tpl">
+								<% if dataList.length>0 %>
+		 						<% each dataList %>
+								<tr>
+									<td><% $value.deliverTime | dateFormat:'yyyy.MM.dd' %></td>
+									<td><% $value.title | textEllipsis:20 %></td>
+									<td><% $value.visitTimes %></td>
+									<td>
+										<a href="/admin/editArticle/<% $value._id %>">
+											<i class="fa fa-pencil"></i>
+										</a>
+										<a href="javascript:;" class="delete-btn" data-id="<% $value._id %>">
+											<i class="fa fa-trash-o"></i>
+										</a>
+									</td>
+								</tr>
+								<% /each %>
+								<% else %>
+								<p style="text-align: center;font-size: 14px; margin-top:10px;color:#333">暂无数据</p>
+								<% /if %>
+								</script>
+						</table>
+					</div>
+					<div class="mt-pagination" id="article-list-pagination">
+		            </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{include '../../inc/footer'}}

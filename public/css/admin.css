@@ -82,3 +82,32 @@
 .margin-right-10{
 	margin-right: 10px;
 }
+
+.edui-default .edui-toolbar .edui-combox-body .edui-button-body{
+	color:#333;
+	
+}
+.edui-default .edui-toolbar .edui-combox .edui-combox-body{
+	font-size: 14px;
+	line-height: 20px;
+}
+.add-article .input-title{
+	padding-left:80px;
+	position: relative;
+}
+.add-article .input-title span{
+	position: absolute;
+	left:0;
+	top:0;
+	line-height: 40px;
+	display: block;
+	left:15px;
+}
+.add-article .input-title input{
+	width:100%;
+	text-indent: 10px;
+	height:40px;
+}
+.add-article .input-title textarea{
+	width:100%;
+}

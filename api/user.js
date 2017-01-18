@@ -19,7 +19,7 @@ var LoginLogModel = require('../mongo/schema/LoginLog').LoginLogModel;
 
 //登录
 router.post('/login', function(req, res) {
-
+	console.log(req.query.id)
 	var uaccount = req.body.account;
 	var upswd = req.body.password;
 
