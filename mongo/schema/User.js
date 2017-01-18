@@ -14,7 +14,8 @@ var UserSchema = new mongoose.Schema({
 	},
 	avatar:{
 		type:String,
-		require:false
+		require:false,
+		default:'defaultAvatar.png'
 	},
 	realName:{
 		type:String,

@@ -57,7 +57,7 @@ var addArticle = function(){
 					alertInfo('发布成功');
 					return;
 				}
-				alertInf(res.msg || '发布失败');
+				alertInfo(res.msg || '发布失败');
 			},
 			error:function(){
 				alertInfo('发布失败');

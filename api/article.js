@@ -9,7 +9,8 @@ var gm = require('gm');
 var crypto = require('crypto');
 var Q = require('q');
 var globalConfig = require('../config');
-
+var keywordFilter = require('../keywordFilter/lib/index');
+var isIncludeSensitive = require('./index').isIncludeSensitive;
 
 
 /**
@@ -38,10 +39,24 @@ router.post('/addArticle', function(req,res){
 		res.end();
 		return;
 	}
+	//敏感字符拦截
+	if(isIncludeSensitive(_content, _title, _leadText)){
+		res.json({retCode:100027,msg:'不能包含敏感字符',data:null});
+		res.end();
+		return;
+	}
+
 	// var reg = /(<|&lt;)img\s+src=(\"|&quot;)(.*\.(png|jpg|gif|bmp))\2\s+title=(\"|&quot;).*(\"|&quot;)\s+alt=\2(.*\.(png|jpg|gif|bmp))\2\/(>|&gt)/im;
 	var reg = /img\s{1}src=(\"|&quot;)\/public\/ueditor\/picture\/(\d{18}\.(gif|jpg|png|bmp))(\"|&quot;)/i;
 	//我发现node代码不能使用/开头的绝对路径，node会以磁盘为根目录
+	//
+	if(!_content.match(reg)){
+		res.json({retCode:100038,msg:'必须添加一张图片作为缩略图',data:null});
+		res.end();
+		return;
+	}
 	var _thumbnailDir = 'public/ueditor/picture/'+_content.match(reg)[2];
+
 
 	// var _thumbnailSize = imageSize(_thumbnailDir);
 	// console.log(_thumbnailSize.width, _thumbnailSize.height)
@@ -104,10 +119,13 @@ router.get('/getArticleList',function(req,res){
                 return;
             }
             _total = mccol || 0;
+            var tempdata = JSON.stringify(data)
+            var filterData = keywordFilter.hasKeyword(tempdata) ? keywordFilter.replaceKeyword(tempdata,'*') : tempdata;
+            filterData = JSON.parse(filterData);
             res.json({
                 retCode: 0,
                 msg: '查询成功',
-                data: data,
+                data: filterData,
                 pageIndex: _pageIndex + 1,
                 pageSize: _pageSize,
                 total: _total
@@ -176,6 +194,12 @@ router.post('/editArticle', function(req, res){
 	}
 	if(!_content){
 		res.json({ retCode:100032, msg:'导读不能为空', data:null });
+		res.end();
+		return;
+	}
+	//敏感字符拦截
+	if(isIncludeSensitive(_content, _title, _leadText)){
+		res.json({retCode:100027,msg:'不能包含敏感字符',data:null});
 		res.end();
 		return;
 	}

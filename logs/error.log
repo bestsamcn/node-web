@@ -1,3 +1,0 @@
-2016/12/19 00:05:02 [emerg] 4804#2248: CreateFile() "E:\node\node-1/conf/nginx.conf" failed (3: The system cannot find the path specified)
-2017/01/03 18:33:11 [emerg] 9608#280: CreateFile() "E:\node-project\node-1/conf/nginx.conf" failed (3: The system cannot find the path specified)
-2017/01/04 18:44:47 [emerg] 7856#8088: CreateFile() "E:\node-project\node-1/conf/nginx.conf" failed (3: The system cannot find the path specified)

@@ -19,7 +19,7 @@ router.get('/articleDetail/:id', function(req, res){
 		res.end();
 		return;
 	}
-	requestify.request('http://'+globalConfig.host+'/api/article/getArticleDetail',{
+	requestify.request('http://'+globalConfig.host+':'+globalConfig.port+'/api/article/getArticleDetail',{
 		method:'GET',
 		dataType:'json',
 		params:{id:req.params.id}

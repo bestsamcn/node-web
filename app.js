@@ -77,7 +77,7 @@ app.use(function(req, res, next) {
     reidsdb.zrevrangebyscore('online', '+inf', ago, function(err, users) {
         if (err) return next(err);
         req.online = users;
-        app.locals.onlineNumber = users.length
+        app.locals.onlineNumber = users.length;
         next();
     });
 });

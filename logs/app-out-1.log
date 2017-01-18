@@ -1,0 +1,1460 @@
+2017-01-10 17:38 +08:00: web runing on:port 80
+2017-01-10 17:38 +08:00: www.swyc.com
+2017-01-10 17:38 +08:00: 数据库连接成功
+2017-01-10 17:42 +08:00: [0mGET / [36m304 [0m69.350 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/css/animate.css [36m304 [0m27.045 ms - -[0m
+[0mGET /public/css/icomoon.css [36m304 [0m25.989 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m25.455 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m25.087 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m25.501 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/css/style.css [36m304 [0m25.145 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/css/admin.css [36m304 [0m24.164 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m23.563 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m24.150 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/css/mall.css [36m304 [0m23.531 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m22.707 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m10.066 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m8.548 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m9.001 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m8.420 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m9.712 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m9.157 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m21.780 ms - -[0m
+[0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m21.077 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m20.333 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m22.442 ms - -[0m
+[0mGET /api/user/getCurrentUser [36m304 [0m45.888 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m51.483 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m12.111 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/js/main.js [36m304 [0m11.585 ms - -[0m
+[0mGET /public/js/article_front.js [36m304 [0m11.210 ms - -[0m
+[0mGET /public/js/admin.js [36m304 [0m10.930 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/images/logo2.png [36m304 [0m10.291 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/images/new1.jpg [36m304 [0m8.467 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/images/news-logo1.png [36m304 [0m16.376 ms - -[0m
+[0mGET /public/images/news-logo2.png [36m304 [0m14.804 ms - -[0m
+[0mGET /public/images/new3.jpg [36m304 [0m13.071 ms - -[0m
+[0mGET /public/images/new2.jpg [36m304 [0m14.462 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/images/news-logo3.png [36m304 [0m11.392 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/images/banner.jpg [36m304 [0m4.596 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/images/image_6.jpg [36m304 [0m13.215 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/images/image_2.jpg [36m304 [0m13.412 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/images/image_3.jpg [36m304 [0m15.083 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/images/image_8.jpg [36m304 [0m13.236 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m10.370 ms - -[0m
+2017-01-10 17:42 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m9.060 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET / [36m304 [0m52.245 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/css/animate.css [36m304 [0m12.779 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m12.552 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m11.951 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m11.595 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m10.916 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/css/style.css [36m304 [0m10.234 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/css/admin.css [36m304 [0m31.352 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m30.337 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m19.754 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/css/mall.css [36m304 [0m18.764 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/css/article.css [36m304 [0m21.480 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m21.026 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m14.115 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m13.684 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m13.500 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m21.750 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m21.510 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m10.691 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m10.388 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m10.077 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m9.295 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m52.667 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m36.581 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m34.338 ms - -[0m
+[0mGET /public/js/main.js [36m304 [0m34.088 ms - -[0m
+[0mGET /public/js/article_front.js [36m304 [0m33.886 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/js/admin.js [36m304 [0m22.696 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/images/logo2.png [36m304 [0m8.973 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/images/new1.jpg [36m304 [0m12.533 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/images/news-logo1.png [36m304 [0m11.432 ms - -[0m
+[0mGET /public/images/news-logo2.png [36m304 [0m8.028 ms - -[0m
+[0mGET /public/images/new2.jpg [36m304 [0m7.342 ms - -[0m
+[0mGET /public/images/new3.jpg [36m304 [0m8.713 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/images/news-logo3.png [36m304 [0m6.072 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/images/banner.jpg [36m304 [0m4.678 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/images/image_6.jpg [36m304 [0m2.947 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/images/image_2.jpg [36m304 [0m11.253 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/images/image_3.jpg [36m304 [0m8.982 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/images/image_8.jpg [36m304 [0m8.144 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m11.528 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m11.101 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /user [36m304 [0m18.074 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/css/animate.css [36m304 [0m10.130 ms - -[0m
+[0mGET /public/css/icomoon.css [36m304 [0m8.694 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m17.531 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m15.640 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m14.893 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/css/style.css [36m304 [0m17.425 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/css/admin.css [36m304 [0m9.211 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m9.176 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m13.121 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/css/mall.css [36m304 [0m14.407 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m12.138 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m22.115 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m20.436 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m20.667 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m19.942 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m18.584 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m18.726 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m15.301 ms - -[0m
+[0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m14.017 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m13.504 ms - -[0m
+[0mGET /api/user/getCurrentUser [36m304 [0m37.914 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m13.210 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m18.444 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m18.005 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/js/main.js [36m304 [0m17.451 ms - -[0m
+[0mGET /public/js/article_front.js [36m304 [0m16.557 ms - -[0m
+[0mGET /public/js/admin.js [36m304 [0m16.711 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/images/logo2.png [36m304 [0m2.658 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/avatar/30ce76fc2816f32bc04ebdee69ee5e4d.png [36m304 [0m2.394 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m8.940 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m8.198 ms - -[0m
+2017-01-10 17:54 +08:00: [0mGET /img/programs_pic_02.png [33m404 [0m25.281 ms - 297[0m
+2017-01-10 17:55 +08:00: [0mGET /user [36m304 [0m21.661 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/css/animate.css [36m304 [0m7.336 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m6.648 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m6.947 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m6.983 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m7.633 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/css/style.css [36m304 [0m8.307 ms - -[0m
+[0mGET /public/css/admin.css [36m304 [0m6.992 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m6.881 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m3.458 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/css/mall.css [36m304 [0m38.872 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/css/article.css [36m304 [0m38.245 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m42.568 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m37.992 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m31.589 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m24.634 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m15.307 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m14.886 ms - -[0m
+[0mGET /public/js/bootstrap.min.js [36m304 [0m15.369 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m15.030 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m16.143 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m54.006 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m15.675 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m15.589 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m15.414 ms - -[0m
+[0mGET /public/js/main.js [36m304 [0m15.349 ms - -[0m
+[0mGET /public/js/article_front.js [36m304 [0m16.020 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/js/admin.js [36m304 [0m6.593 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/images/logo2.png [36m304 [0m3.878 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/avatar/30ce76fc2816f32bc04ebdee69ee5e4d.png [36m304 [0m2.557 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /img/programs_pic_02.png [33m404 [0m13.391 ms - 297[0m
+2017-01-10 17:55 +08:00: [0mGET /img/programs_pic_02.png [33m404 [0m13.102 ms - 297[0m
+2017-01-10 17:55 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m4.337 ms - -[0m
+2017-01-10 17:55 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m3.536 ms - -[0m
+2017-01-10 17:56 +08:00: web runing on:port 80
+2017-01-10 17:56 +08:00: www.swyc.com
+2017-01-10 17:56 +08:00: 数据库连接成功
+2017-01-10 17:58 +08:00: web runing on:port 80
+2017-01-10 17:58 +08:00: www.swyc.com
+2017-01-10 17:58 +08:00: 数据库连接成功
+2017-01-10 18:00 +08:00: [0mGET /user [36m302 [0m49.596 ms - 66[0m
+2017-01-10 18:00 +08:00: [0mGET /sign/login [36m304 [0m33.749 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/css/animate.css [36m304 [0m15.178 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m17.525 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m11.276 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m10.828 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m10.205 ms - -[0m
+[0mGET /public/css/style.css [36m304 [0m9.580 ms - -[0m
+[0mGET /public/css/admin.css [36m304 [0m2.563 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m15.171 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m12.853 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m12.104 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/css/article.css [36m304 [0m12.113 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m11.039 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m11.005 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m11.888 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m11.070 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m9.107 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m17.023 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m16.072 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /api/user/getCurrentUser [32m200 [0m27.762 ms - 22[0m
+2017-01-10 18:00 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m9.190 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m8.563 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m7.856 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m7.200 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m6.578 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/js/main.js [36m304 [0m5.358 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/js/article_front.js [36m304 [0m4.742 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/images/logo2.png [36m304 [0m2.218 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m5.155 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m5.382 ms - -[0m
+2017-01-10 18:00 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:00:25 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true } }
+2017-01-10 18:00 +08:00: [0mGET /services [32m200 [0m48.805 ms - 9556[0m
+2017-01-10 18:00 +08:00: [0mGET /public/css/animate.css [36m304 [0m25.834 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m24.068 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m21.820 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m21.476 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m19.958 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/css/style.css [36m304 [0m36.049 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/css/admin.css [36m304 [0m24.496 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m23.187 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m20.853 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m11.461 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/css/article.css [36m304 [0m20.879 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m20.175 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m17.627 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m15.806 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m14.437 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m11.889 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m11.115 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m26.614 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m13.247 ms - -[0m
+[0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m12.368 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m11.576 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m10.616 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m10.927 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m10.265 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/js/main.js [36m304 [0m11.378 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/js/article_front.js [36m304 [0m10.520 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/images/logo2.png [36m304 [0m2.761 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m3.517 ms - -[0m
+2017-01-10 18:00 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m3.921 ms - -[0m
+2017-01-10 18:01 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:00:25 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true } }
+2017-01-10 18:01 +08:00: [0mGET /services [36m304 [0m32.559 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/animate.css [36m304 [0m20.274 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m18.040 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m16.972 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m15.692 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m13.031 ms - -[0m
+[0mGET /public/css/style.css [36m304 [0m10.957 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/admin.css [36m304 [0m11.626 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m11.024 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m10.514 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m5.629 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m5.084 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m4.991 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m14.813 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m13.707 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m12.150 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m8.941 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m8.324 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m16.969 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m15.990 ms - -[0m
+[0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m15.113 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m14.347 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m14.291 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m14.329 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m13.793 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/main.js [36m304 [0m5.363 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/article_front.js [36m304 [0m4.630 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/images/logo2.png [36m304 [0m2.317 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m3.286 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m3.195 ms - -[0m
+2017-01-10 18:01 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:00:25 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true } }
+2017-01-10 18:01 +08:00: [0mGET /services [36m304 [0m35.020 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/animate.css [36m304 [0m6.910 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m5.745 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m21.147 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m13.571 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m12.729 ms - -[0m
+[0mGET /public/css/style.css [36m304 [0m11.845 ms - -[0m
+[0mGET /public/css/admin.css [36m304 [0m11.301 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m6.636 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m7.197 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/mall.css [36m304 [0m6.449 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m5.676 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m5.157 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m4.658 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m17.799 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m17.219 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m16.572 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m15.906 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m11.732 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m29.606 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m17.691 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m16.287 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m12.630 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m11.987 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m11.237 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/main.js [36m304 [0m12.615 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/article_front.js [36m304 [0m4.064 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/images/logo2.png [36m304 [0m3.974 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m3.280 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m2.946 ms - -[0m
+2017-01-10 18:01 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:00:25 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true } }
+2017-01-10 18:01 +08:00: [0mGET /services [36m304 [0m35.556 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/animate.css [36m304 [0m9.193 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m14.283 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m11.454 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m10.177 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m9.673 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/style.css [36m304 [0m14.044 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/admin.css [36m304 [0m52.075 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m43.409 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m34.628 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/mall.css [36m304 [0m22.658 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/article.css [36m304 [0m27.546 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m23.594 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m16.646 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m15.889 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m14.865 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m22.459 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m16.925 ms - -[0m
+[0mGET /api/user/getCurrentUser [36m304 [0m27.585 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m15.555 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m14.472 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m15.188 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m13.562 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m13.033 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m11.175 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/main.js [36m304 [0m5.653 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/article_front.js [36m304 [0m3.900 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/images/logo2.png [36m304 [0m2.430 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m2.772 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m3.408 ms - -[0m
+2017-01-10 18:01 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:00:25 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true } }
+2017-01-10 18:01 +08:00: [0mGET /services [36m304 [0m29.118 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/animate.css [36m304 [0m11.260 ms - -[0m
+[0mGET /public/css/icomoon.css [36m304 [0m10.637 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m9.551 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m7.954 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m5.448 ms - -[0m
+[0mGET /public/css/style.css [36m304 [0m4.921 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/admin.css [36m304 [0m10.127 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m9.546 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m8.925 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m8.268 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m7.575 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m17.088 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m7.073 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m8.547 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m7.518 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m5.548 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m6.814 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m13.587 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m5.298 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m19.558 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m11.406 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m10.930 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m11.061 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m10.949 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/main.js [36m304 [0m9.749 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/article_front.js [36m304 [0m9.111 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/images/logo2.png [36m304 [0m3.206 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m2.829 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m4.253 ms - -[0m
+2017-01-10 18:01 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:00:25 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true } }
+2017-01-10 18:01 +08:00: [0mGET /services [36m304 [0m25.739 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/animate.css [36m304 [0m11.353 ms - -[0m
+[0mGET /public/css/icomoon.css [36m304 [0m10.867 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m12.994 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m10.134 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m9.547 ms - -[0m
+[0mGET /public/css/style.css [36m304 [0m9.015 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/admin.css [36m304 [0m3.398 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m3.609 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m8.664 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/mall.css [36m304 [0m8.629 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m7.668 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m7.150 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m8.533 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m8.126 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m5.127 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m12.636 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m7.762 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m9.377 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m7.238 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m6.660 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m24.272 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m11.272 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m10.777 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m10.306 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/main.js [36m304 [0m8.473 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/article_front.js [36m304 [0m12.090 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/images/logo2.png [36m304 [0m3.360 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m2.748 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m2.105 ms - -[0m
+2017-01-10 18:01 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:00:25 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true } }
+2017-01-10 18:01 +08:00: [0mGET /services [36m304 [0m28.584 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/animate.css [36m304 [0m9.819 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m12.334 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m10.729 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m10.146 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m8.777 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/style.css [36m304 [0m12.464 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/admin.css [36m304 [0m8.728 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/article.css [36m304 [0m8.119 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m7.452 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m6.968 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/css/mall.css [36m304 [0m6.071 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m14.650 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m14.091 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m6.277 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m5.728 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m5.100 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m25.972 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m15.903 ms - -[0m
+[0mGET /public/js/bootstrap.min.js [36m304 [0m13.732 ms - -[0m
+[0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m13.160 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m12.976 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m12.699 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m11.245 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m8.259 ms - -[0m
+[0mGET /public/js/main.js [36m304 [0m6.468 ms - -[0m
+[0mGET /public/js/article_front.js [36m304 [0m5.633 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/images/logo2.png [36m304 [0m4.413 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m3.300 ms - -[0m
+2017-01-10 18:01 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m2.673 ms - -[0m
+2017-01-10 18:02 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:00:25 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true } }
+2017-01-10 18:02 +08:00: [0mGET /services [36m304 [0m33.795 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m12.911 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m11.876 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m10.910 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m7.960 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m7.536 ms - -[0m
+[0mGET /public/css/style.css [36m304 [0m6.983 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/admin.css [36m304 [0m11.571 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m9.799 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m8.685 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m7.850 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/article.css [36m304 [0m6.996 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m6.550 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m10.233 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m10.208 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m9.694 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m7.924 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m6.819 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m16.195 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m17.457 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m12.922 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m12.331 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m11.579 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m10.505 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m9.576 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/main.js [36m304 [0m7.078 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/article_front.js [36m304 [0m11.570 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m3.826 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m2.170 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m1.666 ms - -[0m
+2017-01-10 18:02 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:00:25 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true } }
+2017-01-10 18:02 +08:00: [0mGET /services [36m304 [0m24.718 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m10.598 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m10.294 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m10.095 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m10.599 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m10.175 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/style.css [36m304 [0m12.622 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m10.831 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/mall.css [36m304 [0m10.238 ms - -[0m
+[0mGET /public/css/admin.css [36m304 [0m9.648 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m9.165 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m8.736 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m8.534 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m6.928 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m6.273 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m5.655 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m4.793 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m4.329 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m27.583 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m16.130 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m14.618 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m13.669 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m12.514 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m13.381 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m10.480 ms - -[0m
+[0mGET /public/js/main.js [36m304 [0m6.727 ms - -[0m
+[0mGET /public/js/article_front.js [36m304 [0m4.637 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m3.858 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m3.891 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m2.557 ms - -[0m
+2017-01-10 18:02 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:00:25 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true } }
+2017-01-10 18:02 +08:00: [0mGET /services [36m304 [0m40.611 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m6.994 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m6.275 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m12.823 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m10.769 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m12.135 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/style.css [36m304 [0m11.562 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/admin.css [36m304 [0m8.953 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m7.972 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m13.647 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m14.524 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m12.216 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m14.555 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m12.139 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m11.555 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m12.741 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m8.079 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m7.441 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m6.798 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m6.395 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m25.990 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m10.139 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m9.523 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m9.219 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m8.778 ms - -[0m
+[0mGET /public/js/main.js [36m304 [0m8.514 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/article_front.js [36m304 [0m3.654 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m5.856 ms - -[0m
+2017-01-10 18:02 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:00:25 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true } }
+2017-01-10 18:02 +08:00: [0mGET /services [36m304 [0m34.360 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m2.989 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m2.451 ms - -[0m
+2017-01-10 18:02 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:00:25 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true } }
+2017-01-10 18:02 +08:00: [0mGET /contact [32m200 [0m33.136 ms - 8686[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m10.597 ms - -[0m
+[0mGET /public/css/icomoon.css [36m304 [0m10.183 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m12.692 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m11.201 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m10.563 ms - -[0m
+[0mGET /public/css/style.css [36m304 [0m9.318 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/admin.css [36m304 [0m17.573 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m16.965 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m11.861 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/mall.css [36m304 [0m9.788 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/article.css [36m304 [0m9.183 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m8.221 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m10.019 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m14.405 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m12.171 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m8.544 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m7.557 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m11.611 ms - -[0m
+[0mGET /api/user/getCurrentUser [36m304 [0m18.712 ms - -[0m
+[0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m7.642 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m7.046 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m6.538 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m5.965 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m2.144 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/article_front.js [36m304 [0m2.886 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/main.js [36m304 [0m3.959 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m1.976 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m4.666 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m3.965 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /sign/login [36m304 [0m46.615 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m10.659 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m7.754 ms - -[0m
+[0mGET /public/css/animate.css [36m304 [0m11.882 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m8.584 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m5.666 ms - -[0m
+[0mGET /public/css/style.css [36m304 [0m5.047 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/admin.css [36m304 [0m10.168 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m9.276 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m8.734 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m8.871 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m8.439 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m7.825 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m8.502 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m7.825 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m7.345 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m4.440 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m3.989 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m19.616 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m9.536 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m9.086 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m11.076 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m12.214 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m11.276 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m8.070 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/main.js [36m304 [0m10.495 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/article_front.js [36m304 [0m9.709 ms - -[0m
+[0mGET /public/images/logo2.png [36m304 [0m5.216 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m2.106 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m1.659 ms - -[0m
+2017-01-10 18:02 +08:00: [0mPOST /api/user/login [32m200 [0m46.175 ms - 52[0m
+2017-01-10 18:02 +08:00: [0mPOST /api/user/login [32m200 [0m15.269 ms - 46[0m
+2017-01-10 18:02 +08:00: [0mPOST /api/user/login [32m200 [0m10.391 ms - 46[0m
+2017-01-10 18:02 +08:00: [0mPOST /api/user/login [32m200 [0m24.611 ms - 46[0m
+2017-01-10 18:02 +08:00: [0mGET / [36m304 [0m43.361 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m5.713 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m13.176 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m13.075 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m17.872 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m17.427 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/style.css [36m304 [0m12.438 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/admin.css [36m304 [0m10.977 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m9.489 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m8.078 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/mall.css [36m304 [0m9.344 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/article.css [36m304 [0m12.758 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m12.375 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m12.342 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m12.076 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m16.683 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m14.903 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m14.519 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m13.998 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m11.605 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m19.264 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m11.882 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m10.628 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m10.378 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/main.js [36m304 [0m9.722 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [32m200 [0m45.144 ms - 154[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/article_front.js [36m304 [0m18.710 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/admin.js [36m304 [0m16.040 ms - -[0m
+[0mGET /public/images/logo2.png [36m304 [0m9.601 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/new1.jpg [36m304 [0m19.327 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/news-logo1.png [36m304 [0m15.485 ms - -[0m
+[0mGET /public/images/news-logo2.png [36m304 [0m14.928 ms - -[0m
+[0mGET /public/images/new2.jpg [36m304 [0m14.285 ms - -[0m
+[0mGET /public/images/new3.jpg [36m304 [0m13.736 ms - -[0m
+[0mGET /public/images/news-logo3.png [36m304 [0m13.409 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/banner.jpg [36m304 [0m10.061 ms - -[0m
+[0mGET /public/images/image_6.jpg [36m304 [0m8.210 ms - -[0m
+[0mGET /public/images/image_2.jpg [36m304 [0m7.654 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/image_3.jpg [36m304 [0m14.354 ms - -[0m
+[0mGET /public/images/image_8.jpg [36m304 [0m13.336 ms - -[0m
+[0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m11.351 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m9.243 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET / [36m304 [0m54.058 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m17.099 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m16.557 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m16.011 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m15.480 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m14.695 ms - -[0m
+[0mGET /public/css/style.css [36m304 [0m14.186 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/admin.css [36m304 [0m18.272 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m9.766 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m9.191 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/mall.css [36m304 [0m10.643 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/article.css [36m304 [0m9.920 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m9.398 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m13.840 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m13.279 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m14.696 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m14.495 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m14.396 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m11.961 ms - -[0m
+[0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m10.383 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m9.284 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m6.337 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m5.909 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m58.387 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m24.101 ms - -[0m
+[0mGET /public/js/article_front.js [36m304 [0m15.787 ms - -[0m
+[0mGET /public/js/main.js [36m304 [0m24.510 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/admin.js [36m304 [0m16.031 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m12.970 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/new1.jpg [36m304 [0m8.297 ms - -[0m
+[0mGET /public/images/news-logo1.png [36m304 [0m6.566 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/news-logo2.png [36m304 [0m6.120 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/new2.jpg [36m304 [0m6.382 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/new3.jpg [36m304 [0m5.952 ms - -[0m
+[0mGET /public/images/news-logo3.png [36m304 [0m5.570 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/banner.jpg [36m304 [0m3.070 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/image_6.jpg [36m304 [0m6.666 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/image_2.jpg [36m304 [0m6.971 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/image_3.jpg [36m304 [0m7.145 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/image_8.jpg [36m304 [0m5.891 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m2.742 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m2.672 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET / [36m304 [0m58.820 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m15.935 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m15.532 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m15.042 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m14.376 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m11.078 ms - -[0m
+[0mGET /public/css/style.css [36m304 [0m10.323 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/admin.css [36m304 [0m10.224 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m9.702 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m9.124 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m8.671 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m8.270 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m7.871 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m16.912 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m16.338 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m16.021 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m14.525 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m13.940 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m6.278 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m39.823 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m30.657 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m12.345 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m10.953 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m9.915 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m7.840 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/main.js [36m304 [0m5.039 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/article_front.js [36m304 [0m7.327 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/admin.js [36m304 [0m6.478 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m4.101 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/new1.jpg [36m304 [0m4.142 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/news-logo1.png [36m304 [0m4.556 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/news-logo2.png [36m304 [0m12.036 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/new2.jpg [36m304 [0m8.568 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/new3.jpg [36m304 [0m6.490 ms - -[0m
+[0mGET /public/images/news-logo3.png [36m304 [0m7.017 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/banner.jpg [36m304 [0m13.398 ms - -[0m
+[0mGET /public/images/image_6.jpg [36m304 [0m10.730 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/image_2.jpg [36m304 [0m18.762 ms - -[0m
+[0mGET /public/images/image_3.jpg [36m304 [0m14.707 ms - -[0m
+[0mGET /public/images/image_8.jpg [36m304 [0m14.080 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m13.513 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m16.831 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /article [36m304 [0m21.255 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m3.123 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m3.071 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m15.415 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m18.301 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m22.398 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/style.css [36m304 [0m29.626 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/admin.css [36m304 [0m6.769 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m6.199 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m5.780 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m5.373 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m4.968 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m11.030 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m10.596 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m10.185 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m10.978 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m9.893 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m10.348 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m9.813 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m9.504 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m8.117 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m7.676 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m37.146 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m7.913 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/article_back.js [36m304 [0m7.495 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m7.143 ms - -[0m
+[0mGET /public/js/main.js [36m304 [0m6.928 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/article_front.js [36m304 [0m6.444 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/admin.js [36m304 [0m4.757 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m1.363 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m5.786 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m3.086 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/article/getArticleList?pageIndex=1&pageSize=4 [36m304 [0m55.823 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/ueditor/picture/290fc4273335a3e095da0f329d564031.png [36m304 [0m3.013 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/ueditor/picture/9e44a3f91c590273f243640a2b1b8ed1.png [36m304 [0m5.949 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/ueditor/picture/ad24b067a0890fb2e4de6f5da3c7e28e.png [36m304 [0m4.870 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/ueditor/picture/0fc71eae359dea34966b7c1535cb95d6.png [36m304 [0m7.703 ms - -[0m
+2017-01-10 18:02 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:02:40 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true },
+  user: 
+   { _id: 5847632a52843513e48e3565,
+     account: 'sam',
+     password: '4297f44b13955235245b2497399d7a93',
+     __v: 0,
+     lastLoginTime: 1484042560887,
+     userType: 2,
+     createLog: { createTime: 1481040000000, createIp: '10.28.5.197' },
+     gender: 2,
+     email: '8225@qq.com',
+     mobile: '13008890154',
+     realName: 'Ryan',
+     avatar: '30ce76fc2816f32bc04ebdee69ee5e4d.png' },
+  isLogin: true }
+2017-01-10 18:02 +08:00: [0mGET /contact [32m200 [0m22.072 ms - 8728[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m8.811 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m2.860 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m8.625 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m6.409 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m5.763 ms - -[0m
+[0mGET /public/css/admin.css [36m304 [0m4.776 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/style.css [36m304 [0m6.230 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m9.014 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m5.921 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/mall.css [36m304 [0m10.749 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m10.323 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m9.738 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m8.777 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m5.477 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m8.521 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m7.518 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m7.154 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m6.602 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m17.437 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m17.013 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m16.872 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m16.602 ms - -[0m
+[0mGET /api/user/getCurrentUser [36m304 [0m31.099 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m9.676 ms - -[0m
+[0mGET /public/js/main.js [36m304 [0m8.830 ms - -[0m
+[0mGET /public/js/article_front.js [36m304 [0m7.894 ms - -[0m
+[0mGET /public/js/admin.js [36m304 [0m4.741 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m5.731 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m4.643 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m3.648 ms - -[0m
+2017-01-10 18:02 +08:00: 1 users online
+2017-01-10 18:02 +08:00: [0mGET /about [32m200 [0m25.904 ms - 9426[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m7.026 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m6.301 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m5.649 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m5.214 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m13.490 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/style.css [36m304 [0m9.144 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/admin.css [36m304 [0m8.762 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m8.318 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m7.273 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/mall.css [36m304 [0m10.240 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m5.824 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m5.262 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m4.891 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m4.636 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m9.685 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m10.539 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m12.065 ms - -[0m
+[0mGET /public/js/bootstrap.min.js [36m304 [0m12.359 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m13.352 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m10.769 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m9.219 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m9.222 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m37.015 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m12.949 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/main.js [36m304 [0m10.063 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/article_front.js [36m304 [0m14.422 ms - -[0m
+[0mGET /public/js/admin.js [36m304 [0m13.413 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m7.163 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/image_about.jpg [36m304 [0m1.654 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m2.837 ms - -[0m
+[0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m2.287 ms - -[0m
+2017-01-10 18:02 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:02:40 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true },
+  user: 
+   { _id: 5847632a52843513e48e3565,
+     account: 'sam',
+     password: '4297f44b13955235245b2497399d7a93',
+     __v: 0,
+     lastLoginTime: 1484042560887,
+     userType: 2,
+     createLog: { createTime: 1481040000000, createIp: '10.28.5.197' },
+     gender: 2,
+     email: '8225@qq.com',
+     mobile: '13008890154',
+     realName: 'Ryan',
+     avatar: '30ce76fc2816f32bc04ebdee69ee5e4d.png' },
+  isLogin: true }
+2017-01-10 18:02 +08:00: [0mGET /services [32m200 [0m25.354 ms - 9598[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m5.463 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m12.994 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m12.293 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m9.959 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m5.589 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/style.css [36m304 [0m10.801 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/admin.css [36m304 [0m6.002 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m4.852 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m4.727 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/mall.css [36m304 [0m2.640 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/article.css [36m304 [0m2.928 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m3.097 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m3.296 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m2.286 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m3.470 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m12.762 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m12.529 ms - -[0m
+[0mGET /public/js/bootstrap.min.js [36m304 [0m9.786 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m10.110 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m12.086 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m30.604 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m15.397 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m12.784 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m10.337 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/main.js [36m304 [0m6.304 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/article_front.js [36m304 [0m9.169 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/admin.js [36m304 [0m5.251 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m4.166 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m2.660 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m2.225 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /article [36m304 [0m15.060 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m11.934 ms - -[0m
+[0mGET /public/css/icomoon.css [36m304 [0m7.914 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m8.800 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m4.323 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m3.963 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/style.css [36m304 [0m7.677 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m7.191 ms - -[0m
+[0mGET /public/css/admin.css [36m304 [0m6.307 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m6.993 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/mall.css [36m304 [0m3.539 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/article.css [36m304 [0m8.819 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m8.356 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m7.941 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m7.485 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m6.790 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m12.698 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m11.867 ms - -[0m
+[0mGET /public/js/bootstrap.min.js [36m304 [0m11.288 ms - -[0m
+[0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m10.725 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m12.319 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m11.920 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m11.445 ms - -[0m
+[0mGET /public/js/article_back.js [36m304 [0m11.042 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m31.494 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m12.113 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/main.js [36m304 [0m12.092 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/article_front.js [36m304 [0m21.991 ms - -[0m
+[0mGET /public/js/admin.js [36m304 [0m21.654 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m7.502 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m6.054 ms - -[0m
+[0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m8.464 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/article/getArticleList?pageIndex=1&pageSize=4 [36m304 [0m36.802 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/ueditor/picture/290fc4273335a3e095da0f329d564031.png [36m304 [0m3.663 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/ueditor/picture/9e44a3f91c590273f243640a2b1b8ed1.png [36m304 [0m5.111 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/ueditor/picture/ad24b067a0890fb2e4de6f5da3c7e28e.png [36m304 [0m3.871 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/ueditor/picture/0fc71eae359dea34966b7c1535cb95d6.png [36m304 [0m3.383 ms - -[0m
+2017-01-10 18:02 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:02:40 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true },
+  user: 
+   { _id: 5847632a52843513e48e3565,
+     account: 'sam',
+     password: '4297f44b13955235245b2497399d7a93',
+     __v: 0,
+     lastLoginTime: 1484042560887,
+     userType: 2,
+     createLog: { createTime: 1481040000000, createIp: '10.28.5.197' },
+     gender: 2,
+     email: '8225@qq.com',
+     mobile: '13008890154',
+     realName: 'Ryan',
+     avatar: '30ce76fc2816f32bc04ebdee69ee5e4d.png' },
+  isLogin: true }
+2017-01-10 18:02 +08:00: [0mGET /picture [36m304 [0m20.917 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m2.325 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m6.342 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m5.990 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m6.926 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m3.507 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/style.css [36m304 [0m2.059 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/admin.css [36m304 [0m10.065 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m8.309 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m7.835 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m7.465 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m7.113 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m11.446 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m10.984 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m10.031 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m9.552 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m13.536 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m6.297 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m5.637 ms - -[0m
+[0mGET /public/js/bootstrap.min.js [36m304 [0m5.132 ms - -[0m
+[0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m4.677 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m5.585 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m10.665 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m6.176 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m5.996 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/main.js [36m304 [0m6.521 ms - -[0m
+[0mGET /public/js/article_front.js [36m304 [0m5.670 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/admin.js [36m304 [0m2.306 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m2.317 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/image_1.jpg [36m304 [0m7.552 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m6.299 ms - -[0m
+[0mGET /public/images/image_2.jpg [36m304 [0m5.877 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/image_3.jpg [36m304 [0m6.473 ms - -[0m
+[0mGET /public/images/image_4.jpg [36m304 [0m4.754 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/image_5.jpg [36m304 [0m7.690 ms - -[0m
+[0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m7.247 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/image_6.jpg [36m304 [0m7.511 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /mall [36m304 [0m22.548 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/animate.css [36m304 [0m8.975 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m8.566 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m8.183 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m7.570 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m7.241 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/style.css [36m304 [0m5.472 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/admin.css [36m304 [0m5.074 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m4.651 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m7.164 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/mall.css [36m304 [0m6.801 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/css/article.css [36m304 [0m5.242 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m5.036 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m5.638 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m9.426 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m8.809 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m8.603 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m8.228 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m25.230 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m10.522 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m10.160 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m9.884 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m9.575 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m3.929 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m7.395 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/js/main.js [36m304 [0m6.031 ms - -[0m
+[0mGET /public/js/admin.js [36m304 [0m5.166 ms - -[0m
+[0mGET /public/js/article_front.js [36m304 [0m6.327 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/logo2.png [36m304 [0m4.628 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/show_pic_01.jpg [36m304 [0m4.903 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/show_pic_02.jpg [36m304 [0m4.451 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/show_pic_03.jpg [36m304 [0m8.688 ms - -[0m
+2017-01-10 18:02 +08:00: [0mGET /public/images/show_pic_04.jpg [36m304 [0m6.683 ms - -[0m
+[0mGET /public/images/show_pic_05.jpg [36m304 [0m5.648 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/show_pic_06.jpg [36m304 [0m7.379 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/show_pic_08.jpg [36m304 [0m3.008 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/show_pic_07.jpg [36m304 [0m7.898 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m2.446 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m2.151 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET / [36m304 [0m29.917 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/animate.css [36m304 [0m3.114 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m6.351 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m3.471 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m1.956 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m8.085 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/style.css [36m304 [0m5.217 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/admin.css [36m304 [0m10.449 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m5.624 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m10.439 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/mall.css [36m304 [0m7.710 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/article.css [36m304 [0m8.730 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m7.534 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m7.213 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m9.287 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m9.188 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m18.028 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m17.411 ms - -[0m
+[0mGET /public/js/bootstrap.min.js [36m304 [0m16.831 ms - -[0m
+[0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m10.421 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m41.199 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m13.469 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m13.916 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m8.641 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m8.058 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/main.js [36m304 [0m12.484 ms - -[0m
+[0mGET /public/js/article_front.js [36m304 [0m7.871 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/admin.js [36m304 [0m7.310 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/logo2.png [36m304 [0m10.594 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/new1.jpg [36m304 [0m2.566 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/news-logo1.png [36m304 [0m7.782 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/news-logo2.png [36m304 [0m7.875 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/new2.jpg [36m304 [0m7.412 ms - -[0m
+[0mGET /public/images/new3.jpg [36m304 [0m6.945 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/news-logo3.png [36m304 [0m5.141 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/banner.jpg [36m304 [0m5.300 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/image_6.jpg [36m304 [0m9.984 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/image_2.jpg [36m304 [0m9.456 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/image_3.jpg [36m304 [0m9.447 ms - -[0m
+[0mGET /public/images/image_8.jpg [36m304 [0m8.098 ms - -[0m
+[0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m5.774 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m3.097 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /mall [36m304 [0m32.792 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m9.609 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/animate.css [36m304 [0m11.634 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m9.575 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m12.393 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m7.626 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/style.css [36m304 [0m4.199 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/admin.css [36m304 [0m3.645 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m3.508 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m13.479 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/mall.css [36m304 [0m12.931 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m11.760 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m11.509 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m11.169 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m6.797 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m11.576 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m10.558 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m18.215 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m9.831 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m9.232 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m8.807 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m12.307 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m11.818 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m12.214 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/main.js [36m304 [0m12.344 ms - -[0m
+[0mGET /api/user/getCurrentUser [36m304 [0m43.677 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/article_front.js [36m304 [0m10.739 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/admin.js [36m304 [0m10.456 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/logo2.png [36m304 [0m4.316 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/show_pic_01.jpg [36m304 [0m7.456 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/show_pic_02.jpg [36m304 [0m7.149 ms - -[0m
+[0mGET /public/images/show_pic_03.jpg [36m304 [0m6.981 ms - -[0m
+[0mGET /public/images/show_pic_04.jpg [36m304 [0m6.804 ms - -[0m
+[0mGET /public/images/show_pic_05.jpg [36m304 [0m7.099 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/show_pic_06.jpg [36m304 [0m4.060 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/show_pic_07.jpg [36m304 [0m5.964 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/show_pic_08.jpg [36m304 [0m5.819 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m3.253 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m2.869 ms - -[0m
+2017-01-10 18:03 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:02:40 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true },
+  user: 
+   { _id: 5847632a52843513e48e3565,
+     account: 'sam',
+     password: '4297f44b13955235245b2497399d7a93',
+     __v: 0,
+     lastLoginTime: 1484042560887,
+     userType: 2,
+     createLog: { createTime: 1481040000000, createIp: '10.28.5.197' },
+     gender: 2,
+     email: '8225@qq.com',
+     mobile: '13008890154',
+     realName: 'Ryan',
+     avatar: '30ce76fc2816f32bc04ebdee69ee5e4d.png' },
+  isLogin: true }
+2017-01-10 18:03 +08:00: [0mGET /picture [36m304 [0m31.682 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/animate.css [36m304 [0m2.508 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m6.265 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m5.801 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m5.404 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m5.143 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/style.css [36m304 [0m3.869 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/admin.css [36m304 [0m10.161 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m11.102 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m10.578 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m9.829 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/article.css [36m304 [0m10.503 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m5.615 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m7.892 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m9.213 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m14.420 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m11.470 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m7.957 ms - -[0m
+[0mGET /public/js/bootstrap.min.js [36m304 [0m7.075 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m29.742 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m13.846 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m11.343 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m8.868 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m8.390 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m11.786 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/main.js [36m304 [0m11.892 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/article_front.js [36m304 [0m10.869 ms - -[0m
+[0mGET /public/js/admin.js [36m304 [0m10.783 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/logo2.png [36m304 [0m13.865 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/image_1.jpg [36m304 [0m7.557 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m6.283 ms - -[0m
+[0mGET /public/images/image_2.jpg [36m304 [0m5.769 ms - -[0m
+[0mGET /public/images/image_3.jpg [36m304 [0m5.268 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/image_4.jpg [36m304 [0m4.757 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m3.926 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/image_5.jpg [36m304 [0m3.507 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/image_6.jpg [36m304 [0m3.020 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /article [36m304 [0m12.295 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/animate.css [36m304 [0m6.336 ms - -[0m
+[0mGET /public/css/icomoon.css [36m304 [0m4.103 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m11.565 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m11.885 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m9.362 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/style.css [36m304 [0m8.199 ms - -[0m
+[0mGET /public/css/admin.css [36m304 [0m7.974 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m7.610 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m10.577 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/mall.css [36m304 [0m9.412 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/article.css [36m304 [0m6.746 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m7.929 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m7.212 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m4.402 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m10.752 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m7.035 ms - -[0m
+[0mGET /api/user/getCurrentUser [36m304 [0m15.673 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m32.410 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m32.366 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m13.702 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m10.655 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m8.833 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m14.134 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/article_back.js [36m304 [0m19.495 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m12.164 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/main.js [36m304 [0m11.438 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/article_front.js [36m304 [0m10.814 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/admin.js [36m304 [0m8.281 ms - -[0m
+[0mGET /public/images/logo2.png [36m304 [0m2.949 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m5.344 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m5.102 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /api/article/getArticleList?pageIndex=1&pageSize=4 [36m304 [0m46.579 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/ueditor/picture/290fc4273335a3e095da0f329d564031.png [36m304 [0m20.456 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/ueditor/picture/9e44a3f91c590273f243640a2b1b8ed1.png [36m304 [0m5.211 ms - -[0m
+[0mGET /public/ueditor/picture/ad24b067a0890fb2e4de6f5da3c7e28e.png [36m304 [0m4.586 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/ueditor/picture/0fc71eae359dea34966b7c1535cb95d6.png [36m304 [0m5.318 ms - -[0m
+2017-01-10 18:03 +08:00: Session {
+  cookie: 
+   { path: '/',
+     _expires: Wed Jan 11 2017 18:02:40 GMT+0800 (中国标准时间),
+     originalMaxAge: 86400000,
+     httpOnly: true },
+  user: 
+   { _id: 5847632a52843513e48e3565,
+     account: 'sam',
+     password: '4297f44b13955235245b2497399d7a93',
+     __v: 0,
+     lastLoginTime: 1484042560887,
+     userType: 2,
+     createLog: { createTime: 1481040000000, createIp: '10.28.5.197' },
+     gender: 2,
+     email: '8225@qq.com',
+     mobile: '13008890154',
+     realName: 'Ryan',
+     avatar: '30ce76fc2816f32bc04ebdee69ee5e4d.png' },
+  isLogin: true }
+2017-01-10 18:03 +08:00: [0mGET /services [36m304 [0m32.816 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/animate.css [36m304 [0m6.456 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m3.943 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m3.892 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m7.144 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m5.579 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/style.css [36m304 [0m5.424 ms - -[0m
+[0mGET /public/css/admin.css [36m304 [0m4.989 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m6.731 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m4.348 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/mall.css [36m304 [0m8.974 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/article.css [36m304 [0m8.533 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m8.267 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m3.557 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m8.399 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m13.834 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m12.534 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m10.678 ms - -[0m
+[0mGET /public/js/bootstrap.min.js [36m304 [0m10.217 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m9.574 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m8.506 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m33.940 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m8.374 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m8.154 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m7.882 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/main.js [36m304 [0m6.962 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/article_front.js [36m304 [0m8.793 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/admin.js [36m304 [0m6.732 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/logo2.png [36m304 [0m4.053 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m2.714 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m2.301 ms - -[0m
+2017-01-10 18:03 +08:00: 1 users online
+2017-01-10 18:03 +08:00: [0mGET /about [36m304 [0m25.508 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/animate.css [36m304 [0m8.420 ms - -[0m
+[0mGET /public/css/icomoon.css [36m304 [0m7.367 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m5.858 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m13.191 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m12.994 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/admin.css [36m304 [0m8.599 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m8.335 ms - -[0m
+[0mGET /public/css/style.css [36m304 [0m9.650 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m9.417 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m9.031 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m3.875 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m3.525 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m5.192 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m7.619 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m8.455 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m7.112 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m6.795 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m21.926 ms - -[0m
+[0mGET /public/js/bootstrap.min.js [36m304 [0m7.598 ms - -[0m
+[0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m7.294 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m11.191 ms - -[0m
+[0mGET /public/libs/art-template/arttemplate.js [36m304 [0m10.625 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m7.683 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m11.679 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/main.js [36m304 [0m11.007 ms - -[0m
+[0mGET /public/js/article_front.js [36m304 [0m10.180 ms - -[0m
+[0mGET /public/js/admin.js [36m304 [0m8.659 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/logo2.png [36m304 [0m5.458 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/image_about.jpg [36m304 [0m1.507 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m2.595 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m2.093 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /article/articleDetail/5873432dabd4501b64e12c3a [33m405 [0m30023.747 ms - 18[0m
+2017-01-10 18:03 +08:00: [0mGET /article/articleDetail/5873432dabd4501b64e12c3a [0m- [0m- ms - -[0m
+2017-01-10 18:03 +08:00: 1 users online
+2017-01-10 18:03 +08:00: [0mGET /about [36m304 [0m32.681 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/animate.css [36m304 [0m8.754 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m7.590 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m10.877 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m8.014 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m7.441 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/style.css [36m304 [0m3.956 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/admin.css [36m304 [0m3.539 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m3.382 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m10.248 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/mall.css [36m304 [0m9.619 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/article.css [36m304 [0m8.512 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m7.946 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m7.524 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m8.439 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m7.995 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m7.486 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m17.935 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m20.658 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m19.974 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m19.726 ms - -[0m
+[0mGET /api/user/getCurrentUser [36m304 [0m32.164 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m9.888 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m12.955 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m11.780 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/article_front.js [36m304 [0m7.742 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/main.js [36m304 [0m19.948 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/admin.js [36m304 [0m15.589 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/logo2.png [36m304 [0m3.591 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/image_about.jpg [36m304 [0m2.407 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m3.553 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m3.028 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /article [36m304 [0m11.404 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/animate.css [36m304 [0m11.422 ms - -[0m
+[0mGET /public/css/icomoon.css [36m304 [0m9.902 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m9.218 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m9.161 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m8.727 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/style.css [36m304 [0m14.497 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/admin.css [36m304 [0m11.749 ms - -[0m
+[0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m8.144 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m9.021 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m8.692 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/article.css [36m304 [0m15.081 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m13.939 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m13.399 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m12.962 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m13.175 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m12.671 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m12.289 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m13.894 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m13.659 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m5.106 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m14.144 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m7.519 ms - -[0m
+[0mGET /public/js/article_back.js [36m304 [0m6.512 ms - -[0m
+[0mGET /public/js/jquery.waypoints.min.js [36m304 [0m5.636 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m44.097 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/main.js [36m304 [0m9.497 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/article_front.js [36m304 [0m8.732 ms - -[0m
+[0mGET /public/js/admin.js [36m304 [0m8.644 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/logo2.png [36m304 [0m2.609 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m4.969 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m4.569 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /api/article/getArticleList?pageIndex=1&pageSize=4 [36m304 [0m48.092 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/ueditor/picture/290fc4273335a3e095da0f329d564031.png [36m304 [0m8.470 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/ueditor/picture/9e44a3f91c590273f243640a2b1b8ed1.png [36m304 [0m7.153 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/ueditor/picture/ad24b067a0890fb2e4de6f5da3c7e28e.png [36m304 [0m6.176 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/ueditor/picture/0fc71eae359dea34966b7c1535cb95d6.png [36m304 [0m5.370 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /article/articleDetail/586f38ecd552a41eec271abe [0m- [0m- ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /article/articleDetail/5873432dabd4501b64e12c3a [0m- [0m- ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /article [36m304 [0m12.397 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/animate.css [36m304 [0m6.549 ms - -[0m
+[0mGET /public/css/icomoon.css [36m304 [0m6.181 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/simple-line-icons.css [36m304 [0m27.261 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/bootstrap.css [36m304 [0m26.446 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m13.077 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/style.css [36m304 [0m12.363 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/admin.css [36m304 [0m12.717 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m12.424 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m7.303 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m6.842 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/css/article.css [36m304 [0m24.193 ms - -[0m
+[0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m24.168 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m23.792 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m23.138 ms - -[0m
+[0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m22.719 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.min.js [36m304 [0m11.911 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.easing.1.3.js [36m304 [0m11.390 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m11.192 ms - -[0m
+[0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m11.792 ms - -[0m
+[0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m11.102 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m54.889 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m22.645 ms - -[0m
+[0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m20.224 ms - -[0m
+[0mGET /public/js/article_back.js [36m304 [0m19.114 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m14.533 ms - -[0m
+[0mGET /public/js/main.js [36m304 [0m14.507 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/article_front.js [36m304 [0m5.327 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/js/admin.js [36m304 [0m7.549 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/images/logo2.png [36m304 [0m2.590 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/simple-line-icons/Simple-Line-Icons.ttf?v=2.2.2 [36m304 [0m8.948 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/fonts/icomoon/icomoon.ttf?srf3rx [36m304 [0m10.029 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /api/article/getArticleList?pageIndex=1&pageSize=4 [36m304 [0m57.465 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/ueditor/picture/9e44a3f91c590273f243640a2b1b8ed1.png [36m304 [0m4.444 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/ueditor/picture/290fc4273335a3e095da0f329d564031.png [36m304 [0m7.003 ms - -[0m
+2017-01-10 18:03 +08:00: [0mGET /public/ueditor/picture/ad24b067a0890fb2e4de6f5da3c7e28e.png [36m304 [0m6.085 ms - -[0m
+[0mGET /public/ueditor/picture/0fc71eae359dea34966b7c1535cb95d6.png [36m304 [0m5.292 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /article [36m304 [0m17.501 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/css/animate.css [36m304 [0m20.326 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/css/icomoon.css [36m304 [0m18.084 ms - -[0m
+[0mGET /public/css/simple-line-icons.css [36m304 [0m17.065 ms - -[0m
+[0mGET /public/css/bootstrap.css [36m304 [0m14.431 ms - -[0m
+[0mGET /public/css/style.css [36m304 [0m13.316 ms - -[0m
+[0mGET /public/libs/jquery-pager/Pager.css [36m304 [0m13.201 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/css/admin.css [36m304 [0m15.199 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/libs/font-awesome/css/font-awesome.css [36m304 [0m11.342 ms - -[0m
+[0mGET /public/libs/upload/css/jquery.Jcrop.css [36m304 [0m11.583 ms - -[0m
+[0mGET /public/css/mall.css [36m304 [0m10.469 ms - -[0m
+[0mGET /public/css/article.css [36m304 [0m9.851 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/libs/ueditor/themes/default/css/ueditor.css [36m304 [0m12.234 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCoreDefault.css [36m304 [0m15.336 ms - -[0m
+[0mGET /public/libs/ueditor/third-party/syntaxhighlighter/shCore.js [36m304 [0m13.424 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/js/modernizr-2.6.2.min.js [36m304 [0m11.245 ms - -[0m
+[0mGET /public/js/jquery.easing.1.3.js [36m304 [0m8.960 ms - -[0m
+[0mGET /public/js/jquery.min.js [36m304 [0m9.750 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/js/bootstrap.min.js [36m304 [0m7.897 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/libs/bootstrap-confirm/confirm-bootstrap.js [36m304 [0m7.256 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/libs/jquery-pager/jquery.pager.js [36m304 [0m6.719 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/libs/art-template/arttemplate.js [36m304 [0m9.287 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/libs/upload/js/jquery.Jcrop.min.js [36m304 [0m8.559 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /api/user/getCurrentUser [36m304 [0m31.502 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/js/article_back.js [36m304 [0m10.855 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/js/jquery.waypoints.min.js [36m304 [0m13.535 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/js/main.js [36m304 [0m14.320 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/js/article_front.js [36m304 [0m52.973 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/js/admin.js [36m304 [0m49.427 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /public/images/logo2.png [36m304 [0m34.400 ms - -[0m
+2017-01-10 18:11 +08:00: [0mGET /article [36m304 [0m14.992 ms - -[0m
